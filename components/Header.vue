@@ -4,6 +4,21 @@
 		<img :class="{active: !isHover}" src="/public/logo_bw.webp" alt="logo">
 		<img :class="{active: isHover}" src="/public/logo_color.webp" alt="logo">
 	</div>
+	<h1 :class="{active: isHover}">
+		<span>Д</span>
+		<span>О</span>
+		<span>Б</span>
+		<span>Р</span>
+		<span>О</span>
+		<span>Г</span>
+		<span>О</span>
+		<span>Р</span>
+		<span>Л</span>
+		<span>О</span>
+		<span>В</span>
+		<span>К</span>
+		<span>А</span>
+	</h1>
 	<nav>
 		<div>Команда</div>
 		<div>Партнёры</div>
@@ -24,8 +39,8 @@ header{
 	border-bottom: 4px solid var(--color-black);
 }
 .header__logo{
-	width: 500px;
-	height: 130px;
+	width: 600px;
+	height: 150px;
 	margin: 30px auto;
 	position: relative;
 	& img{
@@ -37,6 +52,28 @@ header{
 		&.active{
 			opacity: 1;
 		}
+	}
+}
+h1 {
+	--border: 3px;
+	--border-m: -3px;
+	& span{
+		transition: 0.4s ease-in-out;
+	}
+	&.active span{
+		text-shadow: var(--border-m) var(--border-m) 0 var(--color-black), var(--border) var(--border-m) 0 var(--color-black), var(--border-m) var(--border) 0 var(--color-black), var(--border) var(--border) 0 var(--color-black);
+			&:nth-child(1n){
+				color: var(--color-green);
+			}
+			&:nth-child(2n){
+				color: var(--color-blue);
+			}
+			&:nth-child(3n){
+				color: var(--color-orange);
+			}
+			&:nth-child(4n){
+				color: var(--color-pink);
+			}
 	}
 }
 nav{

@@ -1,5 +1,6 @@
 <template>
   <div class="mainpage">
+    <Contacts/>
     <Team/>
     <Partners/>
     <Documents/>
