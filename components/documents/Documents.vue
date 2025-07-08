@@ -1,5 +1,5 @@
 <template>
-  <div class="documents">
+  <section class="documents">
 	<h2>Документы организации</h2>
 	<h3>Учредительные документы</h3>
 	<div class="documents__cards">
@@ -12,7 +12,7 @@
 	<div class="documents__cards">
 		<DocumentsCard :size="'3.16 MB'">Отчёт 2024 год</DocumentsCard>
 	</div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

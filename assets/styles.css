@@ -4,6 +4,10 @@ body{
 	font-size: 18pt;
 }
 
+section{
+	margin: 20px 0;
+}
+
 h2{
 	font-size: 2.8em;
 	padding: 10px;
