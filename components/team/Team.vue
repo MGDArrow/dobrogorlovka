@@ -44,8 +44,6 @@
 <style scoped lang="scss">
 .team {
   min-height: 100dvh;
-  width: 1600px;
-  margin: 0 auto;
 
   &__big-cards {
     margin: 20px auto;

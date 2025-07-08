@@ -1,15 +1,3 @@
-
-@property --rotate {
-  syntax: "<angle>";
-  initial-value: 132deg;
-  inherits: false;
-}
-/* 
-:root {
-  --card-height: 65vh;
-  --card-width: calc(var(--card-height) / 1.5);
-} */
-
 body{
 	font-family: 'Mont';
 	font-weight: 400;
@@ -27,4 +15,10 @@ h3 {
 	font-size: 2em;
 	padding: 10px 3em;
 	font-weight: 600;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }

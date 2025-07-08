@@ -26,7 +26,7 @@ const isHover = ref(false);
   width: 350px;
   height: 450px;
   border: 5px solid var(--color-black);
-  border-radius: 15px;
+  border-radius: var(--border-radius);
   padding: 10px;
   cursor: pointer;
   transition: 0.3s ease-in-out;

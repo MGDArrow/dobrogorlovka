@@ -5,6 +5,8 @@
 	--color-blue: #3b81c3;
 	--color-orange: #f18918;
 	--color-pink: #fc00af;
+
+    --border-radius: 15px;
 }
 
 @font-face {
