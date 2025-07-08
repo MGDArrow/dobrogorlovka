@@ -15,7 +15,6 @@
 <style scoped lang="scss">
 .partners{
   width: 100%;
-//   min-height: 100dvh;
   &__cards{
 	width: 80%;
 	align-items: center;
