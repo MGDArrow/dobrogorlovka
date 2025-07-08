@@ -1,0 +1,65 @@
+:root{
+	--color-white: white; 
+	--color-black: black; 
+	--color-green: #a6c729;
+	--color-blue: #3b81c3;
+	--color-orange: #f18918;
+	--color-pink: #fc00af;
+}
+
+@font-face {
+    font-family: 'Mont';
+    font-weight: 100;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-Thin.ttf') format('ttf')
+}
+@font-face {
+    font-family: 'Mont';
+    font-weight: 200;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-ExtraLight.ttf') format('ttf')
+}
+@font-face {
+    font-family: 'Mont';
+    font-weight: 300;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-Light.ttf') format('ttf')
+}
+@font-face {
+    font-family: 'Mont';
+    font-weight: 400;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-Regular.ttf') format('ttf')
+}
+@font-face {
+    font-family: 'Mont';
+    font-weight: 500;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-SemiBold.ttf') format('ttf')
+}
+@font-face {
+    font-family: 'Mont';
+    font-weight: 600;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-Bold.ttf') format('ttf')
+}
+@font-face {
+    font-family: 'Mont';
+    font-weight: 700;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-Heavy.ttf') format('ttf')
+}
+@font-face {
+    font-family: 'Mont';
+    font-weight: 800;
+    font-style: normal;
+    src:
+        url('./fonts/Mont-Black.ttf') format('ttf')
+}
