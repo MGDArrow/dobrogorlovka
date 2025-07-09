@@ -43,7 +43,6 @@
 
 <style scoped lang="scss">
 .team {
-  min-height: 100dvh;
 
   &__big-cards {
     margin: 20px auto;

@@ -30,7 +30,7 @@ position: absolute;
 transform: rotateZ(v-bind(rotateZ)) translateY(v-bind(translateY)) translateX(v-bind(translateX));
 z-index: -1;
 	& div {
-		width: 700px;
+		width: 1400px;
 		height: 50px;
 		border: var(--border-block) solid var(--color-black);
 		background-position: 0 0;

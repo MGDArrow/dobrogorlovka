@@ -2,6 +2,8 @@ body{
 	font-family: 'Mont';
 	font-weight: 400;
 	font-size: 18pt;
+	height: 100vw;
+	overflow-x: hidden;
 }
 
 section{
@@ -26,6 +28,39 @@ h3 {
 	font-size: 2em;
 	padding: 10px 3em;
 	font-weight: 600;
+}
+
+.info-list{
+	font-size: 1.2em;
+}
+
+.info-list p{
+	margin: 20px 0;
+	transition: 0.4s ease-in-out;
+	cursor: pointer;
+	&:hover{
+		
+		transform: scale(1.03);
+		&:nth-child(1n){
+			color: var(--color-green);
+		}
+		&:nth-child(2n){
+			color: var(--color-blue);
+		}
+		&:nth-child(3n){
+			color: var(--color-orange);
+		}
+		&:nth-child(4n){
+			color: var(--color-pink);
+		}
+	}
+}
+
+.info-list strong{
+	display: block;
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-bottom: 10px;
 }
 
 @property --angle {
