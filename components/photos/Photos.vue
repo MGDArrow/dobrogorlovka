@@ -58,9 +58,10 @@ import { Navigation, Pagination, Keyboard, Mousewheel, Autoplay, Zoom, Virtual }
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { ENV } from '~/assets/env';
 
 const isHover = ref(false);
-const arrayNamePhotos = ['photo_01', 'photo_02', 'photo_03', 'photo_04','photo_05', 'photo_06'];
+const arrayNamePhotos = ENV.photoArray;
 const modules = [Navigation, Pagination, Keyboard, Mousewheel, Autoplay, Zoom, Virtual ];
 const activeIndex = ref(0)
 const swiperRef:Ref<null | typeof Swiper> = ref(null);

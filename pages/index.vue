@@ -1,14 +1,12 @@
 <template>
   <div class="mainpage">
-    <!-- <About/> -->
+    <About/>
     <Team/>
     <Photos/>
     <Partners/>
     <Documents/>
     <Contacts/>
-    <!-- <p>История о нас</p>
-    <p>Фотогаларея — Лучшие фото из жизни организации</p>
-    <p>Проекты</p> -->
+    <!-- <p>Проекты</p> -->
   </div>
 </template>
 

@@ -5,18 +5,18 @@
 			<div class="contacts__requisites">
 				<h3>Реквизиты</h3>
 				<div class="info-list">
-					<p><strong>ОГРН:</strong>1249300015777</p>
-					<p><strong>ИНН:</strong>9312010716</p>
-					<p><strong>КПП:</strong>931201001</p>
+					<p v-for="requisite in requisites" :key="requisite.label">
+						<strong>{{ requisite.label }}:</strong>{{ requisite.var }}
+					</p>
 				</div>
 			</div>
 			<div class="contacts__contacts" @mouseover="isHover = true" >
 				<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="'162%'"/>
 				<h3>Контакты</h3>
 				<div class="info-list">
-					<p><strong>Телефон:</strong>+7 (949) 520-81-55</p>
-					<p><strong>E-mail:</strong>dobrogorlovka@yandex.ru</p>
-					<p><strong>Юридический адрес:</strong>25688, ДНР, г. Горловка, ул. Соборная, д. 1</p>
+					<p><strong>Телефон:</strong>{{ phone }}</p>
+					<p><strong>E-mail:</strong>{{ email }}</p>
+					<p><strong>Юридический адрес:</strong>{{ address }}</p>
 				</div>
 			</div>
 
@@ -25,7 +25,14 @@
 </template>
 
 <script setup lang="ts">
-const isHover = ref(false)
+import { ENV } from '~/assets/env';
+
+const isHover = ref(false);
+
+const requisites = ENV.requisites;
+const phone = ENV.phone;
+const email = ENV.email;
+const address = ENV.address;
 </script>
 
 <style scoped lang="scss">

@@ -2,14 +2,20 @@
   <section class="partners">
 	<h2>Наши партнёры</h2>
 	<div class="partners__cards">
-		<PartnersCard :photoSrc="'partners/gorlovka.webp'">Горловская епархия</PartnersCard>
-		<PartnersCard :photoSrc="'partners/onf.webp'">Народный фронт</PartnersCard>
-		<PartnersCard :photoSrc="'partners/rostov.webp'">Милосердие-<br/>на-Дону</PartnersCard>
+		<PartnersCard 
+			v-for="partner in partners" 
+			:key="partner.name" 
+			:photoSrc="`partners/${partner.photo}.webp`">
+			{{ partner.name }}
+		</PartnersCard>
 	</div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { ENV } from '~/assets/env';
+
+const partners = ENV.partners;
 </script>
 
 <style scoped lang="scss">

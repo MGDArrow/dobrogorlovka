@@ -8,9 +8,10 @@
           <p>ДОБРОГОРЛОВКА</p>
         </div>
         <div>
-          <p>2024 – 2025© АНО «Добогорловка»</p>
-          <p>+7 (949) 520-81-11</p>
-          <p>dobrogorlovka@yandex.ru</p>
+          <p>2024 – {{ new Date().getFullYear() }}© АНО «Добогорловка»</p>
+          <p>{{ phone }}</p>
+          <p>{{ email }}</p>
+          <p>{{ address }}</p>
         </div>
         <div>
           <div class="created">Created by <strong>MGDArrow</strong></div>
@@ -21,8 +22,15 @@
 </template>
 
 <script setup lang="ts">
-const isHoverSun = ref(false)
-const isHoverDirt = ref(false)
+import { ENV } from '~/assets/env';
+
+const isHoverSun = ref(false);
+const isHoverDirt = ref(false);
+
+
+const phone = ENV.phone;
+const email = ENV.email;
+const address = ENV.address;
 </script>
 
 <style scoped lang="scss">
