@@ -1,5 +1,5 @@
 <template>
-  <div class="team-card-small" @mouseover="isHover = true" @mouseleave="isHover = false">
+  <div class="team-card-small" @mouseover="isHover = true">
     <UiBlocks :active="isHover" :translate-x="'-50%'" :translate-y="'-85%'" />
     <div class="team-card-small__content">
       <img :src="photoSrc" alt="Фото" />

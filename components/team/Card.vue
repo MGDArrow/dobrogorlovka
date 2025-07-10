@@ -1,5 +1,5 @@
 <template>
-  <div class="team-card" @mouseover="isHover = true" @mouseleave="isHover = false">
+  <div class="team-card" @mouseover="isHover = true" >
     <UiBlocks :active="isHover" />
     <div>
       <img :src="photoSrc" alt="Фото" />

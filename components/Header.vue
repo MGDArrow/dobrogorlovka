@@ -1,6 +1,6 @@
 <template>
   <header>
-	<div class="header__logo"  @mouseover="isHover = true" @mouseleave="isHover = false">
+	<div class="header__logo"  @mouseover="isHover = true">
 		<img :class="{active: !isHover}" src="/public/logo_bw.webp" alt="logo">
 		<img :class="{active: isHover}" src="/public/logo_color.webp" alt="logo">
 	</div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="document-card">
+	<div class="document-card" @mouseover="isHover = true" :class="{active: isHover}">
 		<p>
 			<slot />
 		</p>
@@ -21,6 +21,8 @@ interface Props {
 }
 
 defineProps<Props>();
+
+const isHover = ref(false)
 </script>
 
 <style scoped lang="scss">
@@ -67,11 +69,13 @@ defineProps<Props>();
 		transition: 0.4s ease-in-out;
 		font-size: 0.8em;
 	}
-
-	&:hover {
+	&:hover{
 		transform: scale(1.04);
 		width: calc(100% / 2 - 15px - 8px - 65.5px);
 		padding: 25px 15px 25px 50px;
+	}
+
+	&.active {
 
 		&:nth-child(1n) {
 			border-color: var(--color-green);

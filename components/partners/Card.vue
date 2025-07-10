@@ -1,6 +1,6 @@
 <template>
 	<div class="partners-card-wrapper" :class="{ active: isHover }" >
-		<div class="partners-card" @mouseover="isHover = true" @mouseleave="isHover = false">
+		<div class="partners-card" @mouseover="isHover = true">
 			<img :src="photoSrc" alt="Фото" />
 			<p :class="{ active: isHover }">
 				<slot />

@@ -10,7 +10,7 @@
 					<p><strong>КПП:</strong>931201001</p>
 				</div>
 			</div>
-			<div class="contacts__contacts" @mouseover="isHover = true" @mouseleave="isHover = false">
+			<div class="contacts__contacts" @mouseover="isHover = true" >
 				<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'10%'" :translate-y="'-50%'"/>
 				<h3>Контакты</h3>
 				<div class="info-list">
