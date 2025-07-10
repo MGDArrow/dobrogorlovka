@@ -11,7 +11,7 @@
 				</div>
 			</div>
 			<div class="contacts__contacts" @mouseover="isHover = true" >
-				<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'10%'" :translate-y="'-50%'"/>
+				<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="'162%'"/>
 				<h3>Контакты</h3>
 				<div class="info-list">
 					<p><strong>Телефон:</strong>+7 (949) 520-81-55</p>

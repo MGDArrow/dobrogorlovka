@@ -1,6 +1,8 @@
 <template>
   <div class="mainpage">
+    <!-- <About/> -->
     <Team/>
+    <Photos/>
     <Partners/>
     <Documents/>
     <Contacts/>
