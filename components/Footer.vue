@@ -1,7 +1,7 @@
 <template>
-  <footer @mouseover="isHover = true"  :class="{active: isHover}">
-    <div class="footer__sun" :class="{active: isHover}"></div>
-    <div class="footer__dirt" :class="{active: isHover}">
+  <footer  :class="{active: isHoverDirt}">
+    <div class="footer__sun" @mouseover="isHoverSun = true" :class="{active: isHoverSun}"></div>
+    <div class="footer__dirt" @mouseover="isHoverDirt = true" :class="{active: isHoverDirt}">
       <div class="footer__content">
         <div class="footer__logo">
           <img src="/public/logo_bw.webp" alt="logo">
@@ -21,13 +21,14 @@
 </template>
 
 <script setup lang="ts">
-const isHover = ref(false)
+const isHoverSun = ref(false)
+const isHoverDirt = ref(false)
 </script>
 
 <style scoped lang="scss">
 footer{
   width: 100%;
-  height: 700px;
+  height: 600px;
   position: relative;
   color: var(--color-black);
   &.active{
@@ -38,7 +39,7 @@ footer{
   &__sun{
     position: absolute;
     left: 70%;
-    top: 80px;
+    top: 10px;
     width: 120px;
     height: 120px;
     border-radius: 50%;

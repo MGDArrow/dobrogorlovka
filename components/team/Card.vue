@@ -2,7 +2,7 @@
   <div class="team-card" @mouseover="isHover = true" >
     <UiBlocks :active="isHover" />
     <div>
-      <img :src="photoSrc" alt="Фото" />
+      <img :src="photoSrc" alt="Фото" :class="{active: isHover}" />
       <slot />
     </div>
   </div>
@@ -46,16 +46,15 @@ const isHover = ref(false);
     border: 8px solid black;
     transition: 0.5s ease-in-out;
     filter: grayscale(100%);
+    &.active{
+      filter: grayscale(0%);
+    }
   }
 
   &:hover {
     // border-color: var(--color-green);
     // box-shadow: 0 0 10px 5px var(--color-green);
     transform: scale(1.05);
-
-    & img {
-      filter: grayscale(0%);
-    }
   }
 }
 </style>
