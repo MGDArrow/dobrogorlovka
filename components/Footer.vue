@@ -14,7 +14,7 @@
           <p>{{ address }}</p>
         </div>
         <div>
-          <div class="created">Created by <strong>MGDArrow</strong></div>
+          <a :href="created" class="created">Created by <strong>MGDArrow</strong></a>
         </div>
       </div>
     </div>
@@ -31,6 +31,7 @@ const isHoverDirt = ref(false);
 const phone = ENV.phone;
 const email = ENV.email;
 const address = ENV.address;
+const created = ENV.createdLink;
 </script>
 
 <style scoped lang="scss">
@@ -91,6 +92,9 @@ footer{
 }
 
 .created{
+  display: block;
+  color: var(--color-black);
+  text-decoration: none;
   padding: 10px;
   border-radius: var(--border-radius);
   border: 3px solid var(--color-black);

@@ -23,13 +23,13 @@ h2{
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 700;
-	color: rgb(5, 5, 130);
+	/* color: rgb(5, 5, 130); */
 }
 h3 {
 	font-size: 2em;
 	padding: 10px 3em;
 	font-weight: 600;
-	color: rgb(5, 5, 130);
+	/* color: rgb(5, 5, 130); */
 }
 
 .info-list{
