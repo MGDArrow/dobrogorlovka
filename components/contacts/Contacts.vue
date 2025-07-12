@@ -19,8 +19,12 @@
 					<p><strong>Юридический адрес:</strong>{{ address }}</p>
 				</div>
 			</div>
-
 		</div>
+		<div class="contacts__messangers">
+				<DocumentsCard :icon="'vk'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>
+				<DocumentsCard :icon="'tg'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>			
+		</div>
+		
 	</section>
 </template>
 
@@ -74,7 +78,14 @@ const address = ENV.address;
 		padding: 20px 100px;
 		border-radius: var(--border-radius);
 		border: 4px solid black;
-
+		
+	}
+	&__messangers{
+		width: 50%;
+		margin: 20px auto;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
 	}
 }
 </style>

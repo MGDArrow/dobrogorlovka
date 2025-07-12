@@ -14,7 +14,7 @@
           <p>{{ address }}</p>
         </div>
         <div>
-          <a :href="created" class="created">Created by <strong>MGDArrow</strong></a>
+          <a :href="created"  target="_blank" rel="noopener noreferrer" class="created">Created by <strong>MGDArrow</strong></a>
         </div>
       </div>
     </div>

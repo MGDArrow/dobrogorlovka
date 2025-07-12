@@ -1,14 +1,14 @@
 <template>
-	<div class="document-card" @mouseover="isHover = true" :class="{active: isHover}">
+	<a :href="href" target="_blank" rel="noopener noreferrer" class="document-card" @mouseover="isHover = true" :class="{active: isHover}">
 		<p>
 			<slot />
 		</p>
 		<div class="document-card__download">
-			<img src="../../public/download.webp" alt="download">
+			<img :src="`/${icon}.webp`" :alt="icon">
 		</div>
 
-		<div class="document-card__size">{{ size }}</div>
-	</div>
+		<div v-if="size !== null" class="document-card__size">{{ size }}</div>
+	</a>
 </template>
 
 <script setup lang="ts">
@@ -17,18 +17,25 @@ defineSlots<{
 }>();
 
 interface Props {
-	size: string;
+  size?: string | null;
+  icon?: string;
+  href: string;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  size: null,
+  icon: 'download'
+});
 
 const isHover = ref(false)
 </script>
 
 <style scoped lang="scss">
 .document-card {
+	display: block;
 	width: calc(100% / 2 - 15px - 8px - 30px);
 	border: 4px solid var(--color-black);
+	color: var(--color-black);
 	padding: 25px 15px;
 	border-radius: var(--border-radius);
 	position: relative;
@@ -78,20 +85,20 @@ const isHover = ref(false)
 	&.active {
 
 		&:nth-child(1n) {
-			border-color: var(--color-green);
-			color: var(--color-green);
-
-			& .document-card__size, .document-card__download {
-				background: var(--color-green);
-			}
-		}
-
-		&:nth-child(2n) {
 			border-color: var(--color-blue);
 			color: var(--color-blue);
-
+	
 			& .document-card__size, .document-card__download {
 				background: var(--color-blue);
+			}
+		}
+		
+		&:nth-child(2n) {
+			border-color: var(--color-green);
+			color: var(--color-green);
+	
+			& .document-card__size, .document-card__download {
+				background: var(--color-green);
 			}
 		}
 
