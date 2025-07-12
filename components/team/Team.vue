@@ -8,13 +8,13 @@
           <span>Учредитель</span>
         </TeamName>
       </TeamCard>
-      <TeamCard :photoSrc="'persons/persona1.webp'">
+      <TeamCard :photoSrc="'persons/persona2.webp'">
         <TeamName>
           <p><strong>Абросимов</strong> Дмитрий Викторович</p>
           <span>Учредитель</span>
         </TeamName>
       </TeamCard>
-      <TeamCard :photoSrc="'persons/persona1.webp'">
+      <TeamCard :photoSrc="'persons/persona0.webp'">
         <TeamName>
           <p><strong>Ильчук</strong> Михаил Вадимович</p>
           <span>Учредитель</span>
@@ -22,13 +22,13 @@
       </TeamCard>
     </div>
     <div class="team__small-cards">
-      <TeamCardSmall :photoSrc="'persons/persona1.webp'">
+      <TeamCardSmall :photoSrc="'persons/persona4.webp'">
         <TeamName>
           <p><strong>Хоряков</strong> Станислав Владимирович</p>
           <span>Директор</span>
         </TeamName>
       </TeamCardSmall>
-      <TeamCardSmall :photoSrc="'persons/persona1.webp'">
+      <TeamCardSmall :photoSrc="'persons/persona0.webp'">
         <TeamName>
           <p><strong>Марковский</strong> Кирилл Николаевич</p>
           <span>Руководитель волонтёрского движения</span>

@@ -1,6 +1,6 @@
 <template>
   <div class="mainpage">
-    <!-- <About/> -->
+    <About/>
     <Team/>
     <Photos/>
     <Partners/>
