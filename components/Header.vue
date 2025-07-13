@@ -1,9 +1,9 @@
 <template>
   <header>
-	<div class="header__logo"  @mouseover="isHover = true">
+	<a class="header__logo" href="#" @mouseover="isHover = true">
 		<img :class="{active: !isHover}" src="/public/logo_bw.webp" alt="logo">
 		<img :class="{active: isHover}" src="/public/logo_color.webp" alt="logo">
-	</div>
+	</a>
 	<h1 :class="{active: isHover}">
 		<span>Д</span>
 		<span>О</span>
@@ -20,10 +20,12 @@
 		<span>А</span>
 	</h1>
 	<nav>
-		<div>Команда</div>
-		<div>Партнёры</div>
-		<div>Документы</div>
-		<div>Контакты</div>
+		<a href="/#about">О нас</a>
+		<a href="/#team">Команда</a>
+		<a href="/#photos">Фотогалерея</a>
+		<a href="/#partners">Партнёры</a>
+		<a href="/#docs">Документы</a>
+		<a href="/#contacts">Контакты</a>
 	</nav>
 	
   </header>
@@ -35,10 +37,13 @@ const isHover = ref(false)
 
 <style scoped lang="scss">
 header{
+	width: 100vw;
+	overflow-x: hidden;
 	padding: 20px 0;
 	border-bottom: 4px solid var(--color-black);
 }
 .header__logo{
+	display: block;
 	width: 600px;
 	height: 150px;
 	margin: 30px auto;
@@ -84,10 +89,13 @@ nav{
 	font-weight: 800;
 	font-size: 1.3em;
 	text-transform: uppercase;
-	& div {
+	& a {
+		display: block;
 		text-align: center;
 		cursor: pointer;
 		transition: 0.4s ease-in-out;
+		color: var(--color-black);
+		text-decoration: none;
 		&:hover{
 			transform: scale(1.03);
 			&:nth-child(1n){

@@ -1,5 +1,5 @@
 <template>
-  <section class="photos">
+  <section class="photos" id="photos">
 	<h2>Фотогаларея</h2>
 	<div class="photos__wrap">
 		<div class="photos__lines" @mouseover="isHover = true" >
@@ -82,7 +82,7 @@ const slideTo = (index: number) => {
 	&__wrap{
 		width: 100vw;
 		position: relative;
-		left: calc((100vw - 1650px) / 2 * -1 - 200px);
+		left: calc((100vw - 1650px) / 2 * -1 - 150px);
 		display: flex;
 		gap: 50px;
 		margin: 20px 0;

@@ -1,5 +1,5 @@
 <template>
-  <section class="partners">
+  <section class="partners" id="partners">
 	<h2>Наши партнёры</h2>
 	<div class="partners__cards">
 		<PartnersCard 
@@ -20,7 +20,7 @@ const partners = ENV.partners;
 
 <style scoped lang="scss">
 .partners{
-  width: 100%;
+//   width: 100%;
   &__cards{
 	width: 80%;
 	align-items: center;

@@ -1,16 +1,16 @@
 <template>
-  <section class="documents">
+  <section class="documents" id="docs">
 	<h2>Документы организации</h2>
 	<h3>Учредительные документы</h3>
 	<div class="documents__cards">
-		<DocumentsCard :size="'3.16 MB'">Устав</DocumentsCard>
-		<DocumentsCard :size="'127.3 KB'">ЕГРЮЛ</DocumentsCard>
-		<DocumentsCard :size="'244.4 KB'">Свидетельство о постановке на учёт</DocumentsCard>
-		<DocumentsCard :size="'426.4 KB'">Свидетельство о ГРНО</DocumentsCard>
+		<DocumentsCard :size="'3.16 MB'" :href="'/'">Устав</DocumentsCard>
+		<DocumentsCard :size="'127.3 KB'" :href="'/'">ЕГРЮЛ</DocumentsCard>
+		<DocumentsCard :size="'244.4 KB'" :href="'/'">Свидетельство о постановке на учёт</DocumentsCard>
+		<DocumentsCard :size="'426.4 KB'" :href="'/'">Свидетельство о ГРНО</DocumentsCard>
 	</div>
 	<h3>Отчёты</h3>
 	<div class="documents__cards">
-		<DocumentsCard :size="'3.16 MB'">Отчёт 2024 год</DocumentsCard>
+		<DocumentsCard :size="'3.16 MB'" :href="'/'">Отчёт 2024 год</DocumentsCard>
 	</div>
   </section>
 </template>

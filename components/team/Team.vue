@@ -1,5 +1,5 @@
 <template>
-  <section class="team">
+  <section class="team" id="team">
     <h2>Наша команда</h2>
     <div class="team__big-cards">
       <TeamCard :photoSrc="'persons/persona1.webp'">
@@ -28,7 +28,7 @@
           <span>Директор</span>
         </TeamName>
       </TeamCardSmall>
-      <TeamCardSmall :photoSrc="'persons/persona0.webp'">
+      <TeamCardSmall :photoSrc="'persons/persona5.webp'">
         <TeamName>
           <p><strong>Марковский</strong> Кирилл Николаевич</p>
           <span>Руководитель волонтёрского движения</span>

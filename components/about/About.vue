@@ -1,18 +1,6 @@
 <template>
-  <section class="about">
+  <section class="about" id="about">
     <h2>О нас</h2>
-    <!-- <div class="about__body">
-      <div class="about__text">
-        <div>Мы — социально ориентированная Автономная Некоммерческая Организация <strong>"ДоброГорловка"</strong>.</div>
-        <div>Наша организация была создана <i>в сентябре 2024 года</i>.</div>
-        <div><span>Наше внимание и работа направлены на:</span>
-          <ul>
-            <li>улучшение качества жизни социально незащищенных категорий граждан</li>
-            <li>духовно-патриотическое воспитание молодежи</li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
     <div class="about__body">
       <div class="about__name">
         <AboutCard>

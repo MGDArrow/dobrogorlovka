@@ -36,7 +36,8 @@ const created = ENV.createdLink;
 
 <style scoped lang="scss">
 footer{
-  width: 100%;
+  width: 100vw;
+  overflow-x: hidden;
   height: 600px;
   position: relative;
   color: var(--color-black);

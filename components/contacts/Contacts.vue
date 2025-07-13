@@ -1,30 +1,31 @@
 <template>
-	<section class="contacts">
-		<h2>Реквизиты и Контакты</h2>
-		<div class="contacts__flex">
-			<div class="contacts__requisites">
-				<h3>Реквизиты</h3>
-				<div class="info-list">
-					<p v-for="requisite in requisites" :key="requisite.label">
-						<strong>{{ requisite.label }}:</strong>{{ requisite.var }}
-					</p>
+	<section class="contacts" id="contacts">
+		<div class="contacts__body">
+			<h2>Реквизиты и Контакты</h2>
+			<div class="contacts__flex">
+				<div class="contacts__requisites">
+					<h3>Реквизиты</h3>
+					<div class="info-list">
+						<p v-for="requisite in requisites" :key="requisite.label">
+							<strong>{{ requisite.label }}:</strong>{{ requisite.var }}
+						</p>
+					</div>
+				</div>
+				<div class="contacts__contacts" @mouseover="isHover = true" >
+					<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="'162%'"/>
+					<h3>Контакты</h3>
+					<div class="info-list">
+						<p><strong>Телефон:</strong>{{ phone }}</p>
+						<p><strong>E-mail:</strong>{{ email }}</p>
+						<p><strong>Юридический адрес:</strong>{{ address }}</p>
+					</div>
 				</div>
 			</div>
-			<div class="contacts__contacts" @mouseover="isHover = true" >
-				<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="'162%'"/>
-				<h3>Контакты</h3>
-				<div class="info-list">
-					<p><strong>Телефон:</strong>{{ phone }}</p>
-					<p><strong>E-mail:</strong>{{ email }}</p>
-					<p><strong>Юридический адрес:</strong>{{ address }}</p>
-				</div>
+			<div class="contacts__messangers">
+					<DocumentsCard :icon="'vk'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>
+					<DocumentsCard :icon="'tg'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>			
 			</div>
 		</div>
-		<div class="contacts__messangers">
-				<DocumentsCard :icon="'vk'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>
-				<DocumentsCard :icon="'tg'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>			
-		</div>
-		
 	</section>
 </template>
 
@@ -42,8 +43,12 @@ const address = ENV.address;
 <style scoped lang="scss">
 .contacts {
 	width: 100vw;
-	position: relative;
-	left: calc((100vw - 1650px) / 2 * -1);
+	overflow-x: hidden;
+	&__body{
+		width: 110vw;
+		position: relative;
+		left: -5vw;
+	}
 	&__flex {
 		display: flex;
 		& h3{
@@ -81,7 +86,7 @@ const address = ENV.address;
 		
 	}
 	&__messangers{
-		width: 50%;
+		width: 1000px;
 		margin: 20px auto;
 		display: flex;
 		flex-wrap: wrap;
