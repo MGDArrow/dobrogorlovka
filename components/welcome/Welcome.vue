@@ -1,32 +1,29 @@
 <template>
-	<div class="popup" v-show="isVisible">
-		<div class="popup__bg" @click="isVisible = false"></div>
-		<div class="popup__body">
-			<div class="popup__line-2"></div>
-			<div class="popup__line"></div>
-			
-			<p class="popup__title">Рады привествовать у нас на сайте!</p>
-			<p class="popup__purpose">Мы работаем для того, чтобы сделать лучше жизнь людей, которым требуется помощь и
-				поддержка</p>
-			<div class="popup__invite">
-				<span>
-					Присоединяйся к нашему движению:
-				</span>
-				<ul>
-					<li>👉 <strong>Делись нашими постами</strong> — пусть о добрых делах узнает больше людей.</li>
-					<li>👉 <strong>Стань волонтёром</strong> — иногда для важных перемен нужны просто ваши руки и доброе сердце.</li>
-				</ul>
-			</div>
+    <UiPopup v-if="isVisible" @close-popup="isVisible = false">
+		<div class="welcome__line-2"></div>
+		<div class="welcome__line"></div>
+		
+		<p class="welcome__title">Рады привествовать у нас на сайте!</p>
+		<p class="welcome__purpose">Мы работаем для того, чтобы сделать лучше жизнь людей, которым требуется помощь и
+			поддержка</p>
+		<div class="welcome__invite">
+			<span>
+				Присоединяйся к нашему движению:
+			</span>
+			<ul>
+				<li>👉 <strong>Делись нашими постами</strong> — пусть о добрых делах узнает больше людей.</li>
+				<li>👉 <strong>Стань волонтёром</strong> — иногда для важных перемен нужны просто ваши руки и доброе сердце.</li>
+			</ul>
+		</div>
 
-			<div class="popup__button">
-				<div class="popup__button-layer-1" @click="isVisible = false" :class="{active: isActive}">
-					<div class="popup__button-layer-2" :class="{active: isActive}">
-						<button type="button" @mouseover="isActive = true">Далее</button>
-					</div>
+		<div class="welcome__button">
+			<div class="welcome__button-layer-1" @click="isVisible = false" :class="{active: isActive}">
+				<div class="welcome__button-layer-2" :class="{active: isActive}">
+					<button type="button" @mouseover="isActive = true">Далее</button>
 				</div>
 			</div>
 		</div>
-	</div>
+	</UiPopup>
 </template>
 
 <script setup lang="ts">
@@ -41,14 +38,14 @@ function getTwoWeek(){
 }
 
 onMounted(()=> {
-	const local = window.localStorage.getItem('popup');
+	const local = window.localStorage.getItem('welcome');
 	if (!local){
-		window.localStorage.setItem('popup', getTwoWeek().toString());
+		window.localStorage.setItem('welcome', getTwoWeek().toString());
 		isVisible.value = true;
 	}
 	else{
 		if (new Date().getTime() > +local){
-			window.localStorage.setItem('popup', getTwoWeek().toString());
+			window.localStorage.setItem('welcome', getTwoWeek().toString());
 			isVisible.value = true;
 		}
 	}
@@ -56,34 +53,7 @@ onMounted(()=> {
 </script>
 
 <style scoped lang="scss">
-.popup {
-	width: 100vw;
-	height: 100dvh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10;
-
-	&__bg {
-		width: 100%;
-		height: 100%;
-		background: var(--color-white);
-		opacity: 0.7;
-	}
-
-	&__body {
-		width: 800px;
-		// height: 500px;
-		padding: 20px 40px 20px 20px;
-		border: 4px solid var(--color-black);
-		border-radius: var(--border-radius);
-		background: var(--color-white);
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		overflow: hidden;
-	}
+.welcome {
 
 	&__line{
 		position: relative;

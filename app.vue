@@ -1,4 +1,4 @@
 <template>
   <NuxtLayout/>
-  <Popup/>
+  <Welcome/>
 </template>
