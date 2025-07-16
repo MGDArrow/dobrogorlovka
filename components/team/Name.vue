@@ -25,7 +25,6 @@ defineSlots<{
 	& span {
 	  display: block;
 	  font-size: 0.8em;
-	  font-weight: 300;
 	  font-style: italic;
 	}
 
