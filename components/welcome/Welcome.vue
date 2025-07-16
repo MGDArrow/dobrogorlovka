@@ -1,25 +1,28 @@
 <template>
     <UiPopup v-if="isVisible" @close-popup="isVisible = false">
-		<div class="welcome__line-2"></div>
-		<div class="welcome__line"></div>
+		<div class="welcome">
+			<div class="welcome__line-2"></div>
+			<div class="welcome__line"></div>
+			<div class="welcome__content">
+				<p class="welcome__title">Рады привествовать у нас на сайте!</p>
+				<p class="welcome__purpose">Мы работаем для того, чтобы сделать лучше жизнь людей, которым требуется помощь и
+					поддержка</p>
+				<div class="welcome__invite">
+					<span>
+						Присоединяйся к нашему движению:
+					</span>
+					<ul>
+						<li>👉 <strong>Делись нашими постами</strong> — пусть о добрых делах узнает больше людей.</li>
+						<li>👉 <strong>Стань волонтёром</strong> — иногда для важных перемен нужны просто ваши руки и доброе сердце.</li>
+					</ul>
+				</div>
 		
-		<p class="welcome__title">Рады привествовать у нас на сайте!</p>
-		<p class="welcome__purpose">Мы работаем для того, чтобы сделать лучше жизнь людей, которым требуется помощь и
-			поддержка</p>
-		<div class="welcome__invite">
-			<span>
-				Присоединяйся к нашему движению:
-			</span>
-			<ul>
-				<li>👉 <strong>Делись нашими постами</strong> — пусть о добрых делах узнает больше людей.</li>
-				<li>👉 <strong>Стань волонтёром</strong> — иногда для важных перемен нужны просто ваши руки и доброе сердце.</li>
-			</ul>
-		</div>
-
-		<div class="welcome__button">
-			<div class="welcome__button-layer-1" @click="isVisible = false" :class="{active: isActive}">
-				<div class="welcome__button-layer-2" :class="{active: isActive}">
-					<button type="button" @mouseover="isActive = true">Далее</button>
+				<div class="welcome__button">
+					<div class="welcome__button-layer-1" @click="isVisible = false" :class="{active: isActive}">
+						<div class="welcome__button-layer-2" :class="{active: isActive}">
+							<button type="button" @mouseover="isActive = true">Далее</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -54,7 +57,7 @@ onMounted(()=> {
 
 <style scoped lang="scss">
 .welcome {
-
+	max-width: 800px;
 	&__line{
 		position: relative;
 		width: 872px;
@@ -88,6 +91,9 @@ onMounted(()=> {
 		to{
 			background-position: 0 0;
 		}
+	}
+	&__content {
+		margin-right: 40px;
 	}
 
 	&__title {

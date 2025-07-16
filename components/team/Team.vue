@@ -2,43 +2,43 @@
   <section class="team" id="team">
     <h2>Наша команда</h2>
     <div class="team__big-cards">
-      <TeamCard :photoSrc="'persons/persona1.webp'">
+      <TeamCard 
+        v-for="persona in bigCards" :key="persona.id" 
+        :photoSrc="`persons/${persona.photo}.webp`" 
+        @click="popup = persona"
+      >
         <TeamName>
-          <p><strong>Поляков</strong> Иван Викторович</p>
-          <span>Учредитель</span>
-        </TeamName>
-      </TeamCard>
-      <TeamCard :photoSrc="'persons/persona2.webp'">
-        <TeamName>
-          <p><strong>Абросимов</strong> Дмитрий Викторович</p>
-          <span>Учредитель</span>
-        </TeamName>
-      </TeamCard>
-      <TeamCard :photoSrc="'persons/persona0.webp'">
-        <TeamName>
-          <p><strong>Ильчук</strong> Михаил Вадимович</p>
-          <span>Учредитель</span>
+          <p><strong>{{ persona.surname }}</strong> {{ persona.name }}</p>
+          <span>{{ persona.post }}</span>
         </TeamName>
       </TeamCard>
     </div>
     <div class="team__small-cards">
-      <TeamCardSmall :photoSrc="'persons/persona4.webp'">
+      <TeamCardSmall 
+        v-for="persona in smallCards" :key="persona.id" 
+        :photoSrc="`persons/${persona.photo}.webp`"
+        @click="popup = persona"
+      >
         <TeamName>
-          <p><strong>Хоряков</strong> Станислав Владимирович</p>
-          <span>Директор</span>
-        </TeamName>
-      </TeamCardSmall>
-      <TeamCardSmall :photoSrc="'persons/persona5.webp'">
-        <TeamName>
-          <p><strong>Марковский</strong> Кирилл Николаевич</p>
-          <span>Руководитель волонтёрского движения</span>
+          <p><strong>{{ persona.surname }}</strong> {{ persona.name }}</p>
+          <span>{{ persona.post }}</span>
         </TeamName>
       </TeamCardSmall>
     </div>
+    <TeamCardPopup v-if="popup !== null" :persona="popup" @closePopup="popup = null"/>
   </section>
 </template>
 
 <script setup lang="ts">
+import { ENV } from '~/assets/env';
+import type { IPersona } from '~/types/types';
+
+
+const bigCards = ENV.team.filter((persona) => persona.type === 'big');
+const smallCards = ENV.team.filter((persona) => persona.type === 'small');
+
+const popup: Ref<null | IPersona> = ref(null);
+
 </script>
 
 <style scoped lang="scss">

@@ -16,6 +16,18 @@ const emit = defineEmits<{
   closePopup: [];
 }>();
 
+function closePostEscape(event: KeyboardEvent){
+	if (event.key === 'Escape') emit('closePopup');
+}
+
+onMounted(() => {
+	document.addEventListener('keydown', e => closePostEscape(e))
+})
+onUnmounted(() => {
+	document.removeEventListener('keydown', e => closePostEscape(e))
+})
+
+
 </script>
 
 <style scoped lang="scss">
@@ -34,8 +46,8 @@ const emit = defineEmits<{
 		opacity: 0.7;
 	}
 	&__body {
-		width: 800px;
-		padding: 20px 40px 20px 20px;
+		max-width: 90vw;
+		padding: 20px 20px 20px 20px;
 		border: 4px solid var(--color-black);
 		border-radius: var(--border-radius);
 		background: var(--color-white);

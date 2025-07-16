@@ -17,8 +17,9 @@ defineSlots<{
 	}
   
 	& strong {
-	  font-weight: 500;
+	  font-weight: 600;
 	  display: block;
+	  text-transform: uppercase;
 	}
   
 	& span {
