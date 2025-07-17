@@ -33,6 +33,7 @@ const partners = ENV.partners;
 	}
 	@media screen and (max-width: 1199px) {
 		gap: 5px;
+		height: 390px;
 	}
   }
 }

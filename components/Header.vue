@@ -88,7 +88,7 @@ nav{
 	justify-content: space-evenly;
 	display: flex;
 	flex-wrap: wrap;
-	font-weight: 800;
+	font-weight: 700;
 	font-size: 1.3em;
 	text-transform: uppercase;
 	& a {

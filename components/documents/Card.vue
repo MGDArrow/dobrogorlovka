@@ -40,7 +40,7 @@ const isHover = ref(false)
 	border-radius: var(--border-radius);
 	position: relative;
 	cursor: pointer;
-	font-weight: 700;
+	font-weight: 600;
 	transition: 0.4s ease-in-out;
 	align-items: center;
 
