@@ -66,6 +66,16 @@
       font-size: 0.8em;
       height: 460px;
     }
+    @media screen and (max-width: 768px) {
+      position: unset;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      & > div {
+        position: unset;
+      }
+    }
   }
   
   &__name {
@@ -79,6 +89,11 @@
     }
     @media screen and (max-width: 1199px) {
       height: 280px;
+    }
+    @media screen and (max-width: 768px) {
+      position: unset;
+      width: 100%;
+      height: 140px;
     }
   }
   
@@ -97,6 +112,11 @@
     @media screen and (max-width: 1199px) {
       height: 240px;
     }
+    @media screen and (max-width: 768px) {
+      position: unset;
+      width: 100%;
+      height: 120px;
+    }
   }
   &__to {
     position: absolute;
@@ -111,6 +131,13 @@
     }
     @media screen and (max-width: 1199px) {
       height: 270px;
+    }
+    @media screen and (max-width: 768px) {
+      position: unset;
+      left: 0;
+      transform: unset;
+      width: 100%;
+      height: 180px;
     }
   }
 }

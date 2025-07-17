@@ -1,7 +1,7 @@
 export const ENV = {
-	phone: '+7 (949) 520-81-55',
-	email: 'dobrogorlovka@yandex.ru',
-	address: '25688, ДНР, г. Горловка, ул. Соборная, д. 1',
+	phone: '+7 (949) 593-22-57',
+	email: 'DOBROGORLOVKA@YANDEX.RU',
+	address: '284637, Донецкая Народная Республика, г. Горловка, пр-кт Победы, д. 112, кв. 7',
 	photoArray: ['photo_01', 'photo_02', 'photo_03', 'photo_04','photo_05', 'photo_06'],
 	team: [
 		{

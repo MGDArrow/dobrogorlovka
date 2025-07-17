@@ -4,7 +4,7 @@
 		<img :class="{active: !isHover}" src="/public/logo_bw.webp" alt="logo">
 		<img :class="{active: isHover}" src="/public/logo_color.webp" alt="logo">
 	</a>
-	<h1 :class="{active: isHover}">
+	<h1 :class="{active: isHover}" @mouseover="isHover = true">
 		<span>Д</span>
 		<span>О</span>
 		<span>Б</span>
@@ -42,6 +42,9 @@ header{
 	overflow-x: hidden;
 	padding: 20px 0;
 	border-bottom: 4px solid var(--color-black);
+	@media screen and (max-width: 768px) {
+		padding: 10px 0;
+	}
 }
 .header__logo{
 	display: block;
@@ -58,6 +61,11 @@ header{
 		&.active{
 			opacity: 1;
 		}
+	}
+	@media screen and (max-width: 768px) {
+		width: 330px;
+		margin: 10px auto;
+		height: 80px;
 	}
 }
 h1 {
@@ -124,6 +132,13 @@ nav{
 	}
 	@media screen and (max-width: 1199px) {
 		width: 769px;
+		& a {
+			margin: 10px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		width: 360px;
+		font-size: 1em;
 		& a {
 			margin: 10px;
 		}

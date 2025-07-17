@@ -103,6 +103,11 @@ onMounted(() => {
 			left: calc((100vw - 760px) / 2 * -1 - 40px);
 			gap: 20px;
 		}
+		@media screen and (max-width: 768px) {
+			width: calc(98vw - 40px);
+			position: unset;
+			margin: 40px auto;
+		}
 	}
 	&__lines{
 		position: relative;
@@ -115,6 +120,9 @@ onMounted(() => {
 		transition: 0.5s ease-in-out;
 		&:hover{
 			transform: scale(1.04);
+		}
+		@media screen and (max-width: 768px) {
+			display: none;
 		}
 	}
 	&__list{
@@ -182,8 +190,12 @@ onMounted(() => {
 		@media screen and (max-width: 1199px) {
 			width: 408px;
 		}
+		@media screen and (max-width: 768px) {
+			width: calc(98vw - 40px);
+		}
 		&:hover{
 			transform: scale(1.04);
+			margin: 30px auto;
 		}
 		& img{
 			display: block;
@@ -200,6 +212,10 @@ onMounted(() => {
 			@media screen and (max-width: 1199px) {
 				max-width: 400px;
 				height: 308px;
+			}
+			@media screen and (max-width: 768px) {
+				max-width: calc(98vw - 40px);
+				height: calc((98vw - 40px) * 0.75 - 6px);
 			}
 		}
 	}

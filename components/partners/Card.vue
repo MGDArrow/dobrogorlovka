@@ -1,6 +1,6 @@
 <template>
 	<div class="partners-card-wrapper" :class="{ active: isHover }" >
-		<div class="partners-card" @mouseover="isHover = true">
+		<div class="partners-card" @mouseover="isHover = true" :class="{ active: isHover }">
 			<img :src="photoSrc" alt="Фото" />
 			<p :class="{ active: isHover }">
 				<slot />
@@ -55,6 +55,15 @@ function getRandomColor() {
 		}
 	}
 
+	@media screen and (max-width: 768px) {
+		height: 300px;
+		width: 300px;
+		&.active{
+			height: 380px;
+			width: 360px;		
+		}
+	}
+
 	@keyframes rotate {
 		to {
 			--angle: 360deg;
@@ -76,7 +85,7 @@ function getRandomColor() {
 		transition: 0.4s ease-in-out;
 		filter: grayscale(100%);
 
-		@media screen and (max-width: 1199px) {
+		@media screen and (max-width: 1199px) and (min-width: 769px){
 			width: 200px;
 		}
 	}
@@ -93,7 +102,6 @@ function getRandomColor() {
 
 		&.active {
 			height: 100px;
-
 		}
 	}
 
@@ -104,11 +112,18 @@ function getRandomColor() {
 			filter: grayscale(0%);
 		}
 	}
-	@media screen and (max-width: 1199px) {
+	@media screen and (max-width: 1199px){
 		height: 200px;
 		width: 200px;
 		&:hover{
 			height: 310px;
+		}
+	}
+	@media screen and (max-width: 768px){
+		height: 300px;
+		width: 300px;
+		&.active{
+			height: 420px;
 		}
 	}
 }

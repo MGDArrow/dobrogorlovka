@@ -14,6 +14,9 @@ body{
 	@media screen and (max-width: 1199px) {
 		font-size: 16pt;
 	}
+	@media screen and (max-width: 768px) {
+		font-size: 14pt;
+	}
 }
 body::-webkit-scrollbar {
   width: 4px;
@@ -42,6 +45,11 @@ section{
 		width: 769px;
 		margin: 50px auto;
 	}
+	@media screen and (max-width: 768px) {
+		width: 90vw;
+		min-width: 360px;
+		margin: 20px auto;
+	}
 }
 
 h1{
@@ -49,7 +57,12 @@ h1{
 	font-weight: 800;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 30px 0;
+	margin: 30px auto;
+	width: max-content;
+	@media screen and (max-width: 768px) {
+		font-size: 1.8em;
+		margin: 20px auto;
+	}
 }
 
 h2{
@@ -63,6 +76,10 @@ h2{
 	@media screen and (max-width: 1199px) {
 		font-size: 2.4em;
 	}
+	@media screen and (max-width: 768px) {
+		font-size: 2em;
+		width: auto;
+	}
 }
 h3 {
 	font-size: 2em;
@@ -70,6 +87,11 @@ h3 {
 	font-weight: 500;
 	@media screen and (max-width: 1199px) {
 		padding: 10px 1em;
+	}
+	@media screen and (max-width: 768px) {
+		font-size: 1.4em;
+		padding: 0 10px;
+		/* text-align: center; */
 	}
 }
 

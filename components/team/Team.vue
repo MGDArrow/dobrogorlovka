@@ -13,7 +13,7 @@
         </TeamName>
       </TeamCard>
     </div>
-    <div class="team__small-cards">
+    <div class="team__small-cards" v-if="smallCards.length">
       <TeamCardSmall 
         v-for="persona in smallCards" :key="persona.id" 
         :photoSrc="`persons/${persona.photo}.webp`"
@@ -34,10 +34,17 @@ import { ENV } from '~/assets/env';
 import type { IPersona } from '~/types/types';
 
 
-const bigCards = ENV.team.filter((persona) => persona.type === 'big');
-const smallCards = ENV.team.filter((persona) => persona.type === 'small');
+const bigCards = ref(ENV.team.filter((persona) => persona.type === 'big'));
+const smallCards = ref(ENV.team.filter((persona) => persona.type === 'small'));
 
 const popup: Ref<null | IPersona> = ref(null);
+
+onMounted(() => {
+  if (document.body.clientWidth <= 768){
+    bigCards.value.push(...smallCards.value)
+    smallCards.value = [];
+  }
+})
 
 </script>
 
@@ -57,6 +64,12 @@ const popup: Ref<null | IPersona> = ref(null);
       width: 730px;
       font-size: 0.7em;
       justify-content: space-around;
+    }
+    @media screen and (max-width: 768px) {
+      width: calc(98vw - 40px);
+      flex-wrap: wrap;
+      font-size: 1.2em;
+      gap: 20px;
     }
   }
   

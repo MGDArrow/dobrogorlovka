@@ -7,7 +7,7 @@
           <img src="/public/logo_bw.webp" alt="logo">
           <p>ДОБРОГОРЛОВКА</p>
         </div>
-        <div>
+        <div class="footer__text">
           <p>2024 – {{ new Date().getFullYear() }}© АНО «Добогорловка»</p>
           <p>{{ phone }}</p>
           <p>{{ email }}</p>
@@ -45,7 +45,7 @@ footer{
     color: var(--color-white);
   }
   @media screen and (max-width: 1199px) {
-    height: 400px;    
+    height: 600px;
   }
 }
 .footer{
@@ -79,6 +79,10 @@ footer{
       font-size: 0.8em;
       height: 140px;
     }
+    @media screen and (max-width: 768px) {
+      font-size: 1em;
+      height: max-content;
+    }
   }
   &__content{
     width: 1600px;
@@ -89,10 +93,16 @@ footer{
     height: 100%;
     text-align: center;
     @media screen and (max-width: 1599px) {
-      width: 1200px;
+      width: 1150px;
     }
     @media screen and (max-width: 1199px) {
       width: 769px;
+    }
+    @media screen and (max-width: 768px) {
+      margin: 20px auto;
+      width: 95vw;
+      flex-direction: column;
+      gap: 20px;
     }
   }
   &__logo {
@@ -106,6 +116,15 @@ footer{
       & img{
         height: 50px;
       }
+    }
+  }
+  &__text{
+    max-width: 50%;
+    & p {
+      margin: 0.3em 0;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 80%;
     }
   }
 }

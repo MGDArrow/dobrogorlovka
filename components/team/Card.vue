@@ -45,6 +45,10 @@ const isHover = ref(false);
     width: 200px;
     height: 300px;
 	}
+  @media screen and (max-width: 768px) {
+    width: 350px;
+    height: 450px;
+	}
   
   & img {
     width: 50%;

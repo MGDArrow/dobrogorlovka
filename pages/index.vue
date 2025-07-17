@@ -6,14 +6,14 @@
     <Partners/>
     <Documents/>
     <Contacts/>
-    <!-- <p>Проекты</p> -->
-    <!-- 
-    phone 360?-480 
-    tablets 480-768 
-    *small monitor 769-1199 
-    *monitor 1200-1599 
-    *big monitor 1600+ -->
     <!-- Popup SIZING -->
+    <!-- Phone ACTIVATED -->
+    
+    <!-- Current Data -->
+
+    <!-- Hosting -->
+
+    <!-- <p>Проекты</p> -->
   </div>
 </template>
 

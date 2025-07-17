@@ -45,6 +45,11 @@ function getRandomColor() {
 		width: calc(100% - 70px);
 	}
 
+	@media screen and (max-width: 768px) {
+		height: calc(100% - 20px);
+		width: calc(100% - 20px);
+	}
+
 	@keyframes rotate {
 		to {
 			--angle: 360deg;
@@ -66,6 +71,10 @@ function getRandomColor() {
 	align-items: center;
 	@media screen and (max-width: 1199px) {
 		padding: 10px;
+	}
+	@media screen and (max-width: 768px) {
+		height: calc(100% - 40px);
+		width: calc(100% - 40px);
 	}
 }
 </style>

@@ -44,6 +44,11 @@ const isHover = ref(false)
 	transition: 0.4s ease-in-out;
 	align-items: center;
 
+	@media screen and (max-width: 768px) {
+		width: calc(98vw - 40px - 30px);
+		padding: 25px 10px;
+	}
+
 	& p {
 		padding-left: 80px;
 	}
@@ -81,8 +86,13 @@ const isHover = ref(false)
 		transform: scale(1.04);
 		width: calc(100% / 2 - 15px - 8px - 65.5px);
 		padding: 25px 15px 25px 50px;
+
 		@media screen and (max-width: 1199px) {
 			width: calc(100% / 2 - 15px - 8px - 30.5px);
+			padding: 25px 15px 25px 15px;
+		}
+		@media screen and (max-width: 768px) {
+			width: unset;
 			padding: 25px 15px 25px 15px;
 		}
 	}

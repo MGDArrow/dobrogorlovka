@@ -34,6 +34,11 @@
 		@media screen and (max-width: 1199px) {
 			width: 750px;
 		}
+		@media screen and (max-width: 768px) {
+			width: calc(98vw - 40px);
+			flex-direction: column;
+			gap: 20px;
+		}
 		
   	}
 }

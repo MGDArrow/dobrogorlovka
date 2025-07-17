@@ -44,6 +44,7 @@ const translateY = ref('162%');
 onMounted(() => {
 	(document.body.clientWidth < 1600) && (translateY.value = '200%');
 	(document.body.clientWidth < 1200) && (translateY.value = '280%');
+	(document.body.clientWidth <= 768) && (translateY.value = '230%');
 	
 })
 </script>
@@ -52,6 +53,8 @@ onMounted(() => {
 .contacts {
 	width: 100vw;
 	overflow-x: hidden;
+	
+	
 	&__body{
 		width: 110vw;
 		position: relative;
@@ -71,6 +74,17 @@ onMounted(() => {
 			@media screen and (max-width: 1599px) {
 				padding: 20px 50px;
 			}
+			@media screen and (max-width: 768px) {
+				padding: 20px max(40px, 10vw);
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			flex-direction: column-reverse;
+			& h3{
+				width: 90vw;
+				margin: 0;
+			}
 		}
 	}
 
@@ -81,7 +95,10 @@ onMounted(() => {
 		align-items: center;
 		justify-content: end;
 		flex-wrap: wrap;
-
+		@media screen and (max-width: 768px) {
+			width: 80vw;
+			margin: 0 auto;
+		}
 	}
 
 	&__contacts {
@@ -93,7 +110,10 @@ onMounted(() => {
 		flex-wrap: wrap;
 		border-radius: var(--border-radius);
 		border: 4px solid black;
-		
+		@media screen and (max-width: 768px) {
+			width: 100%;
+			position: relative;
+		}
 	}
 	&__messangers{
 		width: 1000px;
@@ -104,6 +124,11 @@ onMounted(() => {
 		@media screen and (max-width: 1199px) {
 			width: 750px;
 			gap: 10px;
+		}
+		@media screen and (max-width: 768px) {
+			width: calc(98vw - 40px);
+			flex-direction: column;
+			margin: 0 auto;
 		}
 	}
 }
