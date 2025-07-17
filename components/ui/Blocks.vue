@@ -53,6 +53,9 @@ z-index: -1;
 		border-bottom: calc(var(--border-block) * 2) solid var(--color-black);
 		transition: 0.3s;
 		}
+		@media screen and (max-width: 1599px) {
+			height: 43px;
+		}
 	}
 }
 .active div{

@@ -21,6 +21,7 @@
 	</h1>
 	<nav>
 		<a href="/#about">О нас</a>
+		<a href="/#projects">Проекты</a>
 		<a href="/#team">Команда</a>
 		<a href="/#photos">Фотогалерея</a>
 		<a href="/#partners">Партнёры</a>
@@ -86,12 +87,15 @@ nav{
 	margin: 0 auto;
 	justify-content: space-evenly;
 	display: flex;
+	flex-wrap: wrap;
 	font-weight: 800;
 	font-size: 1.3em;
 	text-transform: uppercase;
 	& a {
 		display: block;
 		text-align: center;
+		width: max-content;
+		margin: 0 10px;
 		cursor: pointer;
 		transition: 0.4s ease-in-out;
 		color: var(--color-black);
@@ -110,6 +114,12 @@ nav{
 			&:nth-child(4n){
 				color: var(--color-pink);
 			}
+		}
+	}
+	@media screen and (max-width: 1599px) {
+		width: 1200px;
+		& a {
+			margin: 10px 70px;
 		}
 	}
 }

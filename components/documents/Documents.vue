@@ -22,11 +22,15 @@
 <style scoped lang="scss">
 .documents{
 	&__cards{
-	  width: 80%;
-	  margin: 20px auto;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 30px;
-  }
+		width: 80%;
+		margin: 20px auto;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+		@media screen and (max-width: 1599px) {
+			width: 1100px;
+			font-size: 0.8em;
+		}
+  	}
 }
 </style>

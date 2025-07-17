@@ -81,6 +81,9 @@ footer{
     align-items: center;
     height: 100%;
     text-align: center;
+    @media screen and (max-width: 1599px) {
+      width: 1200px;
+    }
   }
   &__logo {
     width: max-content;

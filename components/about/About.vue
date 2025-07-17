@@ -58,14 +58,21 @@
       justify-content: center;
       align-items: center;
     }
+    @media screen and (max-width: 1599px) {
+      width: 100%;
+      height: 500px;
+    }
   }
-
+  
   &__name {
     text-align: center;
     top: 0;
     left: 0;
     width: 800px;
     height: 330px;
+    @media screen and (max-width: 1599px) {
+      width: 630px;
+    }
   }
   
   &__date {
@@ -75,6 +82,10 @@
     position: absolute;
     width: 700px;
     height: 300px;
+    @media screen and (max-width: 1599px) {
+      top: 60px;
+      height: 280px;
+    }
   }
   &__to {
     position: absolute;
@@ -83,6 +94,9 @@
     transform: translateX(-50%);
     width: 1000px;
     height: 350px;
+    @media screen and (max-width: 1599px) {
+      height: 300px;
+    }
   }
 }
 </style>

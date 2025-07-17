@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<div class="contacts__contacts" @mouseover="isHover = true" >
-					<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="'162%'"/>
+					<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="translateY"/>
 					<h3>Контакты</h3>
 					<div class="info-list">
 						<p><strong>Телефон:</strong>{{ phone }}</p>
@@ -38,6 +38,13 @@ const requisites = ENV.requisites;
 const phone = ENV.phone;
 const email = ENV.email;
 const address = ENV.address;
+
+const translateY = ref('162%');
+
+onMounted(() => {
+	(document.body.clientWidth < 1600) && (translateY.value = '200%');
+	
+})
 </script>
 
 <style scoped lang="scss">
@@ -56,8 +63,12 @@ const address = ENV.address;
 		}
 		& > div{
 			transition: 0.4s ease-in-out;
+			padding: 20px 100px;
 			&:hover{
 				transform: scale(1.06);
+			}
+			@media screen and (max-width: 1599px) {
+				padding: 20px 50px;
 			}
 		}
 	}
@@ -65,7 +76,6 @@ const address = ENV.address;
 	&__requisites {
 		width: 50%;
 		text-align: right;
-		padding: 20px 100px;
 		display: flex;
 		align-items: center;
 		justify-content: end;
@@ -80,7 +90,6 @@ const address = ENV.address;
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		padding: 20px 100px;
 		border-radius: var(--border-radius);
 		border: 4px solid black;
 		

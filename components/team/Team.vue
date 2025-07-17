@@ -49,14 +49,20 @@ const popup: Ref<null | IPersona> = ref(null);
     display: flex;
     width: 80%;
     justify-content: space-between;
+    @media screen and (max-width: 1599px) {
+      width: 1100px;
+	  }
   }
-
+  
   &__small-cards {
     margin: 20px auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 80%;
+    @media screen and (max-width: 1599px) {
+      width: 1100px;
+    }
   }
 }
 </style>

@@ -20,7 +20,6 @@ const partners = ENV.partners;
 
 <style scoped lang="scss">
 .partners{
-//   width: 100%;
   &__cards{
 	width: 80%;
 	align-items: center;
@@ -29,6 +28,9 @@ const partners = ENV.partners;
 	display: flex;
 	gap: 20px;
 	justify-content: space-evenly;
+	@media screen and (max-width: 1599px) {
+		width: 100%;
+	}
   }
 }
 </style>

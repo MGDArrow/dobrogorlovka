@@ -37,6 +37,11 @@ const isHover = ref(false);
   align-items: end;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 1599px) {
+		font-size: 1em;
+    width: 300px;
+    height: 400px;
+	}
 
   & img {
     width: 50%;
@@ -52,8 +57,6 @@ const isHover = ref(false);
   }
 
   &:hover {
-    // border-color: var(--color-green);
-    // box-shadow: 0 0 10px 5px var(--color-green);
     transform: scale(1.05);
   }
 }

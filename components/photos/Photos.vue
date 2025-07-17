@@ -3,7 +3,7 @@
 	<h2>Фотогаларея</h2>
 	<div class="photos__wrap">
 		<div class="photos__lines" @mouseover="isHover = true" >
-			<UiBlocks :active="isHover" :translateX="'10%'" :rotateZ="'-25deg'" :translateY="'170%'"/>
+			<UiBlocks :active="isHover" :translateX="'10%'" :rotateZ="'-25deg'" :translateY="translateY"/>
 			<div class="photos__list">
 				<div 
 				v-for="(photo, index) in arrayNamePhotos" 
@@ -69,11 +69,18 @@ const swiperRef:Ref<null | typeof Swiper> = ref(null);
 const hoverPhotos = ref(new Set());
 
 const setSwiperRef = (swiper) => {
-        swiperRef.value = swiper;
+	swiperRef.value = swiper;
 };
 const slideTo = (index: number) => {
 	swiperRef?.value?.slideTo(index + 1, 0);
 };
+
+const translateY = ref('170%');
+
+onMounted(() => {
+	(document.body.clientWidth < 1600) && (translateY.value = '200%');
+	
+})
 
 </script>
 
@@ -87,6 +94,10 @@ const slideTo = (index: number) => {
 		gap: 50px;
 		margin: 20px 0;
 		user-select: none;
+		@media screen and (max-width: 1599px) {
+			left: calc((100vw - 1230px) / 2 * -1 - 90px);
+			gap: 30px;
+		}
 	}
 	&__lines{
 		position: relative;
@@ -102,7 +113,6 @@ const slideTo = (index: number) => {
 		}
 	}
 	&__list{
-		// background: red;
 		width: 430px;
 		height: 580px;
 		overflow-y: auto;
@@ -111,6 +121,10 @@ const slideTo = (index: number) => {
 		gap: 10px;
 		padding: 10px;
 		overflow-x: hidden;
+		@media screen and (max-width: 1599px) {
+			width: 330px;
+			height: 430px;
+		}
 		& div{
 			width: 200px;
 			height: 150px;
@@ -122,11 +136,19 @@ const slideTo = (index: number) => {
 			&.active{
 				border: 4px solid var(--color-black);
 			}
+			@media screen and (max-width: 1599px) {
+				width: 150px;
+				height: 112.5px;
+			}
 		}
 		& img{
 			max-width: 200px;
 			max-height: 150px;
 			cursor: pointer;
+			@media screen and (max-width: 1599px) {
+				max-width: 150px;
+				max-height: 112.5px;
+			}
 		}
 		&::-webkit-scrollbar {
 			width: 4px;
@@ -145,6 +167,9 @@ const slideTo = (index: number) => {
 		width: 808px;
 		user-select: none;
 		transition: 0.5s ease-in-out;
+		@media screen and (max-width: 1599px) {
+			width: 608px;
+		}
 		&:hover{
 			transform: scale(1.04);
 		}
@@ -155,6 +180,11 @@ const slideTo = (index: number) => {
 			justify-self: center;
 			border: 4px solid var(--color-black);
 			border-radius: var(--border-radius);
+			margin: 0 auto;
+			@media screen and (max-width: 1599px) {
+				max-width: 600px;
+				height: 458px;
+			}
 		}
 	}
 	& img {
