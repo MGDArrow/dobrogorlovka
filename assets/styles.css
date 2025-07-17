@@ -3,7 +3,6 @@ html {
 }
 
 body{
-
 	font-weight: 400;
 	font-size: 18pt;
 	height: 100dvh;
@@ -28,7 +27,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 *{
-	
+
 	font-family: 'Mont', sans-serif !important;
 }
 
