@@ -87,7 +87,6 @@ function getRandomColor() {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-weight: 600;
 		font-size: 1.2em;
 		transition: 0.4s ease-in-out;
 		text-align: center;

@@ -3,7 +3,7 @@ html {
 }
 
 body{
-	font-family: 'Mont';
+	font-family: 'Mont', sans-serif !important;
 	font-weight: 400;
 	font-size: 18pt;
 	height: 100dvh;
@@ -63,7 +63,7 @@ h2{
 h3 {
 	font-size: 2em;
 	padding: 10px 3em;
-	font-weight: 600;
+	font-weight: 500;
 	@media screen and (max-width: 1199px) {
 		padding: 10px 1em;
 	}
