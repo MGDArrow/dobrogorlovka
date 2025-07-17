@@ -122,5 +122,11 @@ nav{
 			margin: 10px 70px;
 		}
 	}
+	@media screen and (max-width: 1199px) {
+		width: 769px;
+		& a {
+			margin: 10px;
+		}
+	}
 }
 </style>

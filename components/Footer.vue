@@ -44,6 +44,9 @@ footer{
   &.active{
     color: var(--color-white);
   }
+  @media screen and (max-width: 1199px) {
+    height: 400px;    
+  }
 }
 .footer{
   &__sun{
@@ -72,6 +75,10 @@ footer{
     &.active{
       background: var(--color-green);
     }
+    @media screen and (max-width: 1199px) {
+      font-size: 0.8em;
+      height: 140px;
+    }
   }
   &__content{
     width: 1600px;
@@ -84,6 +91,9 @@ footer{
     @media screen and (max-width: 1599px) {
       width: 1200px;
     }
+    @media screen and (max-width: 1199px) {
+      width: 769px;
+    }
   }
   &__logo {
     width: max-content;
@@ -91,6 +101,11 @@ footer{
     font-size: 1.3em;
     & img{
       height: 80px;
+    }
+    @media screen and (max-width: 1199px) {
+      & img{
+        height: 50px;
+      }
     }
   }
 }

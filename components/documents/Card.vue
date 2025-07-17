@@ -32,7 +32,7 @@ const isHover = ref(false)
 
 <style scoped lang="scss">
 .document-card {
-	display: block;
+	display: flex;
 	width: calc(100% / 2 - 15px - 8px - 30px);
 	border: 4px solid var(--color-black);
 	color: var(--color-black);
@@ -42,6 +42,7 @@ const isHover = ref(false)
 	cursor: pointer;
 	font-weight: 700;
 	transition: 0.4s ease-in-out;
+	align-items: center;
 
 	& p {
 		padding-left: 80px;
@@ -80,6 +81,10 @@ const isHover = ref(false)
 		transform: scale(1.04);
 		width: calc(100% / 2 - 15px - 8px - 65.5px);
 		padding: 25px 15px 25px 50px;
+		@media screen and (max-width: 1199px) {
+			width: calc(100% / 2 - 15px - 8px - 30.5px);
+			padding: 25px 15px 25px 15px;
+		}
 	}
 
 	&.active {

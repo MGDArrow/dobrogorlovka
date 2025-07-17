@@ -43,6 +43,7 @@ const translateY = ref('162%');
 
 onMounted(() => {
 	(document.body.clientWidth < 1600) && (translateY.value = '200%');
+	(document.body.clientWidth < 1200) && (translateY.value = '280%');
 	
 })
 </script>
@@ -100,6 +101,10 @@ onMounted(() => {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 30px;
+		@media screen and (max-width: 1199px) {
+			width: 750px;
+			gap: 10px;
+		}
 	}
 }
 </style>

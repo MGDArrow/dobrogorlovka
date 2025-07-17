@@ -38,11 +38,14 @@ const isHover = ref(false);
   position: relative;
   overflow: hidden;
   @media screen and (max-width: 1599px) {
-		font-size: 1em;
     width: 300px;
     height: 400px;
 	}
-
+  @media screen and (max-width: 1199px) {
+    width: 200px;
+    height: 300px;
+	}
+  
   & img {
     width: 50%;
     display: block;
@@ -53,6 +56,10 @@ const isHover = ref(false);
     filter: grayscale(100%);
     &.active{
       filter: grayscale(0%);
+    }
+    @media screen and (max-width: 1199px) {
+      width: 70%;
+      margin: 10px auto;
     }
   }
 

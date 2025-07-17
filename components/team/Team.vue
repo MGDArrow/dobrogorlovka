@@ -51,7 +51,13 @@ const popup: Ref<null | IPersona> = ref(null);
     justify-content: space-between;
     @media screen and (max-width: 1599px) {
       width: 1100px;
-	  }
+      font-size: 1em;
+	  }  
+    @media screen and (max-width: 1199px) {
+      width: 730px;
+      font-size: 0.7em;
+      justify-content: space-around;
+    }
   }
   
   &__small-cards {
@@ -62,6 +68,9 @@ const popup: Ref<null | IPersona> = ref(null);
     width: 80%;
     @media screen and (max-width: 1599px) {
       width: 1100px;
+    }
+    @media screen and (max-width: 1199px) {
+      width: 730px;
     }
   }
 }

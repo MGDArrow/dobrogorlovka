@@ -43,8 +43,16 @@ function getRandomColor() {
 		transition: width 0.4s, height 0.4s;
 		animation: 0.4s rotate linear;
 		animation-fill-mode: forwards;
-		height: 460px;
+		height: 480px;
 		width: 360px;
+	}
+	@media screen and (max-width: 1199px) {
+		height: 200px;
+		width: 200px;
+		&.active{
+			height: 370px;
+			width: 240px;		
+		}
 	}
 
 	@keyframes rotate {
@@ -67,6 +75,10 @@ function getRandomColor() {
 		width: 300px;
 		transition: 0.4s ease-in-out;
 		filter: grayscale(100%);
+
+		@media screen and (max-width: 1199px) {
+			width: 200px;
+		}
 	}
 
 	& p {
@@ -87,10 +99,17 @@ function getRandomColor() {
 	}
 
 	&:hover {
-		height: 400px;
+		height: 420px;
 
 		& img {
 			filter: grayscale(0%);
+		}
+	}
+	@media screen and (max-width: 1199px) {
+		height: 200px;
+		width: 200px;
+		&:hover{
+			height: 310px;
 		}
 	}
 }

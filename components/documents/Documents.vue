@@ -31,6 +31,10 @@
 			width: 1100px;
 			font-size: 0.8em;
 		}
+		@media screen and (max-width: 1199px) {
+			width: 750px;
+		}
+		
   	}
 }
 </style>

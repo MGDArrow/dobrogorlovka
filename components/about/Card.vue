@@ -35,13 +35,14 @@ function getRandomColor() {
 	&.active {
 		transition: width 0.4s, height 0.4s, transform 0.4s ease-in-out;
 		animation: 0.4s rotate linear;
-		animation-fill-mode: forwards;
-		height: calc(100% - 90px);
-		width: calc(100% - 90px);
-	
+		animation-fill-mode: forwards;	
 	}
 	&:hover{
 		transform: scale(1.05);
+	}
+	@media screen and (max-width: 1199px) {
+		height: calc(100% - 70px);
+		width: calc(100% - 70px);
 	}
 
 	@keyframes rotate {
@@ -63,5 +64,8 @@ function getRandomColor() {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@media screen and (max-width: 1199px) {
+		padding: 10px;
+	}
 }
 </style>

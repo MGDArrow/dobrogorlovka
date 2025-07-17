@@ -31,6 +31,9 @@ const partners = ENV.partners;
 	@media screen and (max-width: 1599px) {
 		width: 100%;
 	}
+	@media screen and (max-width: 1199px) {
+		gap: 5px;
+	}
   }
 }
 </style>

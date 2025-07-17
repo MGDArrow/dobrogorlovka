@@ -33,7 +33,7 @@ export const ENV = {
 		},
 		{
 			id: 4,
-			surname: 'Хоряков',
+			surname: 'Хорьяков',
 			name: 'Станислав Владимирович',
 			photo: 'persona4',
 			post: 'Директор',

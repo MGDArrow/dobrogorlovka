@@ -56,6 +56,9 @@ z-index: -1;
 		@media screen and (max-width: 1599px) {
 			height: 43px;
 		}
+		@media screen and (max-width: 1199px) {
+			height: 37px;
+		}
 	}
 }
 .active div{

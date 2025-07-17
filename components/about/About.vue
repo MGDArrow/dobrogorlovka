@@ -62,6 +62,10 @@
       width: 100%;
       height: 500px;
     }
+    @media screen and (max-width: 1199px) {
+      font-size: 0.8em;
+      height: 460px;
+    }
   }
   
   &__name {
@@ -71,7 +75,10 @@
     width: 800px;
     height: 330px;
     @media screen and (max-width: 1599px) {
-      width: 630px;
+      width: 52.5%;
+    }
+    @media screen and (max-width: 1199px) {
+      height: 280px;
     }
   }
   
@@ -85,6 +92,10 @@
     @media screen and (max-width: 1599px) {
       top: 60px;
       height: 280px;
+      width: 58.4%;
+    }
+    @media screen and (max-width: 1199px) {
+      height: 240px;
     }
   }
   &__to {
@@ -96,6 +107,10 @@
     height: 350px;
     @media screen and (max-width: 1599px) {
       height: 300px;
+      width: 83.4%;
+    }
+    @media screen and (max-width: 1199px) {
+      height: 270px;
     }
   }
 }

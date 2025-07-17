@@ -36,9 +36,12 @@ const isHover = ref(false);
   align-items: center;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 1199px) {
+		height: 100px;
+	}
 
   &__content{
-    width: 50%;
+    width: max(50%, 600px);
     display: flex;
     justify-content: space-between;
   }

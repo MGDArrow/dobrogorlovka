@@ -79,6 +79,7 @@ const translateY = ref('170%');
 
 onMounted(() => {
 	(document.body.clientWidth < 1600) && (translateY.value = '200%');
+	(document.body.clientWidth < 1600) && (translateY.value = '280%');
 	
 })
 
@@ -97,6 +98,10 @@ onMounted(() => {
 		@media screen and (max-width: 1599px) {
 			left: calc((100vw - 1230px) / 2 * -1 - 90px);
 			gap: 30px;
+		}
+		@media screen and (max-width: 1199px) {
+			left: calc((100vw - 760px) / 2 * -1 - 40px);
+			gap: 20px;
 		}
 	}
 	&__lines{
@@ -124,6 +129,10 @@ onMounted(() => {
 		@media screen and (max-width: 1599px) {
 			width: 330px;
 			height: 430px;
+		}
+		@media screen and (max-width: 1199px) {
+			width: 150px;
+			height: 280px;
 		}
 		& div{
 			width: 200px;
@@ -170,6 +179,9 @@ onMounted(() => {
 		@media screen and (max-width: 1599px) {
 			width: 608px;
 		}
+		@media screen and (max-width: 1199px) {
+			width: 408px;
+		}
 		&:hover{
 			transform: scale(1.04);
 		}
@@ -184,6 +196,10 @@ onMounted(() => {
 			@media screen and (max-width: 1599px) {
 				max-width: 600px;
 				height: 458px;
+			}
+			@media screen and (max-width: 1199px) {
+				max-width: 400px;
+				height: 308px;
 			}
 		}
 	}
