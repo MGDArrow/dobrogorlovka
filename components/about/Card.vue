@@ -1,5 +1,5 @@
 <template>
-	<div class="about-card-wrapper" :class="{ active: isHover }" >
+	<div class="about-card-wrapper" :class="{ active: isHover }"  ref="activeRef">
 		<div class="about-card" @mouseover="isHover = true" >
 				<slot />
 		</div>
@@ -13,10 +13,15 @@ defineSlots<{
 
 const isHover = ref(false);
 
-function getRandomColor() {
-	const number = Math.random();
-	return number > 0.75 ? 'var(--color-pink)' : number > 0.5 ? 'var(--color-green)' : number > 0.25 ? 'var(--color-blue)' : 'var(--color-orange)';
-}
+const activeRef = useTemplateRef('activeRef');
+
+onMounted(() => {
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
+
+onUnmounted(() => {
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
 </script>
 
 <style scoped lang="scss">

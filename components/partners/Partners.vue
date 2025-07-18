@@ -1,12 +1,14 @@
 <template>
   <section class="partners" id="partners">
 	<h2>Наши партнёры</h2>
-	<div class="partners__wrapper">
+	<div class="partners__wrapper" ref="parentRef">
 		<div class="partners__cards">
 			<PartnersCard 
 				v-for="partner in partners" 
 				:key="partner.name" 
-				:photoSrc="`partners/${partner.photo}.webp`">
+				:photoSrc="`partners/${partner.photo}.webp`"
+				:parent="parentRef"
+				>
 				{{ partner.name }}
 			</PartnersCard>
 		</div>
@@ -19,6 +21,9 @@
 import { ENV } from '~/assets/env';
 
 const partners = ENV.partners;
+
+
+const parentRef = useTemplateRef('parentRef');
 </script>
 
 <style scoped lang="scss">
@@ -26,6 +31,7 @@ const partners = ENV.partners;
 	&__wrapper{
 		width: 100%;
 		@media screen and (max-width: 768px) {
+			position: relative;
 			width: calc(98vw - 40px);
 			margin: 0 auto;
 			overflow-y: auto;
@@ -51,8 +57,6 @@ const partners = ENV.partners;
 		height: 460px;
 		width: calc(98vw - 40px);
 		width: max-content;
-		overflow-x: auto;
-		overflow-y: hidden;
 	}
   }
 }

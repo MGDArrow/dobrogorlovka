@@ -1,7 +1,7 @@
 <template>
-	<div class="partners-card-wrapper" :class="{ active: isHover }" >
+	<div class="partners-card-wrapper" :class="{ active: isHover }" ref="activeRef" >
 		<div class="partners-card" @mouseover="isHover = true" :class="{ active: isHover }">
-			<img :src="photoSrc" alt="Фото" />
+			<img :src="photoSrc" alt="Фото" :class="{ active: isHover }" />
 			<p :class="{ active: isHover }">
 				<slot />
 			</p>
@@ -16,15 +16,27 @@ defineSlots<{
 
 interface Props {
 	photoSrc: string;
+	parent: HTMLDivElement | null
 }
-defineProps<Props>();
+const props = defineProps<Props>();
+
 
 const isHover = ref(false);
 
-function getRandomColor() {
-	const number = Math.random();
-	return number > 0.75 ? 'var(--color-pink)' : number > 0.5 ? 'var(--color-green)' : number > 0.25 ? 'var(--color-blue)' : 'var(--color-orange)';
-}
+
+const activeRef = useTemplateRef('activeRef');
+
+onUnmounted(() => {
+	if(props.parent === null) return;
+	document.removeEventListener('scroll', () => scrollActivationLeft(activeRef.value, props.parent, isHover))
+	props.parent.removeEventListener('scroll', () => scrollActivationLeft(activeRef.value, props.parent, isHover))
+})
+
+watch(() => props.parent, ()=> {
+	if(props.parent === null) return;
+	document.addEventListener('scroll', () => scrollActivationLeft(activeRef.value, props.parent, isHover))
+	props.parent.addEventListener('scroll', () => scrollActivationLeft(activeRef.value, props.parent, isHover))
+})
 </script>
 
 <style scoped lang="scss">
@@ -56,11 +68,11 @@ function getRandomColor() {
 	}
 
 	@media screen and (max-width: 768px) {
-		height: 300px;
-		width: 300px;
+		height: 250px;
+		width: 250px;
 		&.active{
-			height: 380px;
-			width: 360px;		
+			height: 330px;
+			width: 310px;		
 		}
 	}
 
@@ -85,8 +97,16 @@ function getRandomColor() {
 		transition: 0.4s ease-in-out;
 		filter: grayscale(100%);
 
-		@media screen and (max-width: 1199px) and (min-width: 769px){
+		&.active{
+			filter: grayscale(0%);
+		}
+
+		@media screen and (max-width: 1199px){
 			width: 200px;
+		}
+
+		@media screen and (max-width: 768px){
+			width: 250px;
 		}
 	}
 
@@ -107,11 +127,8 @@ function getRandomColor() {
 
 	&:hover {
 		height: 420px;
-
-		& img {
-			filter: grayscale(0%);
-		}
 	}
+
 	@media screen and (max-width: 1199px){
 		height: 200px;
 		width: 200px;
@@ -120,10 +137,10 @@ function getRandomColor() {
 		}
 	}
 	@media screen and (max-width: 768px){
-		height: 300px;
-		width: 300px;
+		height: 250px;
+		width: 250px;
 		&.active{
-			height: 420px;
+			height: 370px;
 		}
 	}
 }

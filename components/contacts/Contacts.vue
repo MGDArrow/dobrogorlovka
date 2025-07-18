@@ -1,7 +1,7 @@
 <template>
-	<section class="contacts" id="contacts">
+	<section class="contacts" id="contacts" ref="activeRef">
 		<div class="contacts__body">
-			<h2>Реквизиты и Контакты</h2>
+			<h2 >Реквизиты и Контакты</h2>
 			<div class="contacts__flex">
 				<div class="contacts__requisites">
 					<h3>Реквизиты</h3>
@@ -11,7 +11,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="contacts__contacts" @mouseover="isHover = true" >
+				<div class="contacts__contacts" @mouseover="isHover = true"  >
 					<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="translateY"/>
 					<h3>Контакты</h3>
 					<div class="info-list">
@@ -22,8 +22,8 @@
 				</div>
 			</div>
 			<div class="contacts__messangers">
-					<DocumentsCard :icon="'vk'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>
-					<DocumentsCard :icon="'tg'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>			
+					<DocumentsCard :icon="'vk'" :key="'vk'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>
+					<DocumentsCard :icon="'tg'" :key="'tg'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>			
 			</div>
 		</div>
 	</section>
@@ -41,11 +41,17 @@ const address = ENV.address;
 
 const translateY = ref('162%');
 
+const activeRef = useTemplateRef('activeRef');
+
 onMounted(() => {
 	(document.body.clientWidth < 1600) && (translateY.value = '200%');
 	(document.body.clientWidth < 1200) && (translateY.value = '280%');
-	(document.body.clientWidth <= 768) && (translateY.value = '230%');
-	
+	(document.body.clientWidth <= 768) && (translateY.value = '230%');	
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
+
+onUnmounted(() => {
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
 })
 </script>
 

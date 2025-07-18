@@ -6,10 +6,13 @@
     <Partners/>
     <Documents/>
     <Contacts/>
-    <!-- Popup SIZING -->
+
     <!-- Phone ACTIVATED -->
+    <!-- Phone построить на стиле CSS Bloks и TeamCards, а не JS (Убрать скачки и ускорить производительность) -->
     
     <!-- Current Data -->
+    <!-- Seo -->
+    <!-- favicon -->
 
     <!-- Hosting -->
 

@@ -40,7 +40,7 @@
 				:modules="modules"
 				class="mySwiper"
 				@swiper="setSwiperRef"
-				@slideChange="(e) => activeIndex = e.realIndex"
+				@slideChange="(e) => slideChange(e.realIndex)"
 			>
 				<swiper-slide v-for="(photo, index) in arrayNamePhotos" :key="index" :virtualIndex="index">
 					<img :src="`/photos/${photo}.webp`" :alt="photo" @mouseover="hoverPhotos.add(index)" :class="{colorise: hoverPhotos.has(index)}">
@@ -67,6 +67,12 @@ const activeIndex = ref(0)
 const swiperRef:Ref<null | typeof Swiper> = ref(null);
 
 const hoverPhotos = ref(new Set());
+
+const slideChange = (realIndex: number) => {
+	activeIndex.value = realIndex;
+	hoverPhotos.value.add(realIndex);
+
+}
 
 const setSwiperRef = (swiper) => {
 	swiperRef.value = swiper;
@@ -195,7 +201,6 @@ onMounted(() => {
 		}
 		&:hover{
 			transform: scale(1.04);
-			margin: 30px auto;
 		}
 		& img{
 			display: block;

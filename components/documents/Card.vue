@@ -1,5 +1,5 @@
 <template>
-	<a :href="href" target="_blank" rel="noopener noreferrer" class="document-card" @mouseover="isHover = true" :class="{active: isHover}">
+	<a :href="href" target="_blank" rel="noopener noreferrer" class="document-card" @mouseover="isHover = true" :class="{active: isHover}" ref="activeRef">
 		<p>
 			<slot />
 		</p>
@@ -28,6 +28,16 @@ withDefaults(defineProps<Props>(), {
 });
 
 const isHover = ref(false)
+
+const activeRef = useTemplateRef('activeRef');
+
+onMounted(() => {
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
+
+onUnmounted(() => {
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
 </script>
 
 <style scoped lang="scss">

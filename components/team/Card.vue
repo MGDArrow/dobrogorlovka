@@ -1,5 +1,5 @@
 <template>
-  <div class="team-card" @mouseover="isHover = true" >
+  <div class="team-card" @mouseover="isHover = true" ref="activeRef" >
     <UiBlocks :active="isHover" />
     <div>
       <img :src="photoSrc" alt="Фото" :class="{active: isHover}" />
@@ -19,6 +19,16 @@ interface Props {
 defineProps<Props>();
 
 const isHover = ref(false);
+
+const activeRef = useTemplateRef('activeRef');
+
+onMounted(() => {
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
+
+onUnmounted(() => {
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
 </script>
 
 <style scoped lang="scss">

@@ -1,6 +1,6 @@
 <template>
   <header>
-	<a class="header__logo" href="#" @mouseover="isHover = true">
+	<a class="header__logo" href="#" @mouseover="isHover = true" ref="activeRef">
 		<img :class="{active: !isHover}" src="/public/logo_bw.webp" alt="logo">
 		<img :class="{active: isHover}" src="/public/logo_color.webp" alt="logo">
 	</a>
@@ -34,6 +34,17 @@
 
 <script setup lang="ts">
 const isHover = ref(false)
+
+const activeRef = useTemplateRef('activeRef');
+
+onMounted(() => {
+	scrollActivation(activeRef.value, isHover);
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
+
+onUnmounted(() => {
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
 </script>
 
 <style scoped lang="scss">

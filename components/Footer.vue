@@ -1,5 +1,5 @@
 <template>
-  <footer  :class="{active: isHoverDirt}">
+  <footer  :class="{active: isHoverDirt}" ref="activeRef">
     <div class="footer__sun" @mouseover="isHoverSun = true" :class="{active: isHoverSun}"></div>
     <div class="footer__dirt" @mouseover="isHoverDirt = true" :class="{active: isHoverDirt}">
       <div class="footer__content">
@@ -32,6 +32,18 @@ const phone = ENV.phone;
 const email = ENV.email;
 const address = ENV.address;
 const created = ENV.createdLink;
+
+const activeRef = useTemplateRef('activeRef');
+
+onMounted(() => {
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHoverSun))
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHoverDirt, 0.6))
+})
+
+onUnmounted(() => {
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHoverSun))
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHoverDirt, 0.6))
+})
 </script>
 
 <style scoped lang="scss">
