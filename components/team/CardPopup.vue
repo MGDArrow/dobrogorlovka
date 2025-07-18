@@ -38,14 +38,42 @@ const emit = defineEmits<{
 	gap: 30px;
 	& img{
 		height: 600px;
+		@media screen and (max-width: 1599px) {
+			height: 450px;
+		}
+		@media screen and (max-width: 1199px) {
+			height: 300px;
+		}
+		@media screen and (max-width: 768px) {
+			height: unset;
+			max-width: 90vw;
+			display: block;
+			margin: 0 auto;
+		}
 	}
 	&__content{
 		font-size: 1.2em;
-		max-height: 600px;
+		max-height: 800px;
 		width: 800px;
+		@media screen and (max-width: 1599px) {
+			font-size: 1em;
+		}
+		@media screen and (max-width: 1199px) {
+			font-size: 0.8em;
+			max-width: calc(90vw - 400px);
+			max-height: 90dvh;
+			overflow-y: auto;
+		}
+		@media screen and (max-width: 768px) {
+			max-width: 90vw;
+		}
 	}
 	&__title{
 		font-size: 1.2em;
+	}
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		gap: 20px;
 	}
 }
 </style>
