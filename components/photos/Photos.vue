@@ -3,7 +3,7 @@
 	<h2>Фотогаларея</h2>
 	<div class="photos__wrap">
 		<div class="photos__lines" @mouseover="isHover = true" >
-			<UiBlocks :active="isHover" :translateX="'10%'" :rotateZ="'-25deg'" :translateY="translateY"/>
+			<UiBlocks :active="isHover" class="blocks-photo"/>
 			<div class="photos__list">
 				<div 
 				v-for="(photo, index) in arrayNamePhotos" 
@@ -80,14 +80,6 @@ const setSwiperRef = (swiper) => {
 const slideTo = (index: number) => {
 	swiperRef?.value?.slideTo(index + 1, 0);
 };
-
-const translateY = ref('170%');
-
-onMounted(() => {
-	(document.body.clientWidth < 1600) && (translateY.value = '200%');
-	(document.body.clientWidth < 1600) && (translateY.value = '280%');
-	
-})
 
 </script>
 
@@ -230,6 +222,15 @@ onMounted(() => {
 		&.colorise{
 			filter: grayscale(0%) ;
 		}
+	}
+}
+.blocks-photo{
+	transform: rotateZ(-25deg) translateY(170%) translateX(10%);
+	@media screen and (max-width: 1599px) {
+		transform: rotateZ(-25deg) translateY(200%) translateX(10%);
+	}
+	@media screen and (max-width: 1199px) {
+		transform: rotateZ(-25deg) translateY(280%) translateX(10%);
 	}
 }
 </style>

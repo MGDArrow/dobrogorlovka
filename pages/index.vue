@@ -7,8 +7,8 @@
     <Documents/>
     <Contacts/>
 
-    <!-- Phone ACTIVATED -->
-    <!-- Phone построить на стиле CSS Bloks и TeamCards, а не JS (Убрать скачки и ускорить производительность) -->
+    <!-- BG -->
+    <!-- Footer -->
     
     <!-- Current Data -->
     <!-- Seo -->

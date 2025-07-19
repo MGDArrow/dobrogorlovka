@@ -1,6 +1,6 @@
 <template>
   <div class="team-card-small" @mouseover="isHover = true">
-    <UiBlocks :active="isHover" :translate-x="'-50%'" :translate-y="'-85%'" />
+    <UiBlocks :active="isHover" />
     <div class="team-card-small__content">
       <img :src="photoSrc" alt="Фото" :class="{active: isHover}" />
       <slot />
@@ -62,10 +62,12 @@ const isHover = ref(false);
 
 
   &:hover {
-    // border-color: var(--color-green);
-    // box-shadow: 0 0 10px 5px var(--color-green);
     transform: scale(1.05);
 
   }
+}
+
+.photo-card-small{
+  transform: rotateZ(-20deg) translateY(-85%) translateX(-50%);
 }
 </style>

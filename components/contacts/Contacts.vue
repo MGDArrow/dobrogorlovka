@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<div class="contacts__contacts" @mouseover="isHover = true"  >
-					<UiBlocks :active="isHover" :rotate-z="'30deg'" :translate-x="'-20%'" :translate-y="translateY"/>
+					<UiBlocks :active="isHover" class="block-contacts"/>
 					<h3>Контакты</h3>
 					<div class="info-list">
 						<p><strong>Телефон:</strong>{{ phone }}</p>
@@ -39,14 +39,9 @@ const phone = ENV.phone;
 const email = ENV.email;
 const address = ENV.address;
 
-const translateY = ref('162%');
-
 const activeRef = useTemplateRef('activeRef');
 
 onMounted(() => {
-	(document.body.clientWidth < 1600) && (translateY.value = '200%');
-	(document.body.clientWidth < 1200) && (translateY.value = '280%');
-	(document.body.clientWidth <= 768) && (translateY.value = '230%');	
 	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
 })
 
@@ -136,6 +131,18 @@ onUnmounted(() => {
 			flex-direction: column;
 			margin: 0 auto;
 		}
+	}
+}
+.block-contacts{
+	transform: rotateZ(30deg) translateY(162%) translateX(-20%);
+	@media screen and (max-width: 1599px) {
+		transform: rotateZ(30deg) translateY(200%) translateX(-20%);
+	}
+	@media screen and (max-width: 1199px) {
+		transform: rotateZ(30deg) translateY(280%) translateX(-20%);
+	}
+	@media screen and (max-width: 768px) {
+		transform: rotateZ(30deg) translateY(230%) translateX(-20%);
 	}
 }
 </style>

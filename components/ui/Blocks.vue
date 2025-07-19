@@ -9,26 +9,20 @@
 
 <script setup lang="ts">
 interface Props {
-  active?: boolean;
-  translateY?: string;
-  translateX?: string;
-  rotateZ?: string; 
+  active?: boolean; 
 }
 
 withDefaults(defineProps<Props>(), {
-  active: false,
-  translateX: '0',
-  translateY: '-115%',
-  rotateZ: '-20deg'
+  active: false
 });
 </script>
 
 <style scoped lang="scss">
 .blocks{
---border-block: 4px;
-position: absolute;
-transform: rotateZ(v-bind(rotateZ)) translateY(v-bind(translateY)) translateX(v-bind(translateX));
-z-index: -1;
+	--border-block: 4px;
+	position: absolute;
+	transform: rotateZ(-20deg) translateY(-115%) translateX(0);
+	z-index: -1;
 	& div {
 		width: 3400px;
 		height: 50px;

@@ -4,7 +4,8 @@
     <div class="team__big-cards">
       <TeamCard 
         v-for="persona in bigCards" :key="persona.id" 
-        :photoSrc="`persons/${persona.photo}.webp`" 
+        :photoSrc="`persons/${persona.photo}.webp`"
+        :class="{unactive: persona.type === 'small'}"
         @click="popup = persona"
       >
         <TeamName>
@@ -34,17 +35,10 @@ import { ENV } from '~/assets/env';
 import type { IPersona } from '~/types/types';
 
 
-const bigCards = ref(ENV.team.filter((persona) => persona.type === 'big'));
+const bigCards = ENV.team;
 const smallCards = ref(ENV.team.filter((persona) => persona.type === 'small'));
 
 const popup: Ref<null | IPersona> = ref(null);
-
-onMounted(() => {
-  if (document.body.clientWidth <= 768){
-    bigCards.value.push(...smallCards.value)
-    smallCards.value = [];
-  }
-})
 
 </script>
 
@@ -71,6 +65,12 @@ onMounted(() => {
       font-size: 1.2em;
       gap: 20px;
     }
+    & .unactive{
+      display: none;
+      @media screen and (max-width: 768px) {
+        display: flex;
+      }
+    }
   }
   
   &__small-cards {
@@ -84,6 +84,9 @@ onMounted(() => {
     }
     @media screen and (max-width: 1199px) {
       width: 730px;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 }
