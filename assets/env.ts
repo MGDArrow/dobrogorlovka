@@ -1,7 +1,4 @@
 export const ENV = {
-	phone: '+7 (949) 593-22-57',
-	email: 'DOBROGORLOVKA@YANDEX.RU',
-	address: '284637, Донецкая Народная Республика, г. Горловка, пр-кт Победы, д. 112, кв. 7',
 	photoArray: ['photo_01', 'photo_02', 'photo_03', 'photo_04','photo_05', 'photo_06'],
 	team: [
 		{
@@ -50,33 +47,61 @@ export const ENV = {
 			description: 'Помощник руководителя Отдела по делам молодёжи Горловской епархии Русской Православной церкви.'
 		},
 	],
-	partners: [
+	partners: {
+		'gorlovka': 'Горловская епархия',
+		'onf': 'Народный фронт',
+		// 'rostov': 'Милосердие-на-Дону',
+	},
+	requisites: {
+		'ОГРН': '1249300015777',
+		'ИНН': '9312010716',
+		'КПП': '931201001',
+	},
+	contacts: {
+		'Телефон': '+7 (949) 593-22-57',
+		'E-mail': 'DOBROGORLOVKA@YANDEX.RU',
+		'Юридический адрес': '284637, Донецкая Народная Республика, г. Горловка, пр-кт Победы, д. 112, кв. 7',
+	},
+	messangers: [
 		{
-			name: 'Горловская епархия',
-			photo: 'gorlovka',
+			title: '@dobrogorlovkanko',
+			photo: 'vk',
+			link: 'https://vk.com/dobrogorlovkanko'
 		},
-		{
-			name: 'Народный фронт',
-			photo: 'onf',
-		},
-		{
-			name: `Милосердие-на-Дону`,
-			photo: 'rostov',
-		},
+		// {
+		// 	title: '@dobrogorlovkanko',
+		// 	photo: 'tg',
+		// 	link: 'https://vk.com/dobrogorlovkanko'
+		// }
 	],
-	requisites: [
+	docs: [
 		{
-			label: 'ОГРН',
-			var: '1249300015777',
+			'name': 'Устав АНО ДоброГорловка',
+			'size': '3.48 MB',
+			'link': 'ustav'
 		},
 		{
-			label: 'ИНН',
-			var: '9312010716',
+			'name': 'ЕГРЮЛ',
+			'size': '2.57 MB',
+			'link': 'EGRUL'
 		},
 		{
-			label: 'КПП',
-			var: '931201001',
+			'name': 'Свидетельство о постановке на учёт',
+			'size': '261 KB',
+			'link': 'uchet'
 		},
+		{
+			'name': 'Свидетельство о ГРНО',
+			'size': '3.08 MB',
+			'link': 'soGRNO'
+		}
 	],
-	createdLink: 'https://mynickname.com/MGDArrow'
+	reports: [
+		// {
+		// 	'name': 'Отчёт за 2024 год',
+		// 	'size': '3.48 MB',
+		// 	'link': 'o_2024'
+		// },
+	],
+	createdLink: 'https://vk.com/mgdarrow'
 }

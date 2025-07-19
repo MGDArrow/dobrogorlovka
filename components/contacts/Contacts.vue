@@ -6,8 +6,8 @@
 				<div class="contacts__requisites">
 					<h3>Реквизиты</h3>
 					<div class="info-list">
-						<p v-for="requisite in requisites" :key="requisite.label">
-							<strong>{{ requisite.label }}:</strong>{{ requisite.var }}
+						<p v-for="(requisite, label) in requisites" :key="label">
+							<strong>{{ label }}:</strong>{{ requisite }}
 						</p>
 					</div>
 				</div>
@@ -15,15 +15,21 @@
 					<UiBlocks :active="isHover" class="block-contacts"/>
 					<h3>Контакты</h3>
 					<div class="info-list">
-						<p><strong>Телефон:</strong>{{ phone }}</p>
-						<p><strong>E-mail:</strong>{{ email }}</p>
-						<p><strong>Юридический адрес:</strong>{{ address }}</p>
+						<p v-for="(contact, label) in contacts" :key="label">
+							<strong>{{ label }}:</strong>{{ contact }}
+						</p>
 					</div>
 				</div>
 			</div>
 			<div class="contacts__messangers">
-					<DocumentsCard :icon="'vk'" :key="'vk'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>
-					<DocumentsCard :icon="'tg'" :key="'tg'" :href="'https://vk.com/dobrogorlovkanko'">@dobrogorlovkanko</DocumentsCard>			
+				<DocumentsCard 
+					v-for="messanger in messangers" 
+					:key="messanger.title"
+				    :icon="messanger.photo" 
+					:href="messanger.link"
+				>
+					{{ messanger.title }}
+				</DocumentsCard>		
 			</div>
 		</div>
 	</section>
@@ -35,9 +41,8 @@ import { ENV } from '~/assets/env';
 const isHover = ref(false);
 
 const requisites = ENV.requisites;
-const phone = ENV.phone;
-const email = ENV.email;
-const address = ENV.address;
+const contacts = ENV.contacts;
+const messangers = ENV.messangers;
 
 const activeRef = useTemplateRef('activeRef');
 
@@ -122,6 +127,9 @@ onUnmounted(() => {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 30px;
+		& a {
+			flex: 1;
+		}
 		@media screen and (max-width: 1199px) {
 			width: 750px;
 			gap: 10px;

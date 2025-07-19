@@ -8,10 +8,12 @@
           <p>ДОБРОГОРЛОВКА</p>
         </div>
         <div class="footer__text">
-          <p>2024 – {{ new Date().getFullYear() }}© АНО «Добогорловка»</p>
-          <p>{{ phone }}</p>
-          <p>{{ email }}</p>
-          <p>{{ address }}</p>
+          <ClientOnly>
+            <p>2024 – {{ new Date().getFullYear() }}© АНО «Добогорловка»</p>
+          </ClientOnly>
+          <p v-for="(contact, label) in contacts" :key="label">
+							{{ contact }}
+          </p>
         </div>
         <div>
           <a :href="created"  target="_blank" rel="noopener noreferrer" class="created">Created by <strong>MGDArrow</strong></a>
@@ -27,10 +29,7 @@ import { ENV } from '~/assets/env';
 const isHoverSun = ref(false);
 const isHoverDirt = ref(false);
 
-
-const phone = ENV.phone;
-const email = ENV.email;
-const address = ENV.address;
+const contacts = ENV.contacts;
 const created = ENV.createdLink;
 
 const activeRef = useTemplateRef('activeRef');

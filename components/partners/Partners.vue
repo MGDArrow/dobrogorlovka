@@ -4,12 +4,12 @@
 	<div class="partners__wrapper" ref="parentRef">
 		<div class="partners__cards">
 			<PartnersCard 
-				v-for="partner in partners" 
-				:key="partner.name" 
-				:photoSrc="`partners/${partner.photo}.webp`"
+				v-for="(partner, photo) in partners" 
+				:key="photo" 
+				:photoSrc="`partners/${photo}.webp`"
 				:parent="parentRef"
 				>
-				{{ partner.name }}
+				{{ partner }}
 			</PartnersCard>
 		</div>
 	</div>
@@ -40,22 +40,21 @@ const parentRef = useTemplateRef('parentRef');
   &__cards{
 	width: 80%;
 	align-items: center;
-	height: 460px;
+	height: max-content;
 	margin: 20px auto;
 	display: flex;
 	gap: 20px;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 	@media screen and (max-width: 1599px) {
 		width: 100%;
 	}
 	@media screen and (max-width: 1199px) {
 		gap: 5px;
-		height: 390px;
 	}
 	@media screen and (max-width: 768px) {
+		flex-wrap: nowrap;
 		gap: 5px;
-		height: 460px;
-		width: calc(98vw - 40px);
 		width: max-content;
 	}
   }

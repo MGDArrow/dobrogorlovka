@@ -9,6 +9,8 @@
 
     <!-- BG -->
     <!-- Footer -->
+
+    <!-- Fix Partners -->
     
     <!-- Current Data -->
     <!-- Seo -->
