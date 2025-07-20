@@ -10,12 +10,6 @@
     <!-- BG -->
     <!-- Footer -->
 
-    <!-- Fix Partners -->
-    
-    <!-- Current Data -->
-    <!-- Seo -->
-    <!-- favicon -->
-
     <!-- Hosting -->
 
     <!-- <p>Проекты</p> -->
