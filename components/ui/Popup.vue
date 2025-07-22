@@ -25,9 +25,16 @@ function closePostEscape(event: KeyboardEvent){
 }
 
 onMounted(() => {
+	const url = new URL(window.location.href);
+	url.searchParams.append('popup', 'true');
+	useRouter().push(url.search);
+
 	document.addEventListener('keydown', e => closePostEscape(e))
 })
 onUnmounted(() => {
+	const url = new URL(window.location.href);
+	url.searchParams.delete('popup');
+	useRouter().push(url.search)
 	document.removeEventListener('keydown', e => closePostEscape(e))
 })
 
