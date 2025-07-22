@@ -30,12 +30,15 @@ onMounted(() => {
 	useRouter().push(url.search);
 
 	document.addEventListener('keydown', e => closePostEscape(e))
+	addEventListener('popstate', () => emit('closePopup'));
 })
 onUnmounted(() => {
 	const url = new URL(window.location.href);
 	url.searchParams.delete('popup');
 	useRouter().push(url.search)
+
 	document.removeEventListener('keydown', e => closePostEscape(e))
+	removeEventListener('popstate', () => emit('closePopup'));
 })
 
 
