@@ -1,6 +1,6 @@
 <template>
   <footer  :class="{active: isHoverDirt}" ref="activeRef">
-    <div class="footer__sun" @mouseover="isHoverSun = true" :class="{active: isHoverSun}"></div>
+    <!-- <div class="footer__sun" @mouseover="isHoverSun = true" :class="{active: isHoverSun}"></div> -->
     <div class="footer__dirt" @mouseover="isHoverDirt = true" :class="{active: isHoverDirt}">
       <div class="footer__content">
         <div class="footer__logo">
@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { ENV } from '~/assets/env';
 
-const isHoverSun = ref(false);
+// const isHoverSun = ref(false);
 const isHoverDirt = ref(false);
 
 const contacts = ENV.contacts;
@@ -35,12 +35,12 @@ const created = ENV.createdLink;
 const activeRef = useTemplateRef('activeRef');
 
 onMounted(() => {
-	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHoverSun))
+	// document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHoverSun))
 	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHoverDirt, 0.6))
 })
 
 onUnmounted(() => {
-	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHoverSun))
+	// document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHoverSun))
 	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHoverDirt, 0.6))
 })
 </script>
@@ -49,32 +49,32 @@ onUnmounted(() => {
 footer{
   width: 100vw;
   overflow-x: hidden;
-  height: 600px;
+  height: 250px;
   position: relative;
   color: var(--color-black);
   &.active{
     color: var(--color-white);
   }
   @media screen and (max-width: 1199px) {
-    height: 600px;
+    height: 450px;
   }
 }
 .footer{
-  &__sun{
-    position: absolute;
-    left: 70%;
-    top: 10px;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: var(--color-white);
-    transform: skew(-2deg);
-    transition: 0.5s ease-in-out;
-    border: 4px solid var(--color-black);
-    &.active{
-      background: yellow;
-    }
-  }
+  // &__sun{
+  //   position: absolute;
+  //   left: 70%;
+  //   top: 10px;
+  //   width: 120px;
+  //   height: 120px;
+  //   border-radius: 50%;
+  //   background: var(--color-white);
+  //   transform: skew(-2deg);
+  //   transition: 0.5s ease-in-out;
+  //   border: 4px solid var(--color-black);
+  //   &.active{
+  //     background: yellow;
+  //   }
+  // }
   &__dirt{
     position: absolute;
     bottom: 0;
