@@ -10,7 +10,8 @@
 				:key="index" 
 				:class="{active: activeIndex === index}" 
 				@click="slideTo(index)">
-					<img :src="`/photos/${photo}.webp`" :alt="photo" 
+					<img :src="`/photos/${photo}.webp`" :alt="photo"
+					loading="lazy"
 					@mouseover="hoverPhotos.add(index)" 
 					:class="{colorise: hoverPhotos.has(index)}">
 				</div>
@@ -43,7 +44,7 @@
 				@slideChange="(e) => slideChange(e.realIndex)"
 			>
 				<swiper-slide v-for="(photo, index) in arrayNamePhotos" :key="index" :virtualIndex="index">
-					<img :src="`/photos/${photo}.webp`" :alt="photo" @mouseover="hoverPhotos.add(index)" :class="{colorise: hoverPhotos.has(index)}">
+					<img :src="`/photos/${photo}.webp`" loading="lazy" :alt="photo" @mouseover="hoverPhotos.add(index)" :class="{colorise: hoverPhotos.has(index)}">
 				</swiper-slide>
 			</swiper>
 		</div>
