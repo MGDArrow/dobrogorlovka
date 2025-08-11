@@ -12,8 +12,10 @@ defineSlots<{
 
 <style lang="scss">
 .team-name{
+	width: min(525px, 100%);
+	margin: 0 auto;
 	& p {
-	  margin: 20px auto;
+	  margin: 20px auto 10px;
 	}
   
 	& strong {
@@ -24,6 +26,7 @@ defineSlots<{
   
 	& span {
 	  display: block;
+	//   width: 60%;
 	  font-size: 0.8em;
 	  font-style: italic;
 	}

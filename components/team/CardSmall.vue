@@ -41,7 +41,7 @@ const isHover = ref(false);
 	}
 
   &__content{
-    width: max(50%, 600px);
+    width: max(60%, 600px);
     display: flex;
     justify-content: space-between;
   }
