@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     head: {
       title: 'АНО "ДоброГорловка"',
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=2',
       htmlAttrs: {
         lang: 'ru'
       },
