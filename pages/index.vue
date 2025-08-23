@@ -1,18 +1,15 @@
 <template>
   <div class="mainpage">
     <About/>
+    <Projects/>
     <Team/>
     <Photos/>
     <Partners/>
     <Documents/>
     <Contacts/>
 
-    <!-- BG -->
-    <!-- Footer -->
 
-    <!-- Hosting -->
-
-    <!-- <p>Проекты</p> -->
+    <!-- !TODO href to phone and mail -->
   </div>
 </template>
 
