@@ -1,9 +1,9 @@
 <template>
-  <div class="projects-card" @mouseover="isHover = true">
+  <div class="projects-card" @mouseover="isHover = true" ref="activeRef">
     <UiBlocks :active="isHover"/>
     <div class="projects-card__content">
-		<img :src="photoSrc" alt="Фото" :class="{active: isHover}" />
-		<slot />
+      <img :src="photoSrc" alt="Фото" :class="{active: isHover}" />
+      <slot />
     </div>
   </div>
 </template>
@@ -19,6 +19,16 @@ interface Props {
 defineProps<Props>();
 
 const isHover = ref(false);
+
+const activeRef = useTemplateRef('activeRef');
+
+onMounted(() => {
+	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
+
+onUnmounted(() => {
+	document.removeEventListener('scroll', () => scrollActivation(activeRef.value, isHover))
+})
 </script>
 
 <style scoped lang="scss">
@@ -42,14 +52,16 @@ const isHover = ref(false);
 	}
 	@media screen and (max-width: 768px) {
 	  font-size: 1.2em;
-		width: 350px;
+		max-width: 350px;
 		margin: 0 auto 20px;
+    min-height: 500px;
+    height: max-content;
 	}
 
   &__content{
     width: max(60%, 600px);
     display: flex;
-	flex-direction: column;
+	  flex-direction: column;
     justify-content: space-between;
   }
 
