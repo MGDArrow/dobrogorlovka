@@ -107,3 +107,10 @@ export const ENV = {
 	],
 	createdLink: 'https://vk.com/mgdarrow'
 }
+
+export const loadingValue = ref(false);
+
+export const setLoading = () => {
+	loadingValue.value = true;
+	setTimeout(() => loadingValue.value = false, 2000);
+}

@@ -1,10 +1,10 @@
 <template>
   <header>
-	<a class="header__logo" href="#" @mouseover="isHover = true" ref="activeRef">
+	<a class="header__logo" href="#" @mouseover="isHover = true" ref="activeRef" @click="setRoute('')">
 		<img :class="{active: !isHover}" src="/public/logo_bw.webp" alt="logo">
 		<img :class="{active: isHover}" src="/public/logo_color.webp" alt="logo">
 	</a>
-	<h1 :class="{active: isHover}" @mouseover="isHover = true">
+	<h1 :class="{active: isHover}" @mouseover="isHover = true" >
 		<span>Д</span>
 		<span>О</span>
 		<span>Б</span>
@@ -20,19 +20,34 @@
 		<span>А</span>
 	</h1>
 	<nav>
-		<a href="/#about">О нас</a>
-		<a href="/#projects">Проекты</a>
-		<a href="/#team">Команда</a>
-		<a href="/#photos">Фотогалерея</a>
-		<a href="/#partners">Партнёры</a>
-		<a href="/#docs">Документы</a>
-		<a href="/#contacts">Контакты</a>
+		<a @click="setRoute('#about')">О нас</a>
+		<a @click="setRoute('#projects')">Проекты</a>
+		<a @click="setRoute('#team')">Команда</a>
+		<a @click="setRoute('#photos')">Фотогалерея</a>
+		<a @click="setRoute('#partners')">Партнёры</a>
+		<a @click="setRoute('#docs')">Документы</a>
+		<a @click="setRoute('#contacts')">Контакты</a>
 	</nav>
 	
   </header>
 </template>
 
 <script setup lang="ts">
+import { setLoading } from '~/assets/env';
+
+function setRoute(route: string){
+	if(useRoute().name === 'index') useRouter().push({path: '/', hash: route});
+	else {
+		setLoading();
+		setTimeout(()=> {
+			useRouter().push({path: '/'})
+		}, 1000)
+		setTimeout(() => {
+			useRouter().push({path: '/', hash: route})
+		}, 1100)
+	}
+}
+
 const isHover = ref(false)
 
 const activeRef = useTemplateRef('activeRef');

@@ -4,6 +4,9 @@
      <main>
        <NuxtPage/>
      </main>
+      <ClientOnly>
+        <UiLoading/>
+      </ClientOnly>
     <Footer/>
   </div>
 </template>

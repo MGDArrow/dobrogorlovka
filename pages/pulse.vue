@@ -1,6 +1,6 @@
 <template>
-  <div class="projects">
-	projects
+  <div class="pulse">
+	pulse
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 </script>
 
 <style scoped lang="scss">
-.projects{
+.pulse{
   width: 100%;
 }
 </style>
