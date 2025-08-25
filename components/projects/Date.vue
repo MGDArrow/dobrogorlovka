@@ -20,8 +20,10 @@
       font-weight: 600;
     }
     & span {
+      margin-left: 0.5em;
       @media screen and (max-width: 1199px) {
         display: block;
+        margin-left: none;
       }
     }
     @media screen and (max-width: 1199px) {
