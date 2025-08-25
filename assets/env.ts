@@ -114,3 +114,10 @@ export const setLoading = () => {
 	loadingValue.value = true;
 	setTimeout(() => loadingValue.value = false, 2000);
 }
+
+export const getHrefContacts = (label: string, value: string) => {
+	if (label === 'Телефон') return `tel:+${value.replace(/\D/g, '')}`
+	if (label === 'E-mail') return `mailto:${value}`
+	if (label === 'Юридический адрес') return `https://yandex.ru/maps/?whatshere[point]=37.996122,48.306559&whatshere[zoom]=17`
+	return ''
+}

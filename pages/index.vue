@@ -7,8 +7,6 @@
     <Partners/>
     <Documents/>
     <Contacts/>
-    
-    <!-- !TODO href to phone and mail -->
   </div>
 </template>
 

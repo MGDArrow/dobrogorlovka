@@ -6,18 +6,18 @@
 				<div class="contacts__requisites">
 					<h3>Реквизиты</h3>
 					<div class="info-list">
-						<p v-for="(requisite, label) in requisites" :key="label">
+						<a v-for="(requisite, label) in requisites" :key="label" @click="copyText(label, requisite)">
 							<strong>{{ label }}:</strong>{{ requisite }}
-						</p>
+						</a>
 					</div>
 				</div>
 				<div class="contacts__contacts" @mouseover="isHover = true"  >
 					<UiBlocks :active="isHover" class="block-contacts"/>
 					<h3>Контакты</h3>
 					<div class="info-list">
-						<p v-for="(contact, label) in contacts" :key="label">
+						<a v-for="(contact, label) in contacts" :key="label" :href="getHrefContacts(label, contact)" :target="label === 'Юридический адрес' ? '_blank' : ''">
 							<strong>{{ label }}:</strong>{{ contact }}
-						</p>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ENV } from '~/assets/env';
+import { ENV, getHrefContacts } from '~/assets/env';
 
 const isHover = ref(false);
 
@@ -45,6 +45,11 @@ const contacts = ENV.contacts;
 const messangers = ENV.messangers;
 
 const activeRef = useTemplateRef('activeRef');
+
+const copyText = (label: string, value: string) => {
+	  navigator.clipboard.writeText(`${label}: ${value}`)
+	  .then(() => alert(`${label} скопирован в буфер обмена`))
+}
 
 onMounted(() => {
 	document.addEventListener('scroll', () => scrollActivation(activeRef.value, isHover))

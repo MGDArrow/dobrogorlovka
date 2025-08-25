@@ -11,9 +11,12 @@
           <ClientOnly>
             <p>2024 – {{ new Date().getFullYear() }}© АНО «Добогорловка»</p>
           </ClientOnly>
-          <p v-for="(contact, label) in contacts" :key="label">
+          <!-- <p v-for="(contact, label) in contacts" :key="label">
 							{{ contact }}
-          </p>
+          </p> -->
+          <a v-for="(contact, label) in contacts" :key="label" :href="getHrefContacts(label, contact)" :target="label === 'Юридический адрес' ? '_blank' : ''">
+							{{ contact }}
+          </a>
         </div>
         <div>
           <a :href="created"  target="_blank" rel="noopener noreferrer" class="created">Created by <strong>MGDArrow</strong></a>
@@ -24,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ENV } from '~/assets/env';
+import { ENV, getHrefContacts } from '~/assets/env';
 
 // const isHoverSun = ref(false);
 const isHoverDirt = ref(false);
@@ -131,8 +134,11 @@ footer{
   }
   &__text{
     max-width: 50%;
-    & p {
+    & a {
+      display: block;
+      text-decoration: none;
       margin: 0.3em 0;
+      color: inherit;
     }
     @media screen and (max-width: 768px) {
       max-width: 80%;
