@@ -23,6 +23,11 @@
       :big-cards="bigCards"
       :small-cards="smallCards"
     />
+    <Partners
+      :title="'Партнёры проекта'"
+      :partners="DIGITAL.partners"
+      class="project-partners"
+    />
   </section>
 </template>
 
@@ -68,6 +73,9 @@
       //   border: 4px solid var(--color-black);
       //   border-radius: var(--border-radius);
       // }
+    }
+    &-partners {
+      font-size: 0.85em;
     }
   }
 </style>

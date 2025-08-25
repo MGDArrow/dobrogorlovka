@@ -8,7 +8,7 @@
       :small-cards="smallCards"
     />
     <Photos />
-    <Partners />
+    <Partners :partners="partners" :title="'Наши партнёры'" />
     <Documents />
     <Contacts />
   </div>
@@ -18,9 +18,9 @@
   import { ENV } from '~/assets/env';
 
   const bigCards = ENV.team;
-  const smallCards = ref(
-    ENV.team.filter((persona) => persona.type === 'small'),
-  );
+  const smallCards = ENV.team.filter((persona) => persona.type === 'small');
+
+  const partners = ENV.partners;
 </script>
 
 <style scoped lang="scss">
