@@ -16,6 +16,9 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@mgdarrow/prettier-config": "^1.1.0",
+    "prettier": "^3.6.2",
     "sass-embedded": "^1.89.2"
-  }
+  },
+  "prettier": "@mgdarrow/prettier-config"
 }
