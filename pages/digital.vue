@@ -1,39 +1,39 @@
 <template>
   <section class="digital">
     <div class="project__updeck">
-      <ProjectsImage :photo-src="'digital'" />
+      <ProjectsImage :photo-src="DIGITAL.photo" />
       <div class="project__info">
         <ProjectsName>
-          <h2>Цифровой иммунитет</h2>
-          <span>Учись, Играй, Будь в безопасности</span>
+          <h2>{{ DIGITAL.name }}</h2>
+          <span>{{ DIGITAL.subname }}</span>
         </ProjectsName>
         <ProjectsDate>
-          <strong>Реализация проекта:</strong>
-          <span>18 августа 2025 – 28 февраля 2026</span>
+          <strong>Реализация проекта:</strong><span>{{ DIGITAL.date }}</span>
         </ProjectsDate>
         <!-- <img src="/public/partners/pgrants_horizontal.png" alt="При под" /> -->
         <ProjectsDescription>
-          <p>
-            Наша заявка стала победителем второго конкурса Фонда Президентских
-            грантов 2025 и этот проект стал первой грантовой историей в нашей
-            организации.
-          </p>
-          <p>
-            Проект направлен на обучение детей из многодетных семей, обучающихся
-            в 8-11 классах общеобразовательных школ города Горловки навыкам
-            пользования офисных программ Microsoft Office (Word, Excel,
-            PowerPoint), а также основам кибербезопасности и противостояния
-            кибербуллингу, закладывание в подростков идей о морали в интернете,
-            а также обучение азам гимнастики для поддержания физической формы и
-            избежания болезней при длительной работе за компьютером.
+          <p v-for="(descript, index) in DIGITAL.description" :key="index">
+            {{ descript }}
           </p>
         </ProjectsDescription>
       </div>
     </div>
+    <Team
+      :title="'Команда проекта'"
+      :big-cards="bigCards"
+      :small-cards="smallCards"
+    />
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { DIGITAL } from '~/assets/env';
+
+  const bigCards = DIGITAL.team;
+  const smallCards = ref(
+    DIGITAL.team.filter((persona) => persona.type === 'small'),
+  );
+</script>
 
 <style scoped lang="scss">
   .project {
