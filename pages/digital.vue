@@ -18,6 +18,25 @@
         </ProjectsDescription>
       </div>
     </div>
+    <div class="project__updeck">
+      <div class="project__info">
+        <ProjectsFinance
+          :title="'Финансирование проекта'"
+          :data="DIGITAL.finance"
+        />
+      </div>
+      <img
+        src="/public/partners/pgrants_vertical.webp"
+        alt="При поддержке Фонда Президентских Грантов"
+        class="pgrants-vertical"
+      />
+      <img
+        src="/public/partners/pgrants_horizontal.png"
+        alt="При поддержке Фонда Президентских Грантов"
+        class="pgrants-horizontal"
+      />
+      <!-- <ProjectsImage :photo-src="DIGITAL.photo" /> -->
+    </div>
     <Team
       :title="'Команда проекта'"
       :big-cards="bigCards"
@@ -32,6 +51,7 @@
 </template>
 
 <script setup lang="ts">
+  import { ProjectsFinance } from '#components';
   import { DIGITAL } from '~/assets/env';
 
   const bigCards = DIGITAL.team;
@@ -55,6 +75,23 @@
       @media screen and (max-width: 768px) {
         flex-wrap: wrap;
       }
+      & > img {
+        display: block;
+        width: 300px;
+        border: 4px solid var(--color-black);
+        border-radius: var(--border-radius);
+        transition: 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.05);
+        }
+        @media screen and (max-width: 1199px) {
+          width: 200px;
+        }
+        @media screen and (max-width: 768px) {
+          width: min(100%, 500px);
+          margin: 0 auto;
+        }
+      }
     }
     &__info {
       flex: 1;
@@ -66,16 +103,24 @@
         width: 100%;
         flex: auto;
       }
-      // & img {
-      //   display: block;
-      //   height: 100px;
-      //   // margin: 0 auto;
-      //   border: 4px solid var(--color-black);
-      //   border-radius: var(--border-radius);
-      // }
     }
     &-partners {
       font-size: 0.85em;
+    }
+  }
+
+  .pgrants {
+    &-vertical {
+      @media screen and (max-width: 768px) {
+        display: none !important;
+        visibility: hidden;
+      }
+    }
+    &-horizontal {
+      @media screen and (min-width: 769px) {
+        display: none !important;
+        visibility: hidden;
+      }
     }
   }
 </style>

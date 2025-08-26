@@ -189,6 +189,10 @@ export const DIGITAL = {
     gorlovkaAdmin: 'Администрация г.о. Горловка',
     gorlovkaObr: 'Управление образования г.о. Горловка',
   },
+  finance: {
+    'Cредства предоставлены Фондом президентских грантов': 471891.3,
+    'Софинансирование': 204090.0,
+  },
 };
 
 export const loadingValue = ref(false);
