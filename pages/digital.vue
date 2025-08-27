@@ -10,7 +10,6 @@
         <ProjectsDate>
           <strong>Реализация проекта:</strong><span>{{ DIGITAL.date }}</span>
         </ProjectsDate>
-        <!-- <img src="/public/partners/pgrants_horizontal.png" alt="При под" /> -->
         <ProjectsDescription>
           <p v-for="(descript, index) in DIGITAL.description" :key="index">
             {{ descript }}
@@ -35,7 +34,6 @@
         alt="При поддержке Фонда Президентских Грантов"
         class="pgrants-horizontal"
       />
-      <!-- <ProjectsImage :photo-src="DIGITAL.photo" /> -->
     </div>
     <Team
       :title="'Команда проекта'"
@@ -88,7 +86,8 @@
           width: 200px;
         }
         @media screen and (max-width: 768px) {
-          width: min(100%, 500px);
+          flex: 1;
+          max-width: 500px;
           margin: 0 auto;
         }
       }
