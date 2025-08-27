@@ -126,6 +126,7 @@
         flex: 1;
         max-width: 500px;
         margin: 0 auto;
+        font-size: 0.8em;
       }
       & li {
         margin: 10px 14px;
