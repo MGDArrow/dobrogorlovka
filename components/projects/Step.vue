@@ -30,6 +30,9 @@
   .project-step {
     border: 4px solid var(--color-black);
     border-radius: var(--border-radius);
+    @media screen and (max-width: 400px) {
+      border: none;
+    }
     &__head {
       display: flex;
       margin: 20px;
