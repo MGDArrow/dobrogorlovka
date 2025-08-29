@@ -100,6 +100,12 @@
         &.active {
           opacity: 1;
         }
+        &:first-child {
+          border-radius: 10px 0 0 10px;
+        }
+        &:last-child {
+          border-radius: 0 10px 10px 0;
+        }
         &:nth-child(4n + 1) {
           background: var(--color-orange);
         }
