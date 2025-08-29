@@ -18,12 +18,19 @@
           </span>
         </TeamName>
       </ProjectsCard>
-      <!-- <ProjectsCard :photoSrc="`projects/pulse.webp`" @click="setRoute('pulse')">
-			<TeamName >
-				<p><strong>Пульс Добра</strong></p>
-				<span>Проект систематических акций по сдаче донорской крови и её компонентов, которые призваны повысить количество потенциальных доноров среди молодёжи. </span>
-			</TeamName>
-		</ProjectsCard> -->
+      <!-- <ProjectsCard
+        :photoSrc="`projects/pulse.webp`"
+        @click="setRoute('pulse')"
+      >
+        <TeamName>
+          <p><strong>Пульс Добра</strong></p>
+          <span
+            >Проект систематических акций по сдаче донорской крови и её
+            компонентов, которые призваны повысить количество потенциальных
+            доноров среди молодёжи.
+          </span>
+        </TeamName>
+      </ProjectsCard> -->
     </div>
   </section>
 </template>

@@ -90,7 +90,18 @@ h3 {
   @media screen and (max-width: 768px) {
     font-size: 1.4em;
     padding: 0 10px;
-    /* text-align: center; */
+  }
+}
+h4 {
+  font-size: 1.4em;
+  padding: 10px 2.3em;
+  font-weight: 500;
+  @media screen and (max-width: 1199px) {
+    padding: 10px 1em;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1.2em;
+    padding: 0 5px;
   }
 }
 
