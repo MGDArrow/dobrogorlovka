@@ -193,6 +193,13 @@ export const DIGITAL = {
     'Cредства предоставлены Фондом президентских грантов': 471891.3,
     'Софинансирование': 204090.0,
   },
+  photos: {
+    step1: [
+      'digital/step1_01.webp',
+      'digital/step1_02.webp',
+      'digital/step1_03.webp',
+    ],
+  },
 };
 
 export const loadingValue = ref(false);

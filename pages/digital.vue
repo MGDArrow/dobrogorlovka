@@ -130,6 +130,7 @@
         на ее воплощение. Это инвестиция в будущее молодого поколения Донецкой
         Народной Республики.
       </p>
+      <ProjectsPhotos :photos="DIGITAL.photos.step1" />
     </ProjectsStep>
   </section>
 </template>
