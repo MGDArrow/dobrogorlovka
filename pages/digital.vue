@@ -1,8 +1,11 @@
 <template>
-  <section class="digital">
+  <section class="digital" id="block">
+    <ClientOnly>
+      <MenuClient :menu />
+    </ClientOnly>
     <div class="project__updeck">
       <ProjectsImage :photo-src="DIGITAL.photo" />
-      <div class="project__info">
+      <div class="project__info point" id="about">
         <ProjectsName>
           <h2>{{ DIGITAL.name }}</h2>
           <span>{{ DIGITAL.subname }}</span>
@@ -18,7 +21,11 @@
       </div>
     </div>
     <div class="project__updeck">
-      <div class="project__info">
+      <div
+        class="project__info point"
+        id="finance"
+        style="scroll-margin-block-start: 50px"
+      >
         <ProjectsFinance
           :title="'Финансирование проекта'"
           :data="DIGITAL.finance"
@@ -39,16 +46,21 @@
       :title="'Команда проекта'"
       :big-cards="bigCards"
       :small-cards="smallCards"
+      id="team"
+      class="point"
     />
     <Partners
       :title="'Партнёры проекта'"
       :partners="DIGITAL.partners"
-      class="project-partners"
+      class="project-partners point"
+      id="partners"
     />
     <ProjectsStep
       :title="'Шаг 1. Старт: '"
       :subtitle="'от идеи к заявке'"
       :date="'16.03.2025 — 15.06.2025'"
+      id="step1"
+      class="point"
     >
       <h4>
         Какие проблемы стали причиной рождения идеи написания грантовой заявки?
@@ -136,13 +148,21 @@
 </template>
 
 <script setup lang="ts">
-  import { ProjectsFinance } from '#components';
   import { DIGITAL } from '~/assets/env';
+  import MenuClient from '~/components/projects/Menu.client.vue';
 
   const bigCards = DIGITAL.team;
   const smallCards = ref(
     DIGITAL.team.filter((persona) => persona.type === 'small'),
   );
+
+  const menu = [
+    { name: 'О проекте', id: 'about' },
+    { name: 'Финансирование проекта', id: 'finance' },
+    { name: 'Команда проекта', id: 'team' },
+    { name: 'Партнёры проекта', id: 'partners' },
+    { name: 'Шаг 1. Старт', id: 'step1' },
+  ];
 </script>
 
 <style scoped lang="scss">

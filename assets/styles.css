@@ -159,3 +159,7 @@ h4 {
   initial-value: 0deg;
   inherits: false;
 }
+
+.point {
+  scroll-margin-block-start: 50px;
+}

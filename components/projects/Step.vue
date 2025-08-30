@@ -72,10 +72,6 @@
         text-align: justify;
         text-indent: 5%;
         line-height: 1.3em;
-        // & strong {
-        //   font-weight: 600;
-        //   color: v-bind(getRandomColor());
-        // }
       }
 
       & li {
@@ -101,6 +97,9 @@
         }
         &:nth-child(4n + 4)::before {
           background: var(--color-pink);
+        }
+        &:last-child {
+          margin-bottom: 8px;
         }
       }
     }
