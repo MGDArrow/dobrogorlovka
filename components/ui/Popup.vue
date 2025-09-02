@@ -44,16 +44,14 @@
 
   onMounted(() => {
     const url = new URL(window.location.href);
-    url.searchParams.append('popup', 'true');
-    useRouter().push(url.search);
+    useRouter().push({ hash: url.hash, query: { popup: 'true' } });
 
     document.addEventListener('keydown', (e) => closePostEscape(e));
     addEventListener('popstate', () => emit('closePopup'));
   });
   onUnmounted(() => {
     const url = new URL(window.location.href);
-    url.searchParams.delete('popup');
-    useRouter().push(url.search);
+    useRouter().push({ hash: url.hash });
 
     document.removeEventListener('keydown', (e) => closePostEscape(e));
     removeEventListener('popstate', () => emit('closePopup'));

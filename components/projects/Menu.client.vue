@@ -1,5 +1,5 @@
 <template>
-  <div id="list" class="point-list" @scroll="setScroll">
+  <div id="list" class="point-list">
     <template v-for="(point, index) in menu" :key="point.id">
       <NuxtLink :to="`#${point.id}`" :class="{ active: actives[index] }">
         #{{ point.name }}
@@ -23,10 +23,6 @@
   onBeforeUnmount(() => {
     window.removeEventListener('scroll', getVisable);
   });
-
-  function setScroll(event: Event) {
-    console.log(event);
-  }
 
   function getVisable() {
     const heightCorrect = 1;
