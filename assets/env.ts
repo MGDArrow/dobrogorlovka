@@ -199,6 +199,12 @@ export const DIGITAL = {
       'digital/step1_02.webp',
       'digital/step1_03.webp',
     ],
+    step2: [
+      'digital/step2_01.webp',
+      'digital/step2_02.webp',
+      'digital/step2_03.webp',
+      'digital/step2_04.webp',
+    ],
   },
 };
 export const PULSE = {
