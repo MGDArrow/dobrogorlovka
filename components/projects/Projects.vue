@@ -18,7 +18,7 @@
           </span>
         </TeamName>
       </ProjectsCard>
-      <!-- <ProjectsCard
+      <ProjectsCard
         :photoSrc="`projects/pulse.webp`"
         @click="setRoute('pulse')"
       >
@@ -30,7 +30,7 @@
             доноров среди молодёжи.
           </span>
         </TeamName>
-      </ProjectsCard> -->
+      </ProjectsCard>
     </div>
   </section>
 </template>

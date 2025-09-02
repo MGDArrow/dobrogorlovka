@@ -1,20 +1,20 @@
 <template>
-  <section class="digital" id="block">
+  <section id="block">
     <ClientOnly>
       <MenuClient :menu />
     </ClientOnly>
     <div class="project__updeck">
-      <ProjectsImage :photo-src="DIGITAL.photo" />
+      <ProjectsImage :photo-src="project.photo" />
       <div class="project__info point" id="about">
         <ProjectsName>
-          <h2>{{ DIGITAL.name }}</h2>
-          <span>{{ DIGITAL.subname }}</span>
+          <h2>{{ project.name }}</h2>
+          <span>{{ project.subname }}</span>
         </ProjectsName>
         <ProjectsDate>
-          <strong>Реализация проекта:</strong><span>{{ DIGITAL.date }}</span>
+          <strong>Реализация проекта:</strong><span>{{ project.date }}</span>
         </ProjectsDate>
         <ProjectsDescription>
-          <p v-for="(descript, index) in DIGITAL.description" :key="index">
+          <p v-for="(descript, index) in project.description" :key="index">
             {{ descript }}
           </p>
         </ProjectsDescription>
@@ -28,7 +28,7 @@
       >
         <ProjectsFinance
           :title="'Финансирование проекта'"
-          :data="DIGITAL.finance"
+          :data="project.finance"
         />
       </div>
       <img
@@ -51,7 +51,7 @@
     />
     <Partners
       :title="'Партнёры проекта'"
-      :partners="DIGITAL.partners"
+      :partners="project.partners"
       class="project-partners point"
       id="partners"
     />
@@ -142,18 +142,18 @@
         на ее воплощение. Это инвестиция в будущее молодого поколения Донецкой
         Народной Республики.
       </p>
-      <ProjectsPhotos :photos="DIGITAL.photos.step1" />
+      <ProjectsPhotos :photos="project.photos.step1" />
     </ProjectsStep>
   </section>
 </template>
 
 <script setup lang="ts">
-  import { DIGITAL } from '~/assets/env';
+  import { DIGITAL as project } from '~/assets/env';
   import MenuClient from '~/components/projects/Menu.client.vue';
 
-  const bigCards = DIGITAL.team;
+  const bigCards = project.team;
   const smallCards = ref(
-    DIGITAL.team.filter((persona) => persona.type === 'small'),
+    project.team.filter((persona) => persona.type === 'small'),
   );
 
   const menu = [
@@ -165,68 +165,4 @@
   ];
 </script>
 
-<style scoped lang="scss">
-  .project {
-    &__updeck {
-      display: flex;
-      gap: 50px;
-      align-items: center;
-      @media screen and (max-width: 1599px) {
-        gap: 30px;
-      }
-      @media screen and (max-width: 1199px) {
-        gap: 20px;
-      }
-      @media screen and (max-width: 768px) {
-        flex-wrap: wrap;
-      }
-      & > img {
-        display: block;
-        width: 300px;
-        border: 4px solid var(--color-black);
-        border-radius: var(--border-radius);
-        transition: 0.3s ease-in-out;
-        &:hover {
-          transform: scale(1.05);
-        }
-        @media screen and (max-width: 1199px) {
-          width: 200px;
-        }
-        @media screen and (max-width: 768px) {
-          flex: 1;
-          max-width: 500px;
-          margin: 0 auto;
-        }
-      }
-    }
-    &__info {
-      flex: 1;
-      @media screen and (max-width: 1199px) {
-        font-size: 0.8em;
-      }
-      @media screen and (max-width: 768px) {
-        font-size: 1em;
-        width: 100%;
-        flex: auto;
-      }
-    }
-    &-partners {
-      font-size: 0.85em;
-    }
-  }
-
-  .pgrants {
-    &-vertical {
-      @media screen and (max-width: 768px) {
-        display: none !important;
-        visibility: hidden;
-      }
-    }
-    &-horizontal {
-      @media screen and (min-width: 769px) {
-        display: none !important;
-        visibility: hidden;
-      }
-    }
-  }
-</style>
+<style scoped lang="scss"></style>
