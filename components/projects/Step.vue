@@ -30,9 +30,7 @@
   .project-step {
     border: 4px solid var(--color-black);
     border-radius: var(--border-radius);
-    @media screen and (max-width: 400px) {
-      border: none;
-    }
+
     &__head {
       display: flex;
       margin: 20px;
@@ -108,6 +106,19 @@
     }
     @media screen and (max-width: 768px) {
       font-size: 0.8em;
+    }
+    @media screen and (max-width: 400px) {
+      border: none;
+      margin-top: 60px;
+      &::before {
+        width: 70vw;
+        height: 4px;
+        border-radius: 10px;
+        display: block;
+        content: ' ';
+        background: var(--color-black);
+        margin: 0 auto 60px;
+      }
     }
   }
 </style>

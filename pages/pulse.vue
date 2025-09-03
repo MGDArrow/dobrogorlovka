@@ -17,6 +17,10 @@
           <p v-for="(descript, index) in project.description" :key="index">
             {{ descript }}
           </p>
+          <p class="quote">
+            <strong>Донация</strong> — добровольная сдача крови и (или) её
+            компонентов.
+          </p>
         </ProjectsDescription>
       </div>
     </div>

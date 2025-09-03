@@ -25,7 +25,7 @@
   });
 
   function getVisable() {
-    const heightCorrect = 1;
+    const heightCorrect = 0.8;
 
     const array: Array<boolean> = [];
     const windowPosition = {
@@ -107,6 +107,8 @@
     @media screen and (max-width: 400px) {
       padding: 0 10px;
       width: calc(100% - 20px);
+      font-size: 0.8em;
+      border-bottom: 2px solid var(--color-black);
     }
 
     // @media (width >= 576px) {
