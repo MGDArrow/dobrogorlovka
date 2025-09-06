@@ -199,11 +199,16 @@ export const DIGITAL = {
       'digital/step1_02.webp',
       'digital/step1_03.webp',
     ],
-    step2: [
-      'digital/step2_01.webp',
-      'digital/step2_02.webp',
-      'digital/step2_03.webp',
-      'digital/step2_04.webp',
+    step2_1: [
+      'digital/step2_1_01.webp',
+      'digital/step2_1_02.webp',
+      'digital/step2_1_03.webp',
+      'digital/step2_1_04.webp',
+    ],
+    step2_2: [
+      'digital/step2_2_01.webp',
+      'digital/step2_2_02.webp',
+      'digital/step2_2_03.webp',
     ],
   },
 };
