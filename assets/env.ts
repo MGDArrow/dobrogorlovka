@@ -209,6 +209,7 @@ export const DIGITAL = {
       'digital/step2_2_01.webp',
       'digital/step2_2_02.webp',
       'digital/step2_2_03.webp',
+      'digital/step2_2_04.webp',
     ],
   },
 };
