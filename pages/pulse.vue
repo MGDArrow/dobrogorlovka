@@ -45,7 +45,7 @@
         Мы гордимся нашими отважными донорами, которые нашли время и проявили
         настоящее милосердие!
       </p>
-      <ProjectsPhotos :photos="project.photos.step1" />
+      <ProjectsPhotos :photos="photos.step1" :photos-all="photosAll" />
     </ProjectsStep>
   </section>
 </template>
@@ -59,6 +59,9 @@
     { name: 'Партнёры проекта', id: 'partners' },
     { name: 'Сдача 1', id: 'step1' },
   ];
+
+  const photos = project.photos;
+  const photosAll = [...photos.step1];
 </script>
 
 <style scoped lang="scss"></style>

@@ -25,6 +25,7 @@
 <script setup lang="ts">
   interface Props {
     photos: string[];
+    photosAll: string[];
   }
 
   const props = defineProps<Props>();
@@ -33,20 +34,20 @@
 
   const isArrowLeft = computed(() => {
     if (popup.value === null) return false;
-    return props.photos.findIndex((photo) => photo === popup.value) !== 0;
+    return props.photosAll.findIndex((photo) => photo === popup.value) !== 0;
   });
   const isArrowRight = computed(() => {
     if (props.photos.length === 1) return false;
     return (
-      props.photos.findIndex((photo) => photo === popup.value) !==
-      props.photos.length - 1
+      props.photosAll.findIndex((photo) => photo === popup.value) !==
+      props.photosAll.length - 1
     );
   });
 
   function changePhoto(inc: -1 | 1) {
     popup.value =
-      props.photos[
-        props.photos.findIndex((photo) => photo === popup.value) + inc
+      props.photosAll[
+        props.photosAll.findIndex((photo) => photo === popup.value) + inc
       ];
   }
 </script>

@@ -70,12 +70,12 @@
           при поддержке Фонда Президентских Грантов»</UiStrong
         >.
       </p>
-      <ProjectsPhotos :photos="project.photos.step3_1" />
+      <ProjectsPhotos :photos="photos.step3_1" :photos-all="photosAll" />
       <p>
         На открытии в качестве высокого гостя присутствовала глава Управления
         образования города Горловки <UiStrong>Мария Яношевна Полубан</UiStrong>.
       </p>
-      <ProjectsPhotos :photos="project.photos.step3_2" />
+      <ProjectsPhotos :photos="photos.step3_2" :photos-all="photosAll" />
       <p>
         Первая встреча учителей и учащихся началась с
         <UiStrong>общего молебна</UiStrong>, котором мы все попросили помощи
@@ -83,7 +83,7 @@
         выступила Мария Янушевна Полубан, которая подчеркнула важность участия в
         грантовых проектах и пожелала успеха в реализации.
       </p>
-      <ProjectsPhotos :photos="project.photos.step3_3" />
+      <ProjectsPhotos :photos="photos.step3_3" :photos-all="photosAll" />
       <p>
         Далее <UiStrong>Александр Сергеевич Трухачев</UiStrong> — наш учитель
         информатики провел первое вводное занятие с детьми, в котором очертил
@@ -93,12 +93,12 @@
         от них увидеть мы, ответил на интересующие вопросы и проговорил все
         организационные моменты.
       </p>
-      <ProjectsPhotos :photos="project.photos.step3_4" />
+      <ProjectsPhotos :photos="photos.step3_4" :photos-all="photosAll" />
       <p>
         Закончилась встреча с чаепитием в неформальной обстановке, где мы
         обменялись впечатлениями и планами.
       </p>
-      <ProjectsPhotos :photos="project.photos.step3_5" />
+      <ProjectsPhotos :photos="photos.step3_5" :photos-all="photosAll" />
     </ProjectsStep>
     <ProjectsStep
       :title="'Шаг 2. Подготовка.'"
@@ -118,7 +118,7 @@
         грантовой заявке, на средства, выделенные ФПГ
         <UiStrong>на сумму 375 885₽</UiStrong>.
       </p>
-      <ProjectsPhotos :photos="project.photos.step2_1" />
+      <ProjectsPhotos :photos="photos.step2_1" :photos-all="photosAll" />
       <p>
         Во-вторых, путем онлайн-заполнения Яндекс-форм желающими, а также путем
         личного и онлайн собеседования мы отобрали в группу для дальнейшего
@@ -129,7 +129,7 @@
         упражнениям, чтобы смотреть вместе интересные видео, говорить о
         нравственности и противодействии буллингу.
       </p>
-      <ProjectsPhotos :photos="project.photos.step2_2" />
+      <ProjectsPhotos :photos="photos.step2_2" :photos-all="photosAll" />
     </ProjectsStep>
     <ProjectsStep
       :title="'Шаг 1. Старт: '"
@@ -218,7 +218,7 @@
         на ее воплощение. Это инвестиция в будущее молодого поколения Донецкой
         Народной Республики.
       </p>
-      <ProjectsPhotos :photos="project.photos.step1" />
+      <ProjectsPhotos :photos="photos.step1" :photos-all="photosAll" />
     </ProjectsStep>
   </section>
 </template>
@@ -240,6 +240,18 @@
     { name: 'Шаг 3. Открытие', id: 'step3' },
     { name: 'Шаг 2. Подготовка', id: 'step2' },
     { name: 'Шаг 1. Старт', id: 'step1' },
+  ];
+
+  const photos = project.photos;
+  const photosAll = [
+    ...photos.step3_1,
+    ...photos.step3_2,
+    ...photos.step3_3,
+    ...photos.step3_4,
+    ...photos.step3_5,
+    ...photos.step2_1,
+    ...photos.step2_2,
+    ...photos.step1,
   ];
 </script>
 
