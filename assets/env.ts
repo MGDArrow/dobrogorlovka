@@ -211,6 +211,25 @@ export const DIGITAL = {
       'digital/step2_2_03.webp',
       'digital/step2_2_04.webp',
     ],
+    step3_1: [
+      'digital/step3_1_01.webp',
+      'digital/step3_1_02.webp',
+      'digital/step3_1_03.webp',
+      'digital/step3_1_04.webp',
+    ],
+    step3_2: [
+      'digital/step3_2_01.webp',
+      'digital/step3_2_02.webp',
+      'digital/step3_2_03.webp',
+    ],
+    step3_3: ['digital/step3_3_01.webp', 'digital/step3_3_02.webp'],
+    step3_4: [
+      'digital/step3_4_01.webp',
+      'digital/step3_4_02.webp',
+      'digital/step3_4_03.webp',
+      'digital/step3_4_04.webp',
+    ],
+    step3_5: ['digital/step3_5_01.webp', 'digital/step3_5_02.webp'],
   },
 };
 export const PULSE = {
