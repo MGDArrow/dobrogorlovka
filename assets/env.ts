@@ -237,6 +237,40 @@ export const DIGITAL = {
       'digital/step3_4_04.webp',
     ],
     step3_5: ['digital/step3_5_01.webp', 'digital/step3_5_02.webp'],
+    step4_1: [
+      {
+        type: 'photo',
+        photo: 'digital/step4_1_09_18_01.webp',
+        date: '18/09/2025',
+      },
+      {
+        type: 'photo',
+        photo: 'digital/step4_1_09_18_02.webp',
+        date: '18/09/2025',
+      },
+      {
+        type: 'photo',
+        photo: 'digital/step4_1_09_23_01.webp',
+        date: '23/09/2025',
+      },
+      {
+        type: 'photo',
+        photo: 'digital/step4_1_09_30_01.webp',
+        date: '30/09/2025',
+      },
+    ],
+    step4_2: [
+      {
+        type: 'photo',
+        photo: 'digital/step4_2_09_18_01.webp',
+        date: '18/09/2025',
+      },
+      {
+        type: 'photo',
+        photo: 'digital/step4_2_10_02_01.webp',
+        date: '02/10/2025',
+      },
+    ],
   },
 };
 export const PULSE = {

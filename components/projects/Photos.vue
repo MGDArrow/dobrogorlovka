@@ -1,13 +1,23 @@
 <template>
   <div class="project-photos">
-    <img
-      v-for="photo in photos"
-      :key="photo"
-      :src="`/projects/${photo}`"
-      alt="Фото"
-      @click="popup = photo"
-      loading="lazy"
-    />
+    <div
+      class="project-photos__photo"
+      v-for="(photo, index) in photos"
+      :key="index"
+    >
+      <img
+        :src="`/projects/${typeof photo === 'string' ? photo : photo.photo}`"
+        alt="Фото"
+        @click="popup = photo"
+        loading="lazy"
+      />
+      <div
+        class="project-photos__date"
+        v-if="typeof photo !== 'string' && photo.date"
+      >
+        {{ photo.date }}
+      </div>
+    </div>
   </div>
   <UiPopup
     v-if="popup !== null"
@@ -18,19 +28,32 @@
     @left="changePhoto(-1)"
     @right="changePhoto(1)"
   >
-    <img :src="`/projects/${popup}`" alt="Фото" />
+    <div class="popup-photo__base">
+      <img
+        :src="`/projects/${typeof popup === 'string' ? popup : popup.photo}`"
+        alt="Фото"
+      />
+      <div
+        class="popup-photo__date"
+        v-if="typeof popup !== 'string' && popup.date"
+      >
+        Дата: {{ popup.date }}
+      </div>
+    </div>
   </UiPopup>
 </template>
 
 <script setup lang="ts">
+  import type { TStepPhoto } from '~/types/types';
+
   interface Props {
-    photos: string[];
+    photos: TStepPhoto[];
     photosAll: string[];
   }
 
   const props = defineProps<Props>();
 
-  const popup: Ref<null | string> = ref(null);
+  const popup: Ref<null | TStepPhoto> = ref(null);
 
   const isArrowLeft = computed(() => {
     if (popup.value === null) return false;
@@ -63,22 +86,11 @@
       border-radius: var(--border-radius);
       cursor: pointer;
       display: block;
-      width: 288px;
+      width: inherit;
       aspect-ratio: 1/1;
       image-rendering: optimizeSpeed;
       object-fit: cover;
-      transition: 0.3s ease-in-out;
-      &:hover {
-        transform: scale(1.05);
-      }
-      @media screen and (max-width: 1599px) {
-        width: 267px;
-      }
-      @media screen and (max-width: 1199px) {
-        width: 225px;
-      }
       @media screen and (max-width: 768px) {
-        width: 147px;
         border-width: 2px;
       }
     }
@@ -88,6 +100,33 @@
     @media screen and (max-width: 768px) {
       gap: 10px;
       justify-content: center;
+    }
+    &__photo {
+      width: 288px;
+      position: relative;
+      transition: 0.3s ease-in-out;
+      @media screen and (max-width: 1599px) {
+        width: 267px;
+      }
+      @media screen and (max-width: 1199px) {
+        width: 225px;
+      }
+      @media screen and (max-width: 768px) {
+        width: 147px;
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &__date {
+      padding: 3px 0;
+      width: calc(100% + 4px);
+      position: absolute;
+      bottom: 2px;
+      color: white;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 10px 10px;
     }
     &--popup {
       & img {
@@ -100,6 +139,23 @@
           object-fit: contain;
         }
       }
+    }
+  }
+  .popup-photo {
+    &__base {
+      position: relative;
+    }
+    &__date {
+      width: max-content;
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      padding: 15px;
+      transform: translateX(-50%);
+      font-size: 1.2em;
+      color: white;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
     }
   }
 </style>
