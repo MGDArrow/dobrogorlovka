@@ -4,7 +4,10 @@
       <h2>
         {{ title }}<span>{{ subtitle }}</span>
       </h2>
-      <div class="project-step__date">{{ date }}</div>
+      <div class="project-step__head-status">
+        <div>{{ date }}</div>
+        <ProjectsStatus :status="status" />
+      </div>
     </div>
 
     <div class="project-step__body">
@@ -21,9 +24,12 @@
     title: string;
     subtitle: string;
     date: string;
+    status?: 'Активный' | 'Завершённый';
   }
 
-  defineProps<Props>();
+  withDefaults(defineProps<Props>(), {
+    status: 'Завершённый',
+  });
 </script>
 
 <style lang="scss">
@@ -41,6 +47,7 @@
       & h2 {
         width: max-content;
         margin: 0;
+        padding: 20px 10px;
         font-size: 1.9em;
         border: 4px solid var(--color-black);
         transition: 0.3s ease-in-out;
@@ -51,14 +58,20 @@
           font-weight: 400;
         }
       }
-      & div {
-        font-size: 1.2em;
-        height: max-content;
-        padding: 3px 5px;
-        border: 3px solid var(--color-black);
-        transition: 0.3s ease-in-out;
-        &:hover {
-          transform: scale(1.05);
+      &-status {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        & div {
+          font-size: 1.2em;
+          height: max-content;
+          padding: 5px 5px;
+          border: 3px solid var(--color-black);
+          transition: 0.3s ease-in-out;
+          &:hover {
+            transform: scale(1.05);
+          }
         }
       }
     }

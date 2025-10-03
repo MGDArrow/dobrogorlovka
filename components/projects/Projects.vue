@@ -2,24 +2,29 @@
   <section class="projects" id="projects">
     <h2>Наши проекты</h2>
     <div class="projects__cards">
-      <ProjectsCard
-        :photoSrc="`projects/digital.webp`"
-        @click="setRoute('digital')"
-      >
-        <TeamName>
-          <p>
-            <strong>Цифровой иммунитет</strong> Учись, Играй, Будь в
-            безопасности
-          </p>
-          <span>
-            Проект по обучению детей из многодетных семей навыкам пользования
-            офисных программ, основам кибербезопасности, противостояния
-            кибербуллингу и закладывание в подростков идей о морали в интернете.
-          </span>
-        </TeamName>
-      </ProjectsCard>
+      <div class="projects__cards-full">
+        <ProjectsCard
+          :photoSrc="`projects/digital.webp`"
+          :status="'Активный'"
+          @click="setRoute('digital')"
+        >
+          <TeamName>
+            <p>
+              <strong>Цифровой иммунитет</strong> Учись, Играй, Будь в
+              безопасности
+            </p>
+            <span>
+              Проект по обучению детей из многодетных семей навыкам пользования
+              офисных программ, основам кибербезопасности, противостояния
+              кибербуллингу и закладывание в подростков идей о морали в
+              интернете
+            </span>
+          </TeamName>
+        </ProjectsCard>
+      </div>
       <ProjectsCard
         :photoSrc="`projects/pulse.webp`"
+        :status="'Активный'"
         @click="setRoute('pulse')"
       >
         <TeamName>
@@ -27,7 +32,20 @@
           <span
             >Проект систематических акций по сдаче донорской крови и её
             компонентов, которые призваны повысить количество потенциальных
-            доноров среди молодёжи.
+            доноров среди молодёжи
+          </span>
+        </TeamName>
+      </ProjectsCard>
+      <ProjectsCard
+        :photoSrc="`projects/rill.webp`"
+        :status="'Активный'"
+        @click="setRoute('rill')"
+      >
+        <TeamName>
+          <p><strong>Родник Добра</strong></p>
+          <span
+            >Проект по помощи городу в обеспечении водой населения ввиду трудной
+            ситуации с водоснабжением
           </span>
         </TeamName>
       </ProjectsCard>
@@ -48,6 +66,7 @@
   .projects__cards {
     margin: 20px auto;
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     width: 80%;
     @media screen and (max-width: 1599px) {
