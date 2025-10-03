@@ -91,7 +91,7 @@
         этому вредоносному явлению.
       </p>
       <ProjectsPhotos :photos="photos.step4_2" :photos-all="photosAll" />
-      <!-- <p>ПО МЕРЕ РЕАЛИЗАЦИИ ШАГА ИНФОРМАЦИЯ БУДЕТ ДОБАВЛЯТЬСЯ</p> -->
+      <p>ПО МЕРЕ РЕАЛИЗАЦИИ ШАГА ИНФОРМАЦИЯ БУДЕТ ДОБАВЛЯТЬСЯ</p>
     </ProjectsStep>
     <ProjectsStep
       :title="'Шаг 3. Открытие.'"
@@ -262,7 +262,7 @@
 </template>
 
 <script setup lang="ts">
-  import { DIGITAL as project } from '~/assets/env';
+  import { getAllPhoto, DIGITAL as project } from '~/assets/env';
   import MenuClient from '~/components/projects/Menu.client.vue';
 
   const bigCards = project.team;
@@ -282,16 +282,8 @@
   ];
 
   const photos = project.photos;
-  const photosAll = [
-    ...photos.step3_1,
-    ...photos.step3_2,
-    ...photos.step3_3,
-    ...photos.step3_4,
-    ...photos.step3_5,
-    ...photos.step2_1,
-    ...photos.step2_2,
-    ...photos.step1,
-  ];
+
+  const photosAll = getAllPhoto(project.photos);
 </script>
 
 <style scoped lang="scss"></style>

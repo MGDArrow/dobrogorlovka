@@ -1,3 +1,5 @@
+import type { TStepPhoto } from '~/types/types';
+
 export const ENV = {
   photoArray: [
     'photo_01',
@@ -201,42 +203,6 @@ export const DIGITAL = {
     'Софинансирование': 204090.0,
   },
   photos: {
-    step1: [
-      'digital/step1_01.webp',
-      'digital/step1_02.webp',
-      'digital/step1_03.webp',
-    ],
-    step2_1: [
-      'digital/step2_1_01.webp',
-      'digital/step2_1_02.webp',
-      'digital/step2_1_03.webp',
-      'digital/step2_1_04.webp',
-    ],
-    step2_2: [
-      'digital/step2_2_01.webp',
-      'digital/step2_2_02.webp',
-      'digital/step2_2_03.webp',
-      'digital/step2_2_04.webp',
-    ],
-    step3_1: [
-      'digital/step3_1_01.webp',
-      'digital/step3_1_02.webp',
-      'digital/step3_1_03.webp',
-      'digital/step3_1_04.webp',
-    ],
-    step3_2: [
-      'digital/step3_2_01.webp',
-      'digital/step3_2_02.webp',
-      'digital/step3_2_03.webp',
-    ],
-    step3_3: ['digital/step3_3_01.webp', 'digital/step3_3_02.webp'],
-    step3_4: [
-      'digital/step3_4_01.webp',
-      'digital/step3_4_02.webp',
-      'digital/step3_4_03.webp',
-      'digital/step3_4_04.webp',
-    ],
-    step3_5: ['digital/step3_5_01.webp', 'digital/step3_5_02.webp'],
     step4_1: [
       {
         type: 'photo',
@@ -270,6 +236,42 @@ export const DIGITAL = {
         photo: 'digital/step4_2_10_02_01.webp',
         date: '02/10/2025',
       },
+    ],
+    step3_1: [
+      'digital/step3_1_01.webp',
+      'digital/step3_1_02.webp',
+      'digital/step3_1_03.webp',
+      'digital/step3_1_04.webp',
+    ],
+    step3_2: [
+      'digital/step3_2_01.webp',
+      'digital/step3_2_02.webp',
+      'digital/step3_2_03.webp',
+    ],
+    step3_3: ['digital/step3_3_01.webp', 'digital/step3_3_02.webp'],
+    step3_4: [
+      'digital/step3_4_01.webp',
+      'digital/step3_4_02.webp',
+      'digital/step3_4_03.webp',
+      'digital/step3_4_04.webp',
+    ],
+    step3_5: ['digital/step3_5_01.webp', 'digital/step3_5_02.webp'],
+    step2_1: [
+      'digital/step2_1_01.webp',
+      'digital/step2_1_02.webp',
+      'digital/step2_1_03.webp',
+      'digital/step2_1_04.webp',
+    ],
+    step2_2: [
+      'digital/step2_2_01.webp',
+      'digital/step2_2_02.webp',
+      'digital/step2_2_03.webp',
+      'digital/step2_2_04.webp',
+    ],
+    step1: [
+      'digital/step1_01.webp',
+      'digital/step1_02.webp',
+      'digital/step1_03.webp',
     ],
   },
 };
@@ -335,4 +337,11 @@ export const getHrefContacts = (label: string, value: string) => {
   if (label === 'Юридический адрес')
     return `https://yandex.ru/maps/?whatshere[point]=37.996122,48.306559&whatshere[zoom]=17`;
   return '';
+};
+
+export const getAllPhoto = (photos: { [key: string]: TStepPhoto[] }) => {
+  const allArrays = Object.entries(photos);
+  const endArrays: TStepPhoto[] = [];
+  allArrays.forEach((step) => endArrays.push(...step[1]));
+  return endArrays;
 };

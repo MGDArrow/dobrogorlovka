@@ -48,7 +48,7 @@
 
   interface Props {
     photos: TStepPhoto[];
-    photosAll: string[];
+    photosAll: TStepPhoto[];
   }
 
   const props = defineProps<Props>();
@@ -57,21 +57,25 @@
 
   const isArrowLeft = computed(() => {
     if (popup.value === null) return false;
-    return props.photosAll.findIndex((photo) => photo === popup.value) !== 0;
+    return getCurrentIndex() !== 0;
   });
   const isArrowRight = computed(() => {
     if (props.photos.length === 1) return false;
-    return (
-      props.photosAll.findIndex((photo) => photo === popup.value) !==
-      props.photosAll.length - 1
-    );
+    return getCurrentIndex() !== props.photosAll.length - 1;
   });
 
+  function getCurrentIndex() {
+    const popupPhotoName =
+      typeof popup.value === 'string' ? popup.value : popup.value?.photo;
+    const index = props.photosAll.findIndex((photo) => {
+      const arrayPhotoName = typeof photo === 'string' ? photo : photo.photo;
+      return arrayPhotoName === popupPhotoName;
+    });
+    return index;
+  }
+
   function changePhoto(inc: -1 | 1) {
-    popup.value =
-      props.photosAll[
-        props.photosAll.findIndex((photo) => photo === popup.value) + inc
-      ];
+    popup.value = props.photosAll[getCurrentIndex() + inc];
   }
 </script>
 

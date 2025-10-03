@@ -141,6 +141,7 @@
         cursor: pointer;
         opacity: 0.3;
         transition: 0.3s ease-in-out;
+        z-index: 11;
         &:hover {
           opacity: 1;
         }

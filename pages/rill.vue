@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-  import { RILL as project } from '~/assets/env';
+  import { getAllPhoto, RILL as project } from '~/assets/env';
   import MenuClient from '~/components/projects/Menu.client.vue';
 
   const menu = [
@@ -67,7 +67,7 @@
   ];
 
   const photos = project.photos;
-  const photosAll = [...photos.step1_1, ...photos.step1_2];
+  const photosAll = getAllPhoto(project.photos);
 </script>
 
 <style scoped lang="scss"></style>

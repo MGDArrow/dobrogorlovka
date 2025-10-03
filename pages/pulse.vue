@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-  import { PULSE as project } from '~/assets/env';
+  import { getAllPhoto, PULSE as project } from '~/assets/env';
   import MenuClient from '~/components/projects/Menu.client.vue';
 
   const menu = [
@@ -62,7 +62,7 @@
   ];
 
   const photos = project.photos;
-  const photosAll = [...photos.step1];
+  const photosAll = getAllPhoto(project.photos);
 </script>
 
 <style scoped lang="scss"></style>
