@@ -91,6 +91,7 @@
         этому вредоносному явлению.
       </p>
       <ProjectsPhotos :photos="photos.step4_2" :photos-all="photosAll" />
+      <ProjectsWait />
     </ProjectsStep>
     <ProjectsStep
       :title="'Шаг 3. Открытие.'"
