@@ -220,6 +220,12 @@ export const DIGITAL = {
         date: '23/09/2025',
       },
       {
+        type: 'video',
+        photo: 'digital/v_02.webp',
+        link: 'https://vk.com/video_ext.php?oid=-229630779&id=456239024&hd=1',
+        date: '23/09/2025',
+      },
+      {
         type: 'photo',
         photo: 'digital/step4_1_09_30_01.webp',
         date: '30/09/2025',
@@ -230,6 +236,12 @@ export const DIGITAL = {
         type: 'photo',
         photo: 'digital/step4_2_09_18_01.webp',
         date: '18/09/2025',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_01.webp',
+        link: 'https://vk.com/video_ext.php?oid=-229630779&id=456239025&hd=3',
+        date: '23/09/2025',
       },
       {
         type: 'photo',

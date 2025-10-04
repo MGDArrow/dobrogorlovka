@@ -19,5 +19,6 @@ export interface IVideo {
   type: string | 'video';
   photo: string;
   link: string;
+  date?: string;
 }
-export type TStepPhoto = string | IPhotoDate;
+export type TStepPhoto = string | IPhotoDate | IVideo;

@@ -12,6 +12,13 @@
         loading="lazy"
       />
       <div
+        class="project-photos__video"
+        v-if="typeof photo !== 'string' && photo.type === 'video'"
+        @click="popup = photo"
+      >
+        <img src="/play.svg" alt="play" />
+      </div>
+      <div
         class="project-photos__date"
         v-if="typeof photo !== 'string' && photo.date"
       >
@@ -30,12 +37,22 @@
   >
     <div class="popup-photo__base">
       <img
+        v-if="typeof popup === 'string' || popup.type !== 'video'"
         :src="`/projects/${typeof popup === 'string' ? popup : popup.photo}`"
         alt="Фото"
       />
+      <iframe
+        v-if="typeof popup !== 'string' && popup.type === 'video'"
+        :src="popup.link"
+        class="videoframe"
+        style="background-color: #000"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
       <div
         class="popup-photo__date"
-        v-if="typeof popup !== 'string' && popup.date"
+        v-if="typeof popup !== 'string' && popup.type !== 'video' && popup.date"
       >
         Дата: {{ popup.date }}
       </div>
@@ -122,6 +139,23 @@
         transform: scale(1.05);
       }
     }
+    &__video {
+      width: 20%;
+      height: 20%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & img {
+        width: 80%;
+        border: 0;
+      }
+    }
     &__date {
       padding: 3px 0;
       width: calc(100% + 4px);
@@ -161,5 +195,10 @@
       text-align: center;
       background: rgba(0, 0, 0, 0.5);
     }
+  }
+  .videoframe {
+    min-width: 50vw;
+    width: 100%;
+    aspect-ratio: 1280/720;
   }
 </style>

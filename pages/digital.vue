@@ -91,7 +91,6 @@
         этому вредоносному явлению.
       </p>
       <ProjectsPhotos :photos="photos.step4_2" :photos-all="photosAll" />
-      <p>ПО МЕРЕ РЕАЛИЗАЦИИ ШАГА ИНФОРМАЦИЯ БУДЕТ ДОБАВЛЯТЬСЯ</p>
     </ProjectsStep>
     <ProjectsStep
       :title="'Шаг 3. Открытие.'"
