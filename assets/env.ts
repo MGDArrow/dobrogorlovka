@@ -300,6 +300,7 @@ export const PULSE = {
     ossibge: 'Отдел социального служения Горловской Епархии',
   },
   photos: {
+    step2: ['pulse/step2_01.webp', 'pulse/step2_02.webp'],
     step1: [
       'pulse/step1_01.webp',
       'pulse/step1_02.webp',

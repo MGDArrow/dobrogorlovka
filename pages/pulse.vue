@@ -31,10 +31,26 @@
       id="partners"
     />
     <ProjectsStep
+      :title="'Сдача 2'"
+      :subtitle="''"
+      :date="'16.10.2025'"
+      :status="'Активный'"
+      id="step2"
+      class="point"
+    >
+      <p>
+        Директор АНО "ДоброГорловка" и Ответственный за волонтерскую работу в
+        нашей организации Кирилл Николаевич Марковский в очередной раз
+        присоединились к акции Отдела Социального служения Горловской епархии
+        <UiStrong>"Пульс Добра"</UiStrong> по сдаче донорской крови.
+      </p>
+      <p>Надеемся, что и наш скромный вклад принесет пользу!</p>
+      <ProjectsPhotos :photos="photos.step2" :photos-all="photosAll" />
+    </ProjectsStep>
+    <ProjectsStep
       :title="'Сдача 1: '"
       :subtitle="'День защиты детей 2025'"
       :date="'01.06.2025'"
-      :status="'Активный'"
       id="step1"
       class="point"
     >
@@ -58,6 +74,7 @@
   const menu = [
     { name: 'О проекте', id: 'about' },
     { name: 'Партнёры проекта', id: 'partners' },
+    { name: 'Сдача 2', id: 'step2' },
     { name: 'Сдача 1', id: 'step1' },
   ];
 
