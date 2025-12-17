@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: mgdprog/dobrogorlovka-test
+          images: mgdprog/dobrogorlovka
           tags: |
             type=ref,event=branch
             type=ref,event=pr
