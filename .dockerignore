@@ -1,0 +1,11 @@
+.dockerignore
+node_modules
+.nuxt
+.output
+.git
+.DS_Store
+*.log
+.env
+.env.*
+coverage
+dist
