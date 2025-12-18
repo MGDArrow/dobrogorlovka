@@ -27,3 +27,5 @@ jobs:
           context: .
           push: true
           tags: mgdprog/dobrogorlovka:latest
+          cache-from: type=registry,ref=mgdprog/dobrogorlovka:latest
+          cache-to: type=inline
