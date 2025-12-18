@@ -18,8 +18,8 @@ WORKDIR /app
 
 # Копируем только необходимые файлы из стадии builder
 COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+# COPY --from=builder /app/node_modules ./node_modules
+# COPY --from=builder /app/package.json ./package.json
 
 # Указываем переменные окружения
 ENV NUXT_HOST=0.0.0.0
