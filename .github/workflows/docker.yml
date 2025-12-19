@@ -33,4 +33,4 @@ jobs:
       - name: Trigger Dokploy webhook
         if: success()
         run: |
-          curl -X POST https://dokploy.n-cook.ru/api/deploy/uw5mU1iLnij-Skx5ZkFRq
+          curl -X POST ${{ secrets.DOKPLOY_WEBHOOK }}
