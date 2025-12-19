@@ -1,6 +1,6 @@
 <template>
   <section class="about" id="about">
-    <h2>О нас</h2>
+    <h2>О нас TTT</h2>
     <div class="about__body">
       <div class="about__name">
         <AboutCard>
