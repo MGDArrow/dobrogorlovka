@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build, Push and Deploy
 
 on:
   push:
@@ -29,3 +29,8 @@ jobs:
           tags: mgdprog/dobrogorlovka:latest
           cache-from: type=registry,ref=mgdprog/dobrogorlovka:latest
           cache-to: type=inline
+
+      - name: Trigger Dokploy webhook
+        if: success()
+        run: |
+          curl -X POST https://dokploy.n-cook.ru/api/deploy/uw5mU1iLnij-Skx5ZkFRq
