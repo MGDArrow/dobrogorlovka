@@ -230,6 +230,8 @@ export const DIGITAL = {
         photo: 'digital/step4_1_09_30_01.webp',
         date: '30/09/2025',
       },
+      'digital/step4_1_10_01.webp',
+      'digital/step4_1_10_02.webp',
     ],
     step4_2: [
       {
@@ -248,6 +250,24 @@ export const DIGITAL = {
         photo: 'digital/step4_2_10_02_01.webp',
         date: '02/10/2025',
       },
+    ],
+    step4_3: [
+      'digital/step4_3_01.webp',
+      'digital/step4_3_02.webp',
+      'digital/step4_3_03.webp',
+      'digital/step4_3_04.webp',
+    ],
+    step4_4: ['digital/step4_4_01.webp', 'digital/step4_4_02.webp'],
+    step4_5: [
+      'digital/step4_5_01.webp',
+      'digital/step4_5_02.webp',
+      'digital/step4_5_03.webp',
+      'digital/step4_5_04.webp',
+    ],
+    step4_6: [
+      'digital/step4_6_01.webp',
+      'digital/step4_6_02.webp',
+      'digital/step4_6_03.webp',
     ],
     step3_1: [
       'digital/step3_1_01.webp',
