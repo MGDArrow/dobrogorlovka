@@ -8,7 +8,7 @@ export interface IPersona {
   description: string;
 }
 
-export type TStatus = 'Активный' | 'Завершённый';
+export type TStatus = 'Активный' | 'Завершённый' | 'Постоянный';
 
 export interface IPhotoDate {
   type: string | 'photo';

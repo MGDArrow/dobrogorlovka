@@ -1,11 +1,5 @@
 <template>
-  <div
-    class="project-status"
-    :class="{
-      'status-green': active === true && status === 'Завершённый',
-      'status-orange': active === true && status === 'Активный',
-    }"
-  >
+  <div class="project-status" :style="{ color: statusColor }">
     {{ status }}
   </div>
 </template>
@@ -18,9 +12,18 @@
     active?: boolean;
   }
 
-  withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<Props>(), {
     status: 'Завершённый',
     active: true,
+  });
+
+  const statusColor = computed(() => {
+    if (!props.active) return '';
+    return props.status === 'Активный'
+      ? 'var(--color-green)'
+      : props.status === 'Завершённый'
+        ? 'var(--color-orange)'
+        : 'var(--color-blue)';
   });
 </script>
 
@@ -37,12 +40,5 @@
     &:hover {
       transform: scale(1.05);
     }
-  }
-
-  .status-green {
-    color: var(--color-green);
-  }
-  .status-orange {
-    color: var(--color-orange);
   }
 </style>

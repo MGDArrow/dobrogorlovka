@@ -56,16 +56,16 @@ export const ENV = {
       description:
         'Педадог. Имеет два высших педагогических образования, одно из которых преподаватель истории, второе - организатор физкультуры и спорта. Преподаватель ФГБОУ ВО «ДГПУ им. В. Шаталова».',
     },
-    {
-      id: 5,
-      surname: 'Марковский',
-      name: 'Кирилл Николаевич',
-      photo: 'persona5',
-      post: 'Ответственный за волонтёрскоё движение',
-      type: 'small',
-      description:
-        'Помощник руководителя Отдела по делам молодёжи Горловской епархии Русской Православной Церкви.',
-    },
+    // {
+    //   id: 5,
+    //   surname: 'Марковский',
+    //   name: 'Кирилл Николаевич',
+    //   photo: 'persona5',
+    //   post: 'Ответственный за волонтёрскоё движение',
+    //   type: 'small',
+    //   description:
+    //     'Помощник руководителя Отдела по делам молодёжи Горловской епархии Русской Православной Церкви.',
+    // },
   ],
   partners: {
     gorlovka: 'Горловская епархия',
@@ -203,6 +203,34 @@ export const DIGITAL = {
     'Софинансирование': 204090.0,
   },
   photos: {
+    step5_1: [
+      'digital/step5_1_01.webp',
+      'digital/step5_1_02.webp',
+      'digital/step5_1_03.webp',
+      'digital/step5_1_04.webp',
+      'digital/step5_2_01.webp',
+      'digital/step5_2_02.webp',
+      'digital/step5_2_03.webp',
+      'digital/step5_2_04.webp',
+    ],
+    step5_3: ['digital/step5_3_01.webp'],
+    step5_4: ['digital/step5_4_01.webp', 'digital/step5_4_02.webp'],
+    step5_5: [
+      'digital/step5_5_01.webp',
+      'digital/step5_5_02.webp',
+      'digital/step5_5_03.webp',
+      'digital/step5_5_04.webp',
+      'digital/step5_5_05.webp',
+    ],
+    step5_0: [
+      'digital/step5_0_01.webp',
+      'digital/step5_0_02.webp',
+      'digital/step5_0_03.webp',
+      'digital/step5_0_04.webp',
+      'digital/step5_0_05.webp',
+      'digital/step5_0_06.webp',
+      'digital/step5_0_07.webp',
+    ],
     step4_1: [
       {
         type: 'photo',
@@ -247,6 +275,66 @@ export const DIGITAL = {
         type: 'photo',
         photo: 'digital/step4_2_10_02_01.webp',
         date: '02/10/2025',
+      },
+    ],
+    step4_3: [
+      'digital/step4_3_01.webp',
+      'digital/step4_3_02.webp',
+      'digital/step4_3_03.webp',
+      'digital/step4_3_04.webp',
+    ],
+    step4_4: ['digital/step4_4_01.webp', 'digital/step4_4_02.webp'],
+    step4_5: [
+      'digital/step4_5_01.webp',
+      'digital/step4_5_02.webp',
+      'digital/step4_5_03.webp',
+      'digital/step4_5_04.webp',
+    ],
+    step4_6: [
+      'digital/step4_6_01.webp',
+      'digital/step4_6_02.webp',
+      'digital/step4_6_03.webp',
+      {
+        type: 'video',
+        photo: 'digital/v_03.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239061&hash=bc4c247a0430edd4&hd=3',
+        date: 'Тема 1',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_04.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239062&hash=d41cd3689a487616&hd=3',
+        date: 'Тема 2',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_05.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239063&hash=901954a8d2cdff47&hd=3',
+        date: 'Тема 3',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_06.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239064&hash=b41bd7ea80b71581&hd=3',
+        date: 'Тема 4',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_07.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239068&hash=193e045d2a7ed303&hd=3',
+        date: 'Тема 5',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_08.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239069&hash=8640ea8671a9e86a&hd=3',
+        date: 'Тема 6',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_09.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239074&hash=3e23635903256dbf&hd=3',
+        date: 'Тема 7',
       },
     ],
     step3_1: [

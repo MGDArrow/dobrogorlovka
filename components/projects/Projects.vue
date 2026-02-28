@@ -2,10 +2,37 @@
   <section class="projects" id="projects">
     <h2>Наши проекты</h2>
     <div class="projects__cards">
+      <ProjectsCard
+        :photoSrc="`projects/pulse.webp`"
+        :status="'Постоянный'"
+        @click="setRoute('pulse')"
+      >
+        <TeamName>
+          <p><strong>Пульс Добра</strong></p>
+          <span
+            >Проект систематических акций по сдаче донорской крови и её
+            компонентов, которые призваны повысить количество потенциальных
+            доноров среди молодёжи
+          </span>
+        </TeamName>
+      </ProjectsCard>
+      <ProjectsCard
+        :photoSrc="`projects/rill.webp`"
+        :status="'Постоянный'"
+        @click="setRoute('rill')"
+      >
+        <TeamName>
+          <p><strong>Родник Добра</strong></p>
+          <span
+            >Проект по помощи городу в обеспечении водой населения ввиду трудной
+            ситуации с водоснабжением
+          </span>
+        </TeamName>
+      </ProjectsCard>
       <div class="projects__cards-full">
         <ProjectsCard
           :photoSrc="`projects/digital.webp`"
-          :status="'Активный'"
+          :status="'Завершённый'"
           @click="setRoute('digital')"
         >
           <TeamName>
@@ -22,33 +49,6 @@
           </TeamName>
         </ProjectsCard>
       </div>
-      <ProjectsCard
-        :photoSrc="`projects/pulse.webp`"
-        :status="'Активный'"
-        @click="setRoute('pulse')"
-      >
-        <TeamName>
-          <p><strong>Пульс Добра</strong></p>
-          <span
-            >Проект систематических акций по сдаче донорской крови и её
-            компонентов, которые призваны повысить количество потенциальных
-            доноров среди молодёжи
-          </span>
-        </TeamName>
-      </ProjectsCard>
-      <ProjectsCard
-        :photoSrc="`projects/rill.webp`"
-        :status="'Активный'"
-        @click="setRoute('rill')"
-      >
-        <TeamName>
-          <p><strong>Родник Добра</strong></p>
-          <span
-            >Проект по помощи городу в обеспечении водой населения ввиду трудной
-            ситуации с водоснабжением
-          </span>
-        </TeamName>
-      </ProjectsCard>
     </div>
   </section>
 </template>
