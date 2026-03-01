@@ -41,6 +41,7 @@
         </DocumentsCard>
       </div>
     </div>
+    <UiAlert v-if="alert" v-model="alert" />
   </section>
 </template>
 
@@ -48,6 +49,8 @@
   import { ENV, getHrefContacts } from '~/assets/env';
 
   const isHover = ref(false);
+
+  const alert = ref('');
 
   const requisites = ENV.requisites;
   const contacts = ENV.contacts;
@@ -58,7 +61,7 @@
   const copyText = (label: string, value: string) => {
     navigator.clipboard
       .writeText(`${label}: ${value}`)
-      .then(() => alert(`${label} скопирован в буфер обмена`));
+      .then(() => (alert.value = `Cкопировано`));
   };
 
   onMounted(() => {
