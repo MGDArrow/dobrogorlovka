@@ -296,6 +296,48 @@ export const DIGITAL = {
       'digital/step4_6_01.webp',
       'digital/step4_6_02.webp',
       'digital/step4_6_03.webp',
+      {
+        type: 'video',
+        photo: 'digital/v_03.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239061&hash=bc4c247a0430edd4&hd=3',
+        date: 'Тема 1',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_04.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239062&hash=d41cd3689a487616&hd=3',
+        date: 'Тема 2',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_05.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239063&hash=901954a8d2cdff47&hd=3',
+        date: 'Тема 3',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_06.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239064&hash=b41bd7ea80b71581&hd=3',
+        date: 'Тема 4',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_07.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239068&hash=193e045d2a7ed303&hd=3',
+        date: 'Тема 5',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_08.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239069&hash=8640ea8671a9e86a&hd=3',
+        date: 'Тема 6',
+      },
+      {
+        type: 'video',
+        photo: 'digital/v_09.webp',
+        link: 'https://vkvideo.ru/video_ext.php?oid=-229630779&id=456239074&hash=3e23635903256dbf&hd=3',
+        date: 'Тема 7',
+      },
     ],
     step3_1: [
       'digital/step3_1_01.webp',
