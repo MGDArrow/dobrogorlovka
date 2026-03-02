@@ -54,8 +54,6 @@
 </template>
 
 <script setup lang="ts">
-  import { setLoading } from '~/assets/env';
-
   function setRoute(route: string) {
     setLoading();
     setTimeout(() => useRouter().push(route), 1000);

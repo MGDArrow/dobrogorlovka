@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ENV, getHrefContacts } from '~/assets/env';
+  import { ENV } from '~/assets/env';
 
   const isHover = ref(false);
 

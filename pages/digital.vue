@@ -419,8 +419,8 @@
 </template>
 
 <script setup lang="ts">
-  import { getAllPhoto, DIGITAL as project } from '~/assets/env';
   import MenuClient from '~/components/projects/Menu.client.vue';
+  import { DIGITAL as project } from '~/content/digital.project';
 
   const bigCards = project.team;
   const smallCards = ref(

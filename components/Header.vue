@@ -47,8 +47,6 @@
 </template>
 
 <script setup lang="ts">
-  import { setLoading } from '~/assets/env';
-
   function setRoute(route: string) {
     if (useRoute().name === 'index')
       useRouter().push({ path: '/', hash: route });

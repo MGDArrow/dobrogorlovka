@@ -57,8 +57,8 @@
 </template>
 
 <script setup lang="ts">
-  import { getAllPhoto, RILL as project } from '~/assets/env';
   import MenuClient from '~/components/projects/Menu.client.vue';
+  import { RILL as project } from '~/content/rill.project';
 
   const menu = [
     { name: 'О проекте', id: 'about' },

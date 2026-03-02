@@ -68,8 +68,8 @@
 </template>
 
 <script setup lang="ts">
-  import { getAllPhoto, PULSE as project } from '~/assets/env';
   import MenuClient from '~/components/projects/Menu.client.vue';
+  import { PULSE as project } from '~/content/pulse.project';
 
   const menu = [
     { name: 'О проекте', id: 'about' },
