@@ -9,6 +9,7 @@
     />
     <Photos />
     <Partners :partners="partners" :title="'Наши партнёры'" />
+    <Awards />
     <Documents />
     <Contacts />
   </div>

@@ -14,6 +14,7 @@ export const ENV = {
     'photo_10',
     'photo_11',
     'photo_12',
+    'photo_13',
   ],
   team: [
     {
@@ -86,6 +87,16 @@ export const ENV = {
     'Юридический адрес':
       '284637, Донецкая Народная Республика, г. Горловка, пр-кт Победы, д. 112, кв. 7',
   },
+  awards: [
+    {
+      date: '',
+      photo: 'award_01',
+    },
+    {
+      date: 'Победители премии "Гордость Донбасса 2025" в номинации "НКО-лидер"',
+      photo: 'award_02',
+    },
+  ],
   messangers: [
     {
       title: '@dobrogorlovkanko',

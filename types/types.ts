@@ -10,6 +10,10 @@ export interface IPersona {
 
 export type TStatus = 'Активный' | 'Завершённый' | 'Постоянный';
 
+export interface IPhotoAward {
+  photo: string;
+  date: string;
+}
 export interface IPhotoDate {
   type: string | 'photo';
   photo: string;
