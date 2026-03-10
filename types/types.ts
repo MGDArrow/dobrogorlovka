@@ -58,4 +58,7 @@ export type TIcons =
   | 'services'
   | 'profile'
   | 'cemetery'
-  | 'church';
+  | 'church'
+  | 'info'
+  | 'contacts'
+  | 'colors';

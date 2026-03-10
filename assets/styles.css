@@ -111,6 +111,13 @@ h4 {
     padding: 0 5px;
   }
 }
+h5 {
+  font-size: 1.2em;
+  padding: 0 10px;
+  font-weight: 500;
+  margin: 20px 0;
+  box-sizing: border-box;
+}
 
 .info-list {
   font-size: 1.2em;

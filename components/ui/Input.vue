@@ -31,7 +31,7 @@
       margin: 15px 0;
     }
     & p {
-      width: 100%;
+      width: calc(100% - 10px);
       margin-bottom: 5px;
       font-size: 1.2em;
       font-weight: 600;
