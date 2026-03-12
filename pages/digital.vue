@@ -55,20 +55,52 @@
       class="project-partners point"
       id="partners"
     />
-    <!-- <ProjectsStep
-      :title="'Итоги'"
+
+    <Documents>
+      <h2>Документы проекта</h2>
+      <!-- <h3>Отчёты</h3>
+      <div class="documents__cards">
+        <DocumentsCard
+          v-for="report in reports"
+          :key="report.name"
+          :size="report.size"
+          :href="`/docs/${report.link}.pdf`"
+          download
+        >
+          {{ report.name }}
+        </DocumentsCard>
+      </div> -->
+      <h3>Презентации учеников</h3>
+      <div class="documents__cards">
+        <DocumentsCard
+          v-for="doc in docs"
+          :key="doc.name"
+          :size="doc.size"
+          :href="`/docs/${doc.link}.pptx`"
+          download
+        >
+          {{ doc.name }}
+        </DocumentsCard>
+      </div>
+    </Documents>
+    <ProjectsStep
+      :title="''"
       :subtitle="''"
-      :date="'28.02.2026'"
-      :status="'Активный'"
-      id="step6"
-      class="step6"
+      :date="''"
+      :status="''"
+      id="results"
+      class="results"
     >
+      <h2>Итоги проекта</h2>
       <p>
-        АНО "ДоброГорловка" считает проект успешным и благодарит Фонд
-        президентских грантов за доверие и финансирование проекта!
+        АНО "ДоброГорловка" считает проект успешным и благодарит
+        <UiStrong>Фонд президентских грантов</UiStrong> за доверие и
+        финансирование проекта!
       </p>
-      <ProjectsWait />
-    </ProjectsStep> -->
+      <ProjectsCharts>
+        <ProjectsChart v-for="chart in charts" :chart />
+      </ProjectsCharts>
+    </ProjectsStep>
     <ProjectsSteps>
       <ProjectsStep
         :title="'Шаг 6. Финал.'"
@@ -121,7 +153,7 @@
           >. И что можно сказать —
           <UiStrong>время и силы специалистов были потрачены не зря!</UiStrong>
         </p>
-        <p>Лучшие презентации опубликованы в разделе результатов проекта.</p>
+        <p>Лучшие презентации опубликованы в разделе документов проекта.</p>
         <ProjectsPhotos :photos="photos.step5_0" :photos-all="photosAll" />
       </ProjectsStep>
       <ProjectsStep
@@ -432,7 +464,8 @@
     { name: 'Финансирование проекта', id: 'finance' },
     { name: 'Команда проекта', id: 'team' },
     { name: 'Партнёры проекта', id: 'partners' },
-    // { name: 'Итоги', id: 'step6' },
+    { name: 'Документы проекта', id: 'docs' },
+    { name: 'Итоги проекта', id: 'results' },
     { name: 'Шаг 6. Финал', id: 'step6' },
     { name: 'Шаг 5. Экзамен', id: 'step5' },
     { name: 'Шаг 4. Обучение', id: 'step4' },
@@ -442,6 +475,9 @@
   ];
 
   const photos = project.photos;
+  // const reports = project.reports;
+  const charts = project.charts;
+  const docs = project.docs;
 
   const photosAll = getAllPhoto(project.photos);
 </script>

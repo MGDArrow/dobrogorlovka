@@ -1,12 +1,12 @@
 <template>
   <section class="project-step">
     <div class="project-step__head">
-      <h2>
+      <h2 v-if="title">
         {{ title }}<span>{{ subtitle }}</span>
       </h2>
       <div class="project-step__head-status">
-        <div>{{ date }}</div>
-        <ProjectsStatus :status="status" />
+        <div v-if="date">{{ date }}</div>
+        <ProjectsStatus v-if="status" :status="status" />
       </div>
     </div>
 
@@ -24,7 +24,7 @@
     title: string;
     subtitle: string;
     date: string;
-    status?: 'Активный' | 'Завершённый';
+    status?: 'Активный' | 'Завершённый' | '';
   }
 
   withDefaults(defineProps<Props>(), {

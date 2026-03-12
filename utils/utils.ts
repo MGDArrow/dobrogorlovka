@@ -4,12 +4,13 @@ export function scrollActivation(
   ref: HTMLElement | null,
   activated: Ref<boolean>,
   PERCENT = 0.45,
+  always: boolean = false,
 ) {
   if (activated.value === true) return;
   if (ref === null) return;
 
   const doc = document.documentElement;
-  if (doc.clientWidth > 768) return;
+  if (doc.clientWidth > 768 && !always) return;
 
   const needScroll = doc.clientHeight * PERCENT + doc.scrollTop;
   const elementTop = ref?.offsetTop;

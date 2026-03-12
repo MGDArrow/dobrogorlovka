@@ -129,12 +129,17 @@ export const ENV = {
       link: 'soGRNO',
     },
   ],
-  reports: [
-    // {
-    // 	'name': 'Отчёт за 2024 год',
-    // 	'size': '3.48 MB',
-    // 	'link': 'o_2024'
-    // },
-  ],
+  // reports: [
+  //   {
+  //     name: 'Аналитический отчёт проекта "Цифровой иммунитет"',
+  //     size: '6.02 MB',
+  //     link: 'o_digital_analytical_report',
+  //   },
+  //   {
+  //     name: 'Финансовый отчёт проекта "Цифровой иммунитет"',
+  //     size: '466 KB',
+  //     link: 'o_digital_financial_report',
+  //   },
+  // ],
   createdLink: 'https://vk.com/mgdarrow',
 };

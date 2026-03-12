@@ -244,4 +244,66 @@ export const DIGITAL = {
       'digital/step1_03.webp',
     ],
   },
+
+  // reports: [
+  //   {
+  //     name: 'Аналитический отчёт',
+  //     size: '6.02 MB',
+  //     link: 'o_digital_analytical_report',
+  //   },
+  //   {
+  //     name: 'Финансовый отчёт',
+  //     size: '466 KB',
+  //     link: 'o_digital_financial_report',
+  //   },
+  // ],
+  docs: [
+    {
+      name: 'Плюсы и минусы появления интернета в социальной культуре',
+      size: '1.35 MB',
+      link: 'digital_presentation_1',
+    },
+    {
+      name: 'АНО «ДоброГорловка»',
+      size: '3.58 MB',
+      link: 'digital_presentation_2',
+    },
+  ],
+  charts: [
+    {
+      name: 'Количество обучающихся',
+      need: 25,
+      made: 25,
+    },
+    {
+      name: 'Количество занятий',
+      need: 35,
+      made: 36,
+    },
+    {
+      name: 'Количество образовательных часов',
+      need: 35,
+      made: 35,
+    },
+    {
+      name: 'Количество единиц контента в сети Интернет',
+      need: 60,
+      made: 74,
+    },
+    {
+      name: 'Материалы о проекте в СМИ',
+      need: 6,
+      made: 6,
+    },
+    {
+      name: 'Привлеченных экспертов',
+      need: 4,
+      made: 11,
+    },
+    {
+      name: 'Количество просмотров',
+      need: 30_000,
+      made: 45_782,
+    },
+  ],
 };
