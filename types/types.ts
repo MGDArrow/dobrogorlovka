@@ -8,7 +8,11 @@ export interface IPersona {
   description: string;
 }
 
-export type TStatus = 'Активный' | 'Завершённый' | 'Постоянный';
+export type TStatus =
+  | 'Активный'
+  | 'Завершённый'
+  | 'Постоянный'
+  | 'Предподготовка';
 
 export interface IPhotoAward {
   photo: string;
@@ -26,3 +30,39 @@ export interface IVideo {
   date?: string;
 }
 export type TStepPhoto = string | IPhotoDate | IVideo;
+
+export type TIcons =
+  | ''
+  | 'angle-left'
+  | 'angle-right'
+  | 'close-cross'
+  | 'close-cross-circle'
+  | 'minus'
+  | 'plus'
+  | 'zero'
+  | 'mail'
+  | 'eye'
+  | 'eye-slash'
+  | 'lock'
+  | 'search'
+  | 'viber'
+  | 'whatsapp'
+  | 'telegram'
+  | 'phone'
+  | 'smartphone'
+  | 'location-cross'
+  | 'clock'
+  | 'calendar'
+  | 'moon'
+  | 'sun'
+  | 'gear'
+  | 'shuffle'
+  | 'list'
+  | 'chart-pie'
+  | 'services'
+  | 'profile'
+  | 'cemetery'
+  | 'church'
+  | 'info'
+  | 'contacts'
+  | 'colors';

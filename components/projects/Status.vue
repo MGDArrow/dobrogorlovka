@@ -23,7 +23,9 @@
       ? 'var(--color-green)'
       : props.status === 'Завершённый'
         ? 'var(--color-orange)'
-        : 'var(--color-blue)';
+        : props.status === 'Предподготовка'
+          ? 'var(--color-pink)'
+          : 'var(--color-blue)';
   });
 </script>
 

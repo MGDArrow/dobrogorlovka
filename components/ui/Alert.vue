@@ -1,7 +1,9 @@
 <template>
   <Teleport to="body">
     <div class="alert">
-      <div class="alert__close" @click="closeAlert()">x</div>
+      <div class="alert__close" @click="closeAlert()">
+        <UiIcon :name="'close-cross'" :size="'15px'" />
+      </div>
       <div class="alert__line"></div>
       <div class="alert__body">{{ modelValue }}</div>
     </div>

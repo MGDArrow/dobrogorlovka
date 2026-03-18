@@ -2,6 +2,37 @@
   <section class="projects" id="projects">
     <h2>Наши проекты</h2>
     <div class="projects__cards">
+      <div class="projects__cards-full">
+        <ProjectsCard
+          :photoSrc="`projects/washing.webp`"
+          :status="'Предподготовка'"
+          @click="setRoute('washing')"
+        >
+          <TeamName>
+            <p>
+              <strong>Стрика Добра</strong>
+            </p>
+            <span>
+              Бесплатная прачечная на 8 стиральных машинок для обеспечения
+              потребностей в стирке вещей жителей города в связи с нестабильной
+              ситуацией с водоснабжением.
+            </span>
+          </TeamName>
+        </ProjectsCard>
+      </div>
+      <ProjectsCard
+        :photoSrc="`projects/rill.webp`"
+        :status="'Постоянный'"
+        @click="setRoute('rill')"
+      >
+        <TeamName>
+          <p><strong>Родник Добра</strong></p>
+          <span
+            >Проект по помощи городу в обеспечении водой населения ввиду трудной
+            ситуации с водоснабжением
+          </span>
+        </TeamName>
+      </ProjectsCard>
       <ProjectsCard
         :photoSrc="`projects/pulse.webp`"
         :status="'Постоянный'"
@@ -13,19 +44,6 @@
             >Проект систематических акций по сдаче донорской крови и её
             компонентов, которые призваны повысить количество потенциальных
             доноров среди молодёжи
-          </span>
-        </TeamName>
-      </ProjectsCard>
-      <ProjectsCard
-        :photoSrc="`projects/rill.webp`"
-        :status="'Постоянный'"
-        @click="setRoute('rill')"
-      >
-        <TeamName>
-          <p><strong>Родник Добра</strong></p>
-          <span
-            >Проект по помощи городу в обеспечении водой населения ввиду трудной
-            ситуации с водоснабжением
           </span>
         </TeamName>
       </ProjectsCard>

@@ -76,6 +76,7 @@
     &__body {
       max-width: 90vw;
       padding: 20px;
+      max-height: 90dvh;
       border: 4px solid var(--color-black);
       border-radius: var(--border-radius);
       background: var(--color-white);
@@ -87,6 +88,7 @@
       @media screen and (max-width: 768px) {
         width: calc(100vw - 28px);
         border-radius: unset;
+        max-height: none;
         max-width: 100vw;
         height: calc(100dvh - 58px);
         padding: 40px 10px 10px;
