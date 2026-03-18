@@ -5,7 +5,7 @@
       <div class="projects__cards-full">
         <ProjectsCard
           :photoSrc="`projects/washing.webp`"
-          :status="'Активный'"
+          :status="'Предподготовка'"
           @click="setRoute('washing')"
         >
           <TeamName>
@@ -13,9 +13,9 @@
               <strong>Стрика Добра</strong>
             </p>
             <span>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis
-              provident quis fugiat, quam porro numquam. Voluptatibus quod
-              aliquid accusamus ex.
+              Бесплатная прачечная на 8 стиральных машинок для обеспечения
+              потребностей в стирке вещей жителей города в связи с нестабильной
+              ситуацией с водоснабжением.
             </span>
           </TeamName>
         </ProjectsCard>

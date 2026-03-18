@@ -8,7 +8,11 @@ export interface IPersona {
   description: string;
 }
 
-export type TStatus = 'Активный' | 'Завершённый' | 'Постоянный';
+export type TStatus =
+  | 'Активный'
+  | 'Завершённый'
+  | 'Постоянный'
+  | 'Предподготовка';
 
 export interface IPhotoAward {
   photo: string;

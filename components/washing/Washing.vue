@@ -9,7 +9,7 @@
         <UiStager :stages v-model="stage" style="margin: 20px auto" />
         <template v-if="stage === 'info'">
           <h5>Ознакомьтесь с важной информацей</h5>
-          <p>Информация</p>
+          <WashingRules />
         </template>
         <template v-if="stage === 'contacts'">
           <h5>Заполните информацию о себе</h5>
@@ -18,7 +18,7 @@
             v-model="form.name"
             :placeholder="'Введите ваше ФИО'"
           />
-          <UiInput
+          <UiInputPhone
             :label="'Телефон:'"
             v-model="form.phone"
             :placeholder="'Введите ваш номер телефона'"
@@ -27,6 +27,11 @@
         <template v-if="stage === 'colors'">
           <h5>Выбирите необходимую категорию стирки</h5>
           <WashingColors />
+          <UiInput
+            :label="'Комментарий'"
+            v-model="form.comment"
+            :placeholder="'Ваш комментарий, при необходимости'"
+          />
         </template>
         <template v-if="stage === 'calendar'">
           <h5>Выбирите доступную дату и время</h5>
@@ -49,7 +54,8 @@
 
   const form = reactive({
     name: '',
-    phone: '',
+    phone: '+7',
+    comment: '',
     date: initDaysj(new Date()),
   });
 

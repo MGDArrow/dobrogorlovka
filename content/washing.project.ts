@@ -2,22 +2,26 @@ export const WASHING = {
   name: 'Стирка Добра',
   subname: '',
   photo: 'washing',
-  date: 'постоянная, периодическая',
+  date: 'предподготовка, старт 20 апреля 2026',
   description: [
-    `Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio commodi
-        incidunt numquam corporis et ratione, minus quae, cupiditate
-        repudiandae, neque alias tempora. Eos ea incidunt suscipit cum
-        repudiandae ipsum voluptatibus non alias explicabo blanditiis nemo
-        exercitationem nam labore a magnam, iure ipsam et delectus dolor
-        voluptates est fugit. Sunt culpa maxime officia unde maiores veritatis
-        deleniti aperiam, tempora voluptatibus quibusdam. Dolorum explicabo
-        harum delectus ullam fugit quis expedita, nam velit eum doloribus
-        tempore itaque molestias optio perspiciatis accusantium odit provident.
-        Laborum recusandae tenetur fugiat sunt nesciunt commodi amet omnis
-        itaque illo dolor ullam beatae quidem, est numquam, ratione, eos
-        adipisci!`,
+    `Бесплатная прачечная на 8 стиральных машинок для обеспечения потребностей в стирке вещей жителей города в связи с нестабильной ситуацией с водоснабжением.`,
   ],
   partners: {
     gorlovka: 'Горловская епархия',
+    onf: 'Народный фронт',
+  },
+  photos: {
+    step2: ['washing/step2_01.webp', 'washing/step2_02.webp'],
+    step1: [
+      'washing/step1_01.webp',
+      'washing/step1_02.webp',
+      'washing/step1_03.webp',
+      'washing/step1_04.webp',
+      'washing/step1_05.webp',
+      'washing/step1_06.webp',
+      'washing/step1_07.webp',
+      'washing/step1_08.webp',
+      'washing/step1_09.webp',
+    ],
   },
 };

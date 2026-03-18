@@ -17,10 +17,26 @@
           <p v-for="(descript, index) in project.description" :key="index">
             {{ descript }}
           </p>
+          <p>Как это работает?</p>
+          <UiList>
+            <li>
+              Заказы на стирку принимаются по предварительной записи через
+              сайт/бот для того, чтобы избежать столпотворений людей и живых
+              очередей;
+            </li>
+            <li>
+              На заранее забронированное время можно принести вещи, не тратя
+              впустую время ожидания, и через условленное время можно забрать
+              уже постиранные вещи;
+            </li>
+            <li>
+              Все процессы стирки будут осуществляют волонтёры «ДоброГорловки»;
+            </li>
+          </UiList>
         </ProjectsDescription>
       </div>
     </div>
-    <Washing />
+    <!-- <Washing /> -->
     <Partners
       :title="'Партнёры проекта'"
       :partners="project.partners"
@@ -28,27 +44,46 @@
       id="partners"
     />
     <ProjectsStep
-      :title="'Закупка'"
+      :title="'Шаг 2. Установка.'"
       :subtitle="''"
-      :date="'26.08.2025'"
+      :date="'18.02.2026 – 19.04.2026'"
+      :status="'Активный'"
+      id="step2"
+      class="point"
+    >
+      <p>
+        Специалистами осуществляется превращение помещений в место, которое
+        станет <UiStrong>благотворительной прачечной</UiStrong>:
+      </p>
+      <ul>
+        <li>устанавливаются стиральные машины;</li>
+        <li>к ним подводится вода и новая электрическая инфраструктура;</li>
+        <li>
+          устанавливаются емкости для воды, которая предоставляется безвозмездно
+          Горловской епархией РПЦ;
+        </li>
+        <li>оборудуется место приема и выдачи белья;</li>
+        <li>проводятся другие необходимые работы.</li>
+      </ul>
+      <ProjectsPhotos :photos="photos.step2" :photos-all="photosAll" />
+    </ProjectsStep>
+    <ProjectsStep
+      :title="'Шаг 1. Закупка.'"
+      :subtitle="''"
+      :date="'18.02.2026'"
       :status="'Завершённый'"
       id="step1"
       class="point"
     >
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio commodi
-        incidunt numquam corporis et ratione, minus quae, cupiditate
-        repudiandae, neque alias tempora. Eos ea incidunt suscipit cum
-        repudiandae ipsum voluptatibus non alias explicabo blanditiis nemo
-        exercitationem nam labore a magnam, iure ipsam et delectus dolor
-        voluptates est fugit. Sunt culpa maxime officia unde maiores veritatis
-        deleniti aperiam, tempora voluptatibus quibusdam. Dolorum explicabo
-        harum delectus ullam fugit quis expedita, nam velit eum doloribus
-        tempore itaque molestias optio perspiciatis accusantium odit provident.
-        Laborum recusandae tenetur fugiat sunt nesciunt commodi amet omnis
-        itaque illo dolor ullam beatae quidem, est numquam, ratione, eos
-        adipisci!
+        Благотворителями закуплены стиральные машины и необходимое оборудование
+        для их установки и монтажа.
       </p>
+      <p>
+        Они силами <UiStrong> «Народного Фронта» </UiStrong> в ДНР были
+        доставлены и загружены на место будущей прачечной.
+      </p>
+      <ProjectsPhotos :photos="photos.step1" :photos-all="photosAll" />
     </ProjectsStep>
   </section>
 </template>
@@ -60,7 +95,12 @@
   const menu = [
     { name: 'О проекте', id: 'about' },
     { name: 'Партнёры проекта', id: 'partners' },
+    { name: 'Шаг 2. Установка', id: 'step2' },
+    { name: 'Шаг 1. Закупка', id: 'step1' },
   ];
+
+  const photos = project.photos;
+  const photosAll = getAllPhoto(project.photos);
 </script>
 
 <style scoped lang="scss"></style>
