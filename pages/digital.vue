@@ -56,7 +56,7 @@
       id="partners"
     />
 
-    <Documents>
+    <Documents id="docs" class="point">
       <h2>Документы проекта</h2>
       <!-- <h3>Отчёты</h3>
       <div class="documents__cards">
@@ -101,14 +101,12 @@
         <ProjectsChart v-for="chart in charts" :chart />
       </ProjectsCharts>
     </ProjectsStep>
-    <ProjectsSteps>
+    <ProjectsSteps id="steps" class="point" :h1="'Шаги проекта'">
       <ProjectsStep
         :title="'Шаг 6. Финал.'"
         :subtitle="''"
         :date="'17.02.2026'"
         :status="'Завершённый'"
-        id="step6"
-        class="step6"
       >
         <ProjectsPhotos :photos="photos.step5_1" :photos-all="photosAll" />
         <p>
@@ -141,8 +139,6 @@
         :subtitle="''"
         :date="'05.02.2026 – 12.02.2026'"
         :status="'Завершённый'"
-        id="step5"
-        class="step5"
       >
         <p>
           Сегодня подводили итоги обучения ребят в
@@ -161,8 +157,6 @@
         :subtitle="''"
         :date="'18.09.2025 – 12.02.2026'"
         :status="'Завершённый'"
-        id="step4"
-        class="point"
       >
         <p>
           В ходе занятий наши дети получают не менее
@@ -281,8 +275,6 @@
         :title="'Шаг 3. Открытие.'"
         :subtitle="''"
         :date="'16.09.2025'"
-        id="step3"
-        class="point"
       >
         <p>
           <UiStrong>16 сентября</UiStrong> состоялось начало обучения детей в
@@ -327,8 +319,6 @@
         :title="'Шаг 2. Подготовка.'"
         :subtitle="''"
         :date="'18.08.2025 — 15.09.2025'"
-        id="step2"
-        class="point"
       >
         <h4>Подготовительная работа по проведению обучающего курса</h4>
         <p>
@@ -359,8 +349,6 @@
         :title="'Шаг 1. Старт: '"
         :subtitle="'от идеи к заявке'"
         :date="'16.03.2025 — 15.06.2025'"
-        id="step1"
-        class="point"
       >
         <h4>
           Какие проблемы стали причиной рождения идеи написания грантовой
@@ -466,12 +454,7 @@
     { name: 'Партнёры проекта', id: 'partners' },
     { name: 'Документы проекта', id: 'docs' },
     { name: 'Итоги проекта', id: 'results' },
-    { name: 'Шаг 6. Финал', id: 'step6' },
-    { name: 'Шаг 5. Экзамен', id: 'step5' },
-    { name: 'Шаг 4. Обучение', id: 'step4' },
-    { name: 'Шаг 3. Открытие', id: 'step3' },
-    { name: 'Шаг 2. Подготовка', id: 'step2' },
-    { name: 'Шаг 1. Старт', id: 'step1' },
+    { name: 'Шаги проекта', id: 'steps' },
   ];
 
   const photos = project.photos;

@@ -52,7 +52,7 @@
         border: 4px solid var(--color-black);
         transition: 0.3s ease-in-out;
         &:hover {
-          transform: scale(1.05);
+          transform: scale(1.03);
         }
         & span {
           font-weight: 400;

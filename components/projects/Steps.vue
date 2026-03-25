@@ -1,6 +1,6 @@
 <template>
   <div class="project-steps">
-    <h1>Шаги проекта</h1>
+    <h1>{{ h1 }}</h1>
     <div class="project-steps__buttons">
       <button @click="isSorted = false" :class="{ active: !isSorted }">
         Сначала новые
@@ -25,6 +25,12 @@
   const direction = computed(() => {
     return isSorted.value ? 'column-reverse' : 'column';
   });
+
+  interface Props {
+    h1: string;
+  }
+
+  const props = defineProps<Props>();
 </script>
 
 <style scoped lang="scss">
