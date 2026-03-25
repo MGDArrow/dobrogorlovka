@@ -11,6 +11,7 @@ export interface IPersona {
 export type TStatus =
   | 'Активный'
   | 'Завершённый'
+  | 'Завершена'
   | 'Постоянный'
   | 'Предподготовка';
 
@@ -65,4 +66,11 @@ export type TIcons =
   | 'church'
   | 'info'
   | 'contacts'
-  | 'colors';
+  | 'colors'
+  | 'heart'
+  | 'heart-pulse'
+  | 'blood'
+  | 'plasma'
+  | 'equals'
+  | 'first'
+  | 'person';

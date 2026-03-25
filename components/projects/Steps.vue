@@ -1,6 +1,6 @@
 <template>
   <div class="project-steps">
-    <h1>{{ h1 }}</h1>
+    <h2>{{ h1 }}</h2>
     <div class="project-steps__buttons">
       <button @click="isSorted = false" :class="{ active: !isSorted }">
         Сначала новые

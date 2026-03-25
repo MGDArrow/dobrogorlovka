@@ -21,7 +21,7 @@
     if (!props.active) return '';
     return props.status === 'Активный'
       ? 'var(--color-green)'
-      : props.status === 'Завершённый'
+      : props.status === 'Завершённый' || props.status === 'Завершена'
         ? 'var(--color-orange)'
         : props.status === 'Предподготовка'
           ? 'var(--color-pink)'

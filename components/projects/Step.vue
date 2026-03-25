@@ -24,7 +24,7 @@
     title: string;
     subtitle: string;
     date: string;
-    status?: 'Активный' | 'Завершённый' | '';
+    status?: 'Активный' | 'Завершённый' | 'Завершена' | '';
   }
 
   withDefaults(defineProps<Props>(), {
