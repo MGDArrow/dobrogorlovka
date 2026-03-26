@@ -88,11 +88,15 @@ export const ENV = {
   awards: [
     {
       date: '',
-      photo: 'award_01',
+      photo: 'award_03',
     },
     {
       date: 'Победители премии "Гордость Донбасса 2025" в номинации "НКО-лидер"',
       photo: 'award_02',
+    },
+    {
+      date: '',
+      photo: 'award_01',
     },
   ],
   messangers: [
