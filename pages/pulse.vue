@@ -382,6 +382,9 @@
         <ProjectsPhotos :photos="photos.step1" :photos-all="photosAll" />
       </ProjectsStep>
     </ProjectsSteps>
+    <Teleport :to="'body'">
+      <PulseAnons />
+    </Teleport>
   </section>
 </template>
 

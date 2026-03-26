@@ -8,6 +8,13 @@ export function initDaysj(date: Date) {
   return dayjs(date);
 }
 
+export function getDateForAnonse(dateStart: Date, dateEnd: Date) {
+  const start = dayjs(dateStart);
+  const end = dayjs(dateEnd);
+  if (start.isSame(end)) return `${start.format('DD/MM/YYYY')}`;
+  return `${start.format('DD/MM/YYYY')} — ${end.format('DD/MM/YYYY')}`;
+}
+
 export function formatInInput(date: Dayjs) {
   return dayjs(date).format('YYYY-MM-DD');
 }
