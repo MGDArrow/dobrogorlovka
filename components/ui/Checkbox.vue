@@ -23,11 +23,14 @@
 <style lang="scss" scoped>
   .ui-checkbox {
     cursor: pointer;
-    // & * {
-    //   box-sizing: border-box;
-    // }
     width: max-content;
     display: flex;
+    @media screen and (max-width: 1199px) {
+      font-size: 0.8em;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.7em;
+    }
     & > input {
       display: none;
     }
@@ -35,7 +38,7 @@
       position: relative;
       display: inline-block;
       width: 1.2em;
-      aspect-ratio: 1/1;
+      height: 1.2em;
       border: 3px solid var(--color-black);
       transition: 0.2s ease-in-out;
       border-radius: 0.3em;
