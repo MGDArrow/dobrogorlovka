@@ -95,6 +95,7 @@
     const result = await installPrompt.prompt();
     console.log(`Install prompt was: ${result.outcome}`);
     installPrompt = null;
+    pwaPopup.value = false;
   }
 
   onMounted(() => {
