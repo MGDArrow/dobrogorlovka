@@ -1,29 +1,29 @@
 <template>
   <div>
-    <Teleport :to="'body'">
-      <div class="pwa" v-if="pwaPopup">
-        <div class="pwa__title">Установить приложение ДоброГорловки?</div>
-        <div class="pwa__info">
-          Вы можете установить наше приложение, для того, чтобы не пропускать
-          основные новости и всегда сделить за нашими делами
-        </div>
-        <div class="pwa__btns">
-          <UiButton
-            :size="'min'"
-            :color="'var(--color-red)'"
-            @click="pwaPopup = false"
-          >
-            Нет
-          </UiButton>
-          <UiButton
-            :size="'min'"
-            :color="'var(--color-green)'"
-            @click="installPWA()"
-          >
-            Да
-          </UiButton>
-        </div>
+    <div class="pwa" v-if="pwaPopup">
+      <div class="pwa__title">Установить приложение ДоброГорловки?</div>
+      <div class="pwa__info">
+        Вы можете установить наше приложение, для того, чтобы не пропускать
+        основные новости и всегда сделить за нашими делами
       </div>
+      <div class="pwa__btns">
+        <UiButton
+          :size="'min'"
+          :color="'var(--color-red)'"
+          @click="pwaPopup = false"
+        >
+          Нет
+        </UiButton>
+        <UiButton
+          :size="'min'"
+          :color="'var(--color-green)'"
+          @click="installPWA()"
+        >
+          Да
+        </UiButton>
+      </div>
+    </div>
+    <Teleport to="body">
       <UiPopup v-if="isVisible" @close-popup="isVisible = false">
         <div class="welcome">
           <div class="welcome__line-2"></div>
