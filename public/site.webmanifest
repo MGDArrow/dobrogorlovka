@@ -1,6 +1,7 @@
 {
   "name": "ДоброГорловка",
   "short_name": "ДоброГорловка",
+  "start_url": "/",
   "icons": [
     {
       "src": "pwa-64x64.png",
@@ -22,6 +23,20 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/home_desctop.webp",
+      "sizes": "1280x634",
+      "type": "image/webp",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshots/home_phone.webp",
+      "sizes": "720x1274",
+      "type": "image/webp",
+      "form_factor": "narrow"
     }
   ],
   "theme_color": "#a6c729",

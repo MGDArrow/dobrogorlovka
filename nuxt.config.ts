@@ -56,37 +56,7 @@ export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', '@vite-pwa/nuxt'],
   pwa: {
     registerType: 'autoUpdate',
-    manifest: {
-      name: 'АНО "ДоброГорловка"',
-      short_name: 'ДоброГорловка',
-      description:
-        'Официальный сайт Автономной Некомерческой Организации "ДоброГорловка"',
-      theme_color: '#a6c729',
-      start_url: '/',
-      icons: [
-        {
-          src: 'pwa-64x64.png',
-          sizes: '64x64',
-          type: 'image/png',
-        },
-        {
-          src: 'pwa-192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
-        },
-        {
-          src: 'pwa-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-        },
-        {
-          src: 'maskable-icon-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-          purpose: 'maskable',
-        },
-      ],
-    },
+    manifest: false,
     workbox: {
       globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
     },
