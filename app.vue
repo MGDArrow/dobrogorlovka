@@ -1,15 +1,17 @@
 <template>
-  <NuxtLayout />
-  <Welcome />
-  <!-- Yandex.Metrika counter -->
   <div>
-    <img
-      src="https://mc.yandex.ru/watch/104383082"
-      style="position: absolute; left: -9999px"
-      alt=""
-    />
+    <NuxtLayout />
+    <Welcome />
+    <!-- Yandex.Metrika counter -->
+    <div>
+      <img
+        src="https://mc.yandex.ru/watch/104383082"
+        style="position: absolute; left: -9999px"
+        alt=""
+      />
+    </div>
+    <!-- /Yandex.Metrika counter -->
   </div>
-  <!-- /Yandex.Metrika counter -->
 </template>
 
 <script setup>

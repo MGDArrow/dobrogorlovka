@@ -1,72 +1,74 @@
 <template>
-  <Teleport :to="'body'">
-    <div class="pwa" v-if="pwaPopup">
-      <div class="pwa__title">Установить приложение ДоброГорловки?</div>
-      <div class="pwa__info">
-        Вы можете установить наше приложение, для того, чтобы не пропускать
-        основные новости и всегда сделить за нашими делами
+  <div>
+    <Teleport :to="'body'">
+      <div class="pwa" v-if="pwaPopup">
+        <div class="pwa__title">Установить приложение ДоброГорловки?</div>
+        <div class="pwa__info">
+          Вы можете установить наше приложение, для того, чтобы не пропускать
+          основные новости и всегда сделить за нашими делами
+        </div>
+        <div class="pwa__btns">
+          <UiButton
+            :size="'min'"
+            :color="'var(--color-red)'"
+            @click="pwaPopup = false"
+          >
+            Нет
+          </UiButton>
+          <UiButton
+            :size="'min'"
+            :color="'var(--color-green)'"
+            @click="installPWA()"
+          >
+            Да
+          </UiButton>
+        </div>
       </div>
-      <div class="pwa__btns">
-        <UiButton
-          :size="'min'"
-          :color="'var(--color-red)'"
-          @click="pwaPopup = false"
-        >
-          Нет
-        </UiButton>
-        <UiButton
-          :size="'min'"
-          :color="'var(--color-green)'"
-          @click="installPWA()"
-        >
-          Да
-        </UiButton>
-      </div>
-    </div>
-    <UiPopup v-if="isVisible" @close-popup="isVisible = false">
-      <div class="welcome">
-        <div class="welcome__line-2"></div>
-        <div class="welcome__line"></div>
-        <div class="welcome__content">
-          <p class="welcome__title">Рады привествовать у нас на сайте!</p>
-          <p class="welcome__purpose">
-            Мы работаем для того, чтобы сделать лучше жизнь людей, которым
-            требуется помощь и поддержка
-          </p>
-          <div class="welcome__invite">
-            <span> Присоединяйся к нашему движению: </span>
-            <ul>
-              <li>
-                👉 <strong>Делись нашими постами</strong> — пусть о добрых делах
-                узнает больше людей.
-              </li>
-              <li>
-                👉 <strong>Стань волонтёром</strong> — иногда для важных перемен
-                нужны просто ваши руки и доброе сердце.
-              </li>
-            </ul>
-          </div>
+      <UiPopup v-if="isVisible" @close-popup="isVisible = false">
+        <div class="welcome">
+          <div class="welcome__line-2"></div>
+          <div class="welcome__line"></div>
+          <div class="welcome__content">
+            <p class="welcome__title">Рады привествовать у нас на сайте!</p>
+            <p class="welcome__purpose">
+              Мы работаем для того, чтобы сделать лучше жизнь людей, которым
+              требуется помощь и поддержка
+            </p>
+            <div class="welcome__invite">
+              <span> Присоединяйся к нашему движению: </span>
+              <ul>
+                <li>
+                  👉 <strong>Делись нашими постами</strong> — пусть о добрых
+                  делах узнает больше людей.
+                </li>
+                <li>
+                  👉 <strong>Стань волонтёром</strong> — иногда для важных
+                  перемен нужны просто ваши руки и доброе сердце.
+                </li>
+              </ul>
+            </div>
 
-          <div class="welcome__button">
-            <div
-              class="welcome__button-layer-1"
-              @click="isVisible = false"
-              :class="{ active: isActive }"
-            >
+            <div class="welcome__button">
               <div
-                class="welcome__button-layer-2"
+                class="welcome__button-layer-1"
+                @click="isVisible = false"
                 :class="{ active: isActive }"
               >
-                <button type="button" @mouseover="isActive = true">
-                  Далее
-                </button>
+                <div
+                  class="welcome__button-layer-2"
+                  :class="{ active: isActive }"
+                >
+                  <button type="button" @mouseover="isActive = true">
+                    Далее
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </UiPopup>
-  </Teleport>
+      </UiPopup>
+    </Teleport>
+  </div>
 </template>
 
 <script setup lang="ts">
