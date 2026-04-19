@@ -1,39 +1,62 @@
 <template>
-  <div class="pulse-anons" v-if="anonses.length && isVisible">
-    <div class="pulse-anons__date">
-      {{ getDateForAnonse(anons.dateStart, anons.dateEnd) }}
-    </div>
-    <div class="pulse-anons__info">
-      <div class="pulse-anons__anonse">
-        <div class="pulse-anons__icon">
-          <UiIcon :name="'blood'" :size="'3em'" />
+  <div>
+    <button class="pulse__get-anonses" @click="isVisible = true">
+      Ближайшие анонсы
+    </button>
+    <Teleport :to="'body'">
+      <div class="pulse-anons" v-if="anonses.length && isVisible" ref="el">
+        <div class="pulse-anons__date">
+          {{ getDateForAnonse(anons.dateStart, anons.dateEnd) }}
         </div>
-        <div class="pulse-anons__text">
-          <p v-for="(text, index) in anons.text" :key="index">{{ text }}</p>
+        <div class="pulse-anons__info">
+          <div class="pulse-anons__anonse">
+            <div class="pulse-anons__icon">
+              <UiIcon :name="'blood'" :size="'3em'" />
+            </div>
+            <div class="pulse-anons__text">
+              <p v-for="(text, index) in anons.text" :key="index">{{ text }}</p>
+            </div>
+          </div>
+          <div class="pulse-anons__contacts">
+            <UiStrong>Присоединиться к акции или задать вопросы</UiStrong>,
+            можно у координатора — клирика Богоявленского кафедрального собора,
+            <UiStrong>диакона Романа Шуклина</UiStrong>:
+            <a href="tel:+79495077156">+7 (949) 507-71-56 (TG).</a>
+          </div>
+        </div>
+        <div class="pulse-anons__btns">
+          <UiIcon
+            :name="'angle-left'"
+            :size="'1em'"
+            @click="swipeAnonse(-1)"
+            style="cursor: pointer"
+          />
+          <div class="pulse-anons__pagination">
+            <div
+              v-for="n in anonses.length"
+              @click="anonseID = n - 1"
+              :class="{ active: n - 1 === anonseID }"
+            />
+          </div>
+          <UiIcon
+            :name="'angle-right'"
+            :size="'1em'"
+            @click="swipeAnonse(1)"
+            style="cursor: pointer"
+          />
+          <div class="pulse-anons__btn" @click="isVisible = false">Понятно</div>
         </div>
       </div>
-      <div class="pulse-anons__contacts">
-        <UiStrong>Присоединиться к акции или задать вопросы</UiStrong>, можно у
-        координатора — клирика Богоявленского кафедрального собора,
-        <UiStrong>диакона Романа Шуклина</UiStrong>:
-        <a href="tel:+79495077156">+7 (949) 507-71-56 (TG).</a>
-      </div>
-    </div>
-    <div class="pulse-anons__btns">
-      <div class="pulse-anons__pagination">
-        <div
-          v-for="n in anonses.length"
-          @click="anonseID = n - 1"
-          :class="{ active: n - 1 === anonseID }"
-        />
-      </div>
-      <div class="pulse-anons__btn" @click="isVisible = false">Понятно</div>
-    </div>
+    </Teleport>
   </div>
 </template>
 
 <script setup lang="ts">
   import { PULSE } from '~/content/pulse.project';
+  import { useSwipe } from '@vueuse/core';
+
+  const anonsesTemplate = useTemplateRef('el');
+  const { isSwiping, direction } = useSwipe(anonsesTemplate);
 
   const anonses = PULSE.anonses.filter((anons) => anons.dateEnd >= new Date());
 
@@ -65,6 +88,19 @@
       }
     }
     if (anonses.length === 0) window.localStorage.removeItem('pulse-anonse');
+  });
+
+  function swipeAnonse(inc: 1 | -1) {
+    let newAnonseID = anonseID.value + inc;
+    if (newAnonseID === anonses.length) newAnonseID = 0;
+    if (newAnonseID === -1) newAnonseID = anonses.length - 1;
+    anonseID.value = newAnonseID;
+  }
+
+  watch(isSwiping, (newVal) => {
+    if (newVal === false) return;
+    if (direction.value === 'right') swipeAnonse(-1);
+    if (direction.value === 'left') swipeAnonse(1);
   });
 </script>
 
@@ -182,6 +218,37 @@
     }
     100% {
       bottom: 20px;
+    }
+  }
+
+  .pulse__get-anonses {
+    background: var(--color-white);
+    border: 8px solid var(--color-black);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 10px auto;
+    display: block;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    @media screen and (max-width: 1599px) {
+      font-size: 2.2em;
+    }
+    @media screen and (max-width: 1199px) {
+      max-width: 80%;
+      font-size: 2.2em;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 90%;
+      font-size: 1.6em;
+      border-width: 6px;
+      margin: 60px auto;
+    }
+    &:hover {
+      background: var(--color-red);
+      color: var(--color-white);
     }
   }
 </style>

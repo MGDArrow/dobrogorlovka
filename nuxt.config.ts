@@ -2,15 +2,18 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+
   nitro: {
     preset: 'node-server',
   },
+
   css: [
     './assets/reset.css',
     './assets/variables.css',
     './assets/styles.css',
     './assets/project.css',
   ],
+
   app: {
     head: {
       title: 'АНО "ДоброГорловка"',
@@ -49,4 +52,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  modules: ['@vueuse/nuxt'],
 });
