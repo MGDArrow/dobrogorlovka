@@ -10,43 +10,76 @@
 </template>
 
 <script setup lang="ts">
+  import { watch } from 'vue';
+
   interface Props {
     label?: string;
     placeholder?: string;
   }
 
   const modelValue = defineModel<string>({ required: true });
-
   const props = defineProps<Props>();
 
   watch(
     () => modelValue.value,
-    async (newValue, oldValue) => {
-      if (newValue.length > 18) {
+    (newValue, oldValue) => {
+      if (newValue == null) return;
+
+      // Проверяем количество цифр (не более 11 для полного номера +7)
+      const digitsOnly = newValue.replace(/\D/g, '');
+      if (digitsOnly.length > 11) {
         modelValue.value = oldValue;
         return;
       }
-      modelValue.value = maskPhone(newValue);
+
+      const masked = maskPhone(newValue);
+      if (masked !== newValue) {
+        modelValue.value = masked;
+      }
     },
     { flush: 'post' },
   );
 
-  function maskPhone(tel: string) {
-    let t = tel;
-    if (t.startsWith('7') || t.startsWith('+')) {
-      if (t.startsWith('7') || t[1] === '7') {
-        const x = /(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/.exec(
-          t.replace(/\D/g, ''),
-        );
-        if (!x) return t;
-        x[1] = '+7';
-        t = !x[3]
-          ? `${x[1]} (${x[2]}`
-          : `${x[1]} (${x[2]}) ${x[3]}${x[4] ? `-${x[4]}` : ''}${x[5] ? `-${x[5]}` : ''}`;
-      }
-    } else t = '';
+  function maskPhone(tel: string): string {
+    // 1. Извлекаем только цифры
+    let digits = tel.replace(/\D/g, '');
+    if (!digits.length) return '';
 
-    return t;
+    // 2. Заменяем ведущую 8 на 7
+    if (digits[0] === '8') {
+      digits = '7' + digits.slice(1);
+    }
+
+    // 3. Если после замены номер не начинается с 7 – возвращаем пустую строку
+    if (digits[0] !== '7') return '';
+
+    // 4. Обрезаем до 11 цифр (7 + 10)
+    if (digits.length > 11) {
+      digits = digits.slice(0, 11);
+    }
+
+    // 5. Разбиваем на группы: первая цифра, код, остальные части
+    const match = /^(\d)(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/.exec(digits);
+    if (!match) return '';
+
+    const [, first, area, part1, part2, part3] = match;
+
+    // 6. Формируем отформатированную строку в стиле "+7 (XXX) XXX-XX-XX"
+    let result = '+7';
+    if (area) {
+      result += ` (${area}`;
+      if (part1) {
+        result += `) ${part1}`;
+        if (part2) {
+          result += `-${part2}`;
+          if (part3) {
+            result += `-${part3}`;
+          }
+        }
+      }
+      // если area есть, но part1 нет – скобка не закрывается (как в оригинале)
+    }
+    return result;
   }
 </script>
 
