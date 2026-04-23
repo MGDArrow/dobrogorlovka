@@ -164,7 +164,7 @@ function getCurrentScheludeDays(
       weekdays.findIndex((d) => d === day[0]),
     );
     day[1].forEach((time) => {
-      dateTimes.push(getTimeForSchedule(date, time).locale('en').toISOString());
+      dateTimes.push(getTimeForSchedule(date, time).toISOString());
     });
   });
   return dateTimes;
