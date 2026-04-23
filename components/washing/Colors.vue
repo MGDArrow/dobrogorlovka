@@ -1,12 +1,29 @@
 <template>
   <div class="colors">
+    <div v-if="loading">
+      <UiSpinner />
+    </div>
+    <div v-else-if="washTypes.length === 0">Нет добавленных типов стирок</div>
     <div
+      v-else
       class="colors__color"
-      v-for="(color, index) in colors"
+      v-for="(color, index) in washTypes"
       :key="color.name"
     >
       <div class="checkbox">
         <UiCheckbox v-model="color.isNeed">{{ color.name }}</UiCheckbox>
+      </div>
+      <div class="colors__info">
+        <div>
+          <span><UiIcon :name="'temperature'" :size="'1.2em'" />:</span>
+          {{ color.temperature }}
+          <span>°C</span>
+        </div>
+        <div>
+          <span><UiIcon :name="'spin'" :size="'1.2em'" />:</span>
+          {{ color.dryingSpin }}
+          <span>об/мин</span>
+        </div>
       </div>
       <div class="colors__desc" @click="setOpenDescription(index)">
         <div
@@ -20,49 +37,24 @@
         </div>
       </div>
     </div>
-    <!-- {{ needed }} -->
   </div>
 </template>
 
 <script setup lang="ts">
-  const colors = reactive([
-    {
-      name: 'Детская стирка',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis aliquid dolorem excepturi eos! Sint veniam ratione nesciunt! Adipisci, obcaecati nesciunt id autem rerum rem dicta facilis fugit dolore qui.',
-      isNeed: false,
-    },
-    {
-      name: 'Постельное бельё',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis aliquid dolorem excepturi eos! Sint veniam ratione nesciunt! Adipisci, obcaecati nesciunt id autem rerum rem dicta facilis fugit dolore qui.',
-      isNeed: false,
-    },
-    {
-      name: 'Белая одежда',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis aliquid dolorem excepturi eos! Sint veniam ratione nesciunt! Adipisci, obcaecati nesciunt id autem rerum rem dicta facilis fugit dolore qui.',
-      isNeed: false,
-    },
-    {
-      name: 'Тёмная одежда',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis aliquid dolorem excepturi eos! Sint veniam ratione nesciunt! Adipisci, obcaecati nesciunt id autem rerum rem dicta facilis fugit dolore qui.',
-      isNeed: false,
-    },
-    {
-      name: 'Цветная одежда',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis aliquid dolorem excepturi eos! Sint veniam ratione nesciunt! Adipisci, obcaecati nesciunt id autem rerum rem dicta facilis fugit dolore qui.',
-      isNeed: false,
-    },
-    {
-      name: 'Свободная машинка',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis aliquid dolorem excepturi eos! Sint veniam ratione nesciunt! Adipisci, obcaecati nesciunt id autem rerum rem dicta facilis fugit dolore qui.',
-      isNeed: false,
-    },
-  ]);
+  interface WashType {
+    id: number;
+    name: string;
+    description: string;
+    temperature: number;
+    dryingSpin: number;
+    isNeed: boolean;
+    isActive: boolean;
+  }
+
+  const modelValue = defineModel<number[]>({ required: true });
+
+  const washTypes = ref<WashType[]>([]);
+  const loading = ref(false);
 
   const isDescription: Ref<null | number> = ref(null);
 
@@ -75,26 +67,59 @@
           : null;
   }
 
-  const needed = computed(() => {
-    let need: string[] = [];
-    colors.forEach((el) => {
-      if (el.isNeed) need.push(el.name);
-    });
-    return need;
+  async function loadWashTypes() {
+    loading.value = true;
+    try {
+      const data = await $fetch<WashType[]>('/api/wash-types');
+      const onlyActive = data.filter((type) => type.isActive);
+      onlyActive.map((data) => {
+        if (modelValue.value.includes(data.id)) data.isNeed = true;
+      });
+      washTypes.value = onlyActive;
+    } catch (err) {
+      console.error('Ошибка загрузки типов стирок', err);
+    } finally {
+      loading.value = false;
+    }
+  }
+
+  watch(
+    () => washTypes,
+    (newVal) => {
+      let ids: Array<number> = [];
+      newVal.value.forEach((el) => {
+        if (el.isNeed) ids.push(el.id);
+      });
+      modelValue.value = ids;
+    },
+    { deep: true },
+  );
+
+  onMounted(() => {
+    loadWashTypes();
   });
 </script>
 
 <style scoped lang="scss">
   .colors {
     width: 100%;
+    max-height: 40dvh;
+    overflow-y: auto;
+    // padding: 0 10px;
+    @media screen and (max-width: 768px) {
+      // padding: 0;
+      max-height: max-content;
+      overflow-y: unset;
+    }
     &__color {
+      scale: 0.98;
       border: 3px solid var(--color-black);
       border-radius: var(--border-radius);
       padding: 5px;
       margin: 8px auto;
       transition: 0.2s ease-in-out;
       &:hover {
-        scale: 1.01;
+        scale: 1;
       }
     }
     &__desc {
@@ -118,9 +143,26 @@
       padding: 0.2em 1em 0 2.3em;
       overflow-y: hidden;
       transition: 0.4s;
+      flex: 1;
       &.open {
         // transition: 0.2s ease-in-out;
         max-height: 100dvh;
+      }
+    }
+    &__info {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 5px 0;
+      & div {
+        & span {
+          font-weight: 600;
+          & svg {
+            position: relative;
+            top: 0.2em;
+          }
+        }
       }
     }
   }

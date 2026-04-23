@@ -1,0 +1,80 @@
+generator client {
+    provider = "prisma-client"
+    output   = "./generated"
+}
+
+datasource db {
+    provider = "postgresql"
+}
+
+model Schedule {
+    id            Int      @id @default(autoincrement())
+    effectiveFrom DateTime @unique
+    timetableData Json
+    createdAt     DateTime @default(now())
+    updatedAt     DateTime @updatedAt
+}
+
+model Holiday {
+    id        Int      @id @default(autoincrement())
+    date      DateTime @unique
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("holidays")
+}
+
+model WashType {
+    id             Int             @id @default(autoincrement())
+    name           String          @unique
+    description    String
+    isActive       Boolean         @default(true)
+    temperature    Int
+    dryingSpin     Int
+    machineCount   Int             @default(1)
+    createdAt      DateTime        @default(now())
+    updatedAt      DateTime        @updatedAt
+    orderWashTypes OrderWashType[]
+
+    @@map("wash_types")
+}
+
+model Order {
+    id             Int      @id @default(autoincrement())
+    orderNumber    String   @unique @map("order_number") // 8-значный уникальный номер заказа
+    rulesConfirmed Boolean  @default(false) @map("rules_confirmed")
+    customerName   String   @map("customer_name")
+    customerPhone  String   @map("customer_phone")
+    comment        String?  @map("comment")
+    scheduledAt    DateTime @map("scheduled_at") // дата и время стирки
+    createdAt      DateTime @default(now()) @map("created_at")
+    updatedAt      DateTime @updatedAt @map("updated_at")
+
+    washTypes OrderWashType[] // связь многие-ко-многим через junction-таблицу
+
+    @@map("orders")
+}
+
+model OrderWashType {
+    orderId    Int      @map("order_id")
+    washTypeId Int      @map("wash_type_id")
+    order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+    washType   WashType @relation(fields: [washTypeId], references: [id])
+
+    @@id([orderId, washTypeId])
+    @@map("order_wash_types")
+}
+
+model TelegramUser {
+    id          Int       @id @default(autoincrement())
+    telegramId  BigInt    @unique
+    chatId      BigInt
+    firstName   String?   @map("first_name")
+    username    String?
+    isActivated Boolean   @default(false) @map("is_activated")
+    activatedAt DateTime? @map("activated_at")
+    createdAt   DateTime  @default(now()) @map("created_at")
+    updatedAt   DateTime  @updatedAt @map("updated_at")
+
+    @@map("telegram_users")
+}

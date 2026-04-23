@@ -2,24 +2,34 @@
   <div class="dates">
     <div
       class="dates__date"
-      v-for="time in times"
-      :key="time"
-      @click="modelValue = setTimeInDate(modelValue, time)"
-      :class="[{ active: isTimeCurrent(time, modelValue) }]"
+      v-for="(date, index) in times"
+      :key="index"
+      :class="{ unactive: !date.isFree, active: currentTimes === date.date }"
+      @click="emitDateTimes(date.date, date.isFree)"
     >
-      <div class="dates__day">{{ time }}</div>
-      <div class="dates__weekday">—</div>
+      <div class="dates__day">
+        {{ formatTime(date.date) }}
+      </div>
     </div>
-    <!-- {{ modelValue.toDate() }} -->
   </div>
 </template>
 
 <script setup lang="ts">
-  import { Dayjs } from 'dayjs';
+  import type { IWashingDate, TDatesForWashing } from '~/types/types';
 
-  const times = ['09:30', '11:00', '12:30'];
+  interface Props {
+    times: IWashingDate[];
+    currentTimes: null | string;
+  }
+  defineProps<Props>();
 
-  const modelValue = defineModel<Dayjs>({ required: true });
+  const emit = defineEmits<{
+    setDateTimes: [times: string];
+  }>();
+
+  function emitDateTimes(date: string, isFree: boolean) {
+    if (isFree) emit('setDateTimes', date);
+  }
 </script>
 
 <style scoped lang="scss">
@@ -27,6 +37,9 @@
     width: 100%;
     display: flex;
     gap: 10px;
+    @media screen and (max-width: 768px) {
+      font-size: 0.7em;
+    }
     &__date {
       padding: 10px;
       border: 3px solid var(--color-black);
@@ -35,10 +48,17 @@
       margin: 20px 0;
       cursor: pointer;
       transition: 0.2s ease-in-out;
-      &:hover,
+      @media screen and (max-width: 768px) {
+        margin: 5px 0;
+      }
+      &:hover:not(.unactive),
       &.active {
         background: v-bind(getRandomColor());
         color: var(--color-white);
+      }
+      &.unactive {
+        opacity: 0.5;
+        cursor: auto;
       }
     }
     &__day {

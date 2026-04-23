@@ -2,7 +2,8 @@
   <div class="washing-calendar">
     <div
       class="washing-calendar__arrow-back"
-      @click="modelValue = weekMinus(modelValue)"
+      :class="{ unactive: isCurrentWeek(modelValue) }"
+      @click="modelValue = changeWeek(modelValue, -1)"
     >
       <UiIcon :name="'angle-left'" :size="'30px'" />
     </div>
@@ -14,7 +15,7 @@
     </div>
     <div
       class="washing-calendar__arrow-new"
-      @click="modelValue = weekPlus(modelValue)"
+      @click="modelValue = changeWeek(modelValue, 1)"
     >
       <UiIcon :name="'angle-right'" :size="'30px'" />
     </div>
@@ -42,7 +43,7 @@
   });
 
   const dateInString = computed(() => {
-    return formatToWeek(modelValue.value);
+    return formatWeekRange(modelValue.value);
   });
 </script>
 
@@ -59,6 +60,10 @@
       transition: 0.3s ease-in-out;
       &:hover {
         transform: scale(1.05);
+      }
+      &.unactive {
+        opacity: 0.5;
+        cursor: auto;
       }
     }
     &__date {

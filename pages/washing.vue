@@ -36,7 +36,7 @@
         </ProjectsDescription>
       </div>
     </div>
-    <!-- <Washing /> -->
+    <Washing />
     <Partners
       :title="'Партнёры проекта'"
       :partners="project.partners"

@@ -1,3 +1,5 @@
+import type { Dayjs } from 'dayjs';
+
 export interface IPersona {
   id: number;
   surname: string;
@@ -31,6 +33,20 @@ export interface IVideo {
   date?: string;
 }
 export type TStepPhoto = string | IPhotoDate | IVideo;
+
+export interface IWashingDate {
+  date: string;
+  isFree: boolean;
+}
+
+export type TDatesForWashing = [
+  string,
+  {
+    date: Dayjs;
+    times: IWashingDate[];
+    isFreeDay: boolean;
+  },
+];
 
 export type TIcons =
   | ''
@@ -73,4 +89,6 @@ export type TIcons =
   | 'plasma'
   | 'equals'
   | 'first'
-  | 'person';
+  | 'person'
+  | 'spin'
+  | 'temperature';

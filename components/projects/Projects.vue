@@ -5,7 +5,7 @@
       <div class="projects__cards-full">
         <ProjectsCard
           :photoSrc="`projects/washing.webp`"
-          :status="'Предподготовка'"
+          :status="'Постоянный'"
           @click="setRoute('washing')"
         >
           <TeamName>

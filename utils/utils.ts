@@ -73,3 +73,8 @@ export const getAllPhoto = (photos: { [key: string]: TStepPhoto[] }) => {
   allArrays.forEach((step) => endArrays.push(...step[1]));
   return endArrays;
 };
+
+export function formatWashinOrderNumber(number: string | undefined) {
+  if (!number) return '';
+  return `${number.slice(0, 3)}-${number.slice(3, 6)}`;
+}

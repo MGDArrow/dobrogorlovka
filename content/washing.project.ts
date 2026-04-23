@@ -11,7 +11,14 @@ export const WASHING = {
     onf: 'Народный фронт',
   },
   photos: {
-    step2: ['washing/step2_01.webp', 'washing/step2_02.webp'],
+    step2: [
+      'washing/step2_01.webp',
+      'washing/step2_02.webp',
+      'washing/step2_03.webp',
+      'washing/step2_04.webp',
+      'washing/step2_05.webp',
+      'washing/step2_06.webp',
+    ],
     step1: [
       'washing/step1_01.webp',
       'washing/step1_02.webp',
