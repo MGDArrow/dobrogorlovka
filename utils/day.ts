@@ -3,10 +3,10 @@ import 'dayjs/locale/ru';
 import weekday from 'dayjs/plugin/weekday.js';
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter.js';
 import isBetween from 'dayjs/plugin/isBetween.js';
-dayjs.locale('ru');
 dayjs.extend(weekday);
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isBetween);
+dayjs.locale('ru');
 
 export function initDaysj(date: Date | string) {
   return dayjs(date).locale('ru').millisecond(0).second(0).minute(0).hour(0);
