@@ -3,7 +3,7 @@ import prisma from '~/utils/prisma';
 export default defineEventHandler(async () => {
   try {
     const washTypes = await prisma.washType.findMany({
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: 'asc' },
       select: {
         id: true,
         name: true,
