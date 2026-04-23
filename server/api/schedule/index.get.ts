@@ -5,7 +5,6 @@ import {
   deleteDatesToStart,
   getDateForSchedule,
   getTimeForSchedule,
-  initDaysj,
   isCurrentHoliday,
 } from '~/utils/day';
 import prisma from '~/utils/prisma';
@@ -25,13 +24,13 @@ interface IHoliday {
 }
 
 const weekdays = [
+  'Воскресенье',
   'Понедельник',
   'Вторник',
   'Среда',
   'Четверг',
   'Пятница',
   'Суббота',
-  'Воскресенье',
 ];
 
 export default defineEventHandler(async (event) => {
@@ -146,8 +145,6 @@ export default defineEventHandler(async (event) => {
     machineCountMap,
   );
 
-  console.log(scheduleWithFree);
-
   return scheduleWithFree;
 });
 
@@ -160,8 +157,6 @@ function getCurrentScheludeDays(
   const days = Object.entries(current.timetableData);
 
   const dateTimes: string[] = [];
-
-  console.log(days, first, dayjs());
 
   days.forEach((day) => {
     const date = getDateForSchedule(

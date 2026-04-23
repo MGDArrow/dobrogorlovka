@@ -122,10 +122,10 @@ export default defineEventHandler(async (event) => {
       include: { washTypes: { include: { washType: true } } },
     });
 
-    await $fetch(`${process.env.URL_ADMIN_PANEL}api/orders`, {
-      method: 'POST',
-      body: { ...order },
-    });
+    // await $fetch(`${process.env.URL_ADMIN_PANEL}api/orders`, {
+    //   method: 'POST',
+    //   body: { ...order },
+    // });
 
     return {
       success: true,

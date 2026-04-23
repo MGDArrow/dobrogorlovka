@@ -8,7 +8,9 @@
       @click="emitTimes(index, date[1].isFreeDay)"
     >
       <div class="dates__day">{{ date[1].date.format('DD.MM') }}</div>
-      <div class="dates__weekday">{{ date[1].date.format('dddd') }}</div>
+      <div class="dates__weekday">
+        {{ date[1].date.locale('ru').format('dddd') }}
+      </div>
     </div>
   </div>
 </template>

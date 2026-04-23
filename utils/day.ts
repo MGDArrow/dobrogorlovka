@@ -6,10 +6,9 @@ import isBetween from 'dayjs/plugin/isBetween.js';
 dayjs.extend(weekday);
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isBetween);
-dayjs.locale('ru');
 
 export function initDaysj(date: Date | string) {
-  return dayjs(date).locale('ru').millisecond(0).second(0).minute(0).hour(0);
+  return dayjs(date).millisecond(0).second(0).minute(0).hour(0);
 }
 
 export function isInRange(
@@ -83,7 +82,7 @@ export function getDateForQuerryGet(dates: [Dayjs, Dayjs]) {
 }
 
 export function getDateForSchedule(date: string, weekdayNum: number) {
-  return dayjs(date).locale('ru').weekday(weekdayNum);
+  return dayjs(date).weekday(weekdayNum);
 }
 
 export function getTimeForSchedule(date: Dayjs, time: string) {
