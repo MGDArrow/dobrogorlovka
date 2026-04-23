@@ -87,6 +87,7 @@ export function getDateForSchedule(date: string, weekdayNum: number) {
 
 export function getTimeForSchedule(date: Dayjs, time: string) {
   return date
+    .locale('ru')
     .set('hour', +time.split(':')[0])
     .set('minute', +time.split(':')[1]);
 }
