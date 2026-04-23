@@ -10,7 +10,7 @@
         <UiButton
           :size="'min'"
           :color="'var(--color-red)'"
-          @click="pwaPopup = false"
+          @click="unactivatedPopup()"
         >
           Нет
         </UiButton>
@@ -86,7 +86,19 @@
   }
 
   const pwaPopup = ref(false);
+  const pwaNonPopup: Ref<null | number> = ref(null);
   let installPrompt: Event | null = null;
+
+  function getBackFiveMinuts() {
+    const date = new Date();
+    date.setMinutes(date.getMinutes() - 5);
+    return date;
+  }
+
+  function unactivatedPopup() {
+    pwaPopup.value = false;
+    pwaNonPopup.value = new Date().valueOf();
+  }
 
   async function installPWA() {
     if (!installPrompt) {
@@ -111,8 +123,13 @@
     }
     window.addEventListener('beforeinstallprompt', (event) => {
       event.preventDefault();
-      pwaPopup.value = true;
-      installPrompt = event;
+      if (
+        pwaNonPopup.value === null ||
+        pwaNonPopup.value <= getBackFiveMinuts().valueOf()
+      ) {
+        pwaPopup.value = true;
+        installPrompt = event;
+      }
     });
   });
 </script>
