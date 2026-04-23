@@ -82,8 +82,8 @@ export function getDateForQuerryGet(dates: [Dayjs, Dayjs]) {
   };
 }
 
-export function getDateForSchedule(date: Dayjs, weekdayNum: number) {
-  return date.weekday(weekdayNum);
+export function getDateForSchedule(date: string, weekdayNum: number) {
+  return dayjs(date).locale('ru').weekday(weekdayNum);
 }
 
 export function getTimeForSchedule(date: Dayjs, time: string) {

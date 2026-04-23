@@ -146,6 +146,8 @@ export default defineEventHandler(async (event) => {
     machineCountMap,
   );
 
+  console.log(scheduleWithFree);
+
   return scheduleWithFree;
 });
 
@@ -159,9 +161,11 @@ function getCurrentScheludeDays(
 
   const dateTimes: string[] = [];
 
+  console.log(days, first, dayjs());
+
   days.forEach((day) => {
     const date = getDateForSchedule(
-      initDaysj(first),
+      first,
       weekdays.findIndex((d) => d === day[0]),
     );
     day[1].forEach((time) => {
