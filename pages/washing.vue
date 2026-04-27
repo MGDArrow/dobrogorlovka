@@ -44,10 +44,33 @@
       id="partners"
     />
     <ProjectsStep
+      :title="'Шаг 3. Открытие.'"
+      :subtitle="''"
+      :date="'24.04.2026'"
+      :status="'Активный'"
+      id="step3"
+      class="point"
+    >
+      <p>
+        <UiStrong>24 апреля 2026</UiStrong> года состоялось открытие проекта
+        <UiStrong>«Стирка Добра»</UiStrong>!
+      </p>
+      <p>
+        Перед первой партией стирки
+        <UiStrong>протоиерей Дмитрий Абросимов</UiStrong> совершил молебен перед
+        началом доброго дела. Проект начинает свою постоянную системную работу.
+        Волонтеры приняли первые заказы.
+        <UiStrong>8 стиральных машин</UiStrong>, распределенных под свою
+        категорию белья, приводят в чистое состояние вещи.
+      </p>
+
+      <ProjectsPhotos :photos="photos.step3" :photos-all="photosAll" />
+    </ProjectsStep>
+    <ProjectsStep
       :title="'Шаг 2. Установка.'"
       :subtitle="''"
       :date="'18.02.2026 – 19.04.2026'"
-      :status="'Активный'"
+      :status="'Завершённый'"
       id="step2"
       class="point"
     >
@@ -95,6 +118,7 @@
   const menu = [
     { name: 'О проекте', id: 'about' },
     { name: 'Партнёры проекта', id: 'partners' },
+    { name: 'Шаг 3. Открытие', id: 'step3' },
     { name: 'Шаг 2. Установка', id: 'step2' },
     { name: 'Шаг 1. Закупка', id: 'step1' },
   ];
