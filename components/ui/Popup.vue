@@ -7,7 +7,9 @@
       <div class="popup__arrow-left" v-if="arrowLeft" @click="emit('left')">
         ←
       </div>
-      <slot />
+      <div class="popup__slot">
+        <slot />
+      </div>
       <div class="popup__arrow-right" v-if="arrowRight" @click="emit('right')">
         →
       </div>
@@ -76,7 +78,7 @@
     &__body {
       max-width: 90vw;
       padding: 20px;
-      max-height: 90dvh;
+      max-height: calc(100dvh - 40px);
       border: 4px solid var(--color-black);
       border-radius: var(--border-radius);
       background: var(--color-white);
@@ -84,7 +86,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      max-height: calc(90vh - 40px); // резерв для старых браузеров
+      max-height: calc(90dvh - 40px);
+      overflow: hidden; // скрываем всё, что выходит
       @media screen and (max-width: 768px) {
         width: calc(100vw - 28px);
         border-radius: unset;
@@ -96,6 +103,8 @@
         left: 0;
         transform: unset;
         overflow-y: auto;
+        max-height: calc(100dvh - 58px);
+        height: 100%;
       }
       &::-webkit-scrollbar {
         width: 4px;
@@ -107,6 +116,11 @@
         background-color: var(--color-white);
         border-radius: 15px;
       }
+    }
+    &__slot {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0 4px; // для скролла
     }
     &__close {
       display: none;

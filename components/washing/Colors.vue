@@ -103,8 +103,8 @@
 <style scoped lang="scss">
   .colors {
     width: 100%;
-    max-height: 40dvh;
-    overflow-y: auto;
+    // max-height: 40dvh;
+    // overflow-y: auto;
     // padding: 0 10px;
     @media screen and (max-width: 768px) {
       // padding: 0;

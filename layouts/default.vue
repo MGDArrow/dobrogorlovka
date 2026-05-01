@@ -1,19 +1,16 @@
 <template>
   <div class="wrapper">
-    <Header/>
-     <main>
-       <NuxtPage/>
-     </main>
-      <ClientOnly>
-        <UiLoading/>
-      </ClientOnly>
-    <Footer/>
+    <Header />
+    <main>
+      <NuxtPage />
+    </main>
+    <ClientOnly>
+      <UiLoading />
+    </ClientOnly>
+    <Footer />
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

@@ -101,8 +101,6 @@
 
 <style scoped lang="scss">
   .washing-rules {
-    max-height: 50dvh;
-    overflow-y: auto;
     padding: 0 10px;
     line-height: 1.5em;
     & p {
