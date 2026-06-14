@@ -92,11 +92,4 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  routeRules: {
-    '/': { prerender: true },
-    '/digital': { prerender: true },
-    '/pulse': { prerender: true },
-    '/rill': { prerender: true },
-    '/washing': { ssr: true },
-  },
 });
