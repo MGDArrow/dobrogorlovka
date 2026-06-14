@@ -98,5 +98,6 @@ export default defineNuxtConfig({
     '/pulse': { prerender: true },
     '/rill': { prerender: true },
     '/washing': { ssr: true },
+    '/**': { redirect: '/' },
   },
 });
