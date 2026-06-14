@@ -112,7 +112,7 @@
         border-radius: 100%;
         width: 180px;
         font-size: 45px;
-        font-weight: 800;
+        font-weight: 700;
         display: flex;
         border: 2px solid grey;
         justify-content: center;

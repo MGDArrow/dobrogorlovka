@@ -1,6 +1,6 @@
 <template>
   <div class="project-wait">
-    <img :src="'/gear.gif'" alt="gear" />
+    <NuxtImg :src="'/gear.gif'" alt="gear" />
     <div>ПО МЕРЕ РЕАЛИЗАЦИИ ШАГА ИНФОРМАЦИЯ БУДЕТ ДОБАВЛЯТЬСЯ</div>
   </div>
 </template>

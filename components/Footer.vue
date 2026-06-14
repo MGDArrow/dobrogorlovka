@@ -8,7 +8,7 @@
     >
       <div class="footer__content">
         <div class="footer__logo">
-          <img src="/public/logo_bw.webp" alt="logo" />
+          <NuxtImg src="/logo_bw.webp" alt="logo" />
           <p>ДОБРОГОРЛОВКА</p>
         </div>
         <div class="footer__text">

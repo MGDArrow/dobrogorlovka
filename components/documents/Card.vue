@@ -12,7 +12,7 @@
       <slot />
     </p>
     <div class="document-card__download">
-      <img :src="`/${icon}.webp`" :alt="icon" />
+      <NuxtImg :src="`/${icon}.webp`" :alt="icon" />
     </div>
 
     <div v-if="size !== null" class="document-card__size">{{ size }}</div>

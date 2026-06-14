@@ -2,7 +2,7 @@
   <div class="team-card-small" @mouseover="isHover = true">
     <UiBlocks :active="isHover" />
     <div class="team-card-small__content">
-      <img :src="photoSrc" alt="Фото" :class="{ active: isHover }" />
+      <NuxtImg :src="photoSrc" alt="Фото" :class="{ active: isHover }" />
       <slot />
     </div>
   </div>

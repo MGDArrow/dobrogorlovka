@@ -1,7 +1,7 @@
 <template>
   <UiPopup @close-popup="emit('closePopup')">
     <div class="team-card-popup">
-      <img
+      <NuxtImg
         :src="`/persons/${persona.photo}_full.webp`"
         :alt="persona.surname"
       />

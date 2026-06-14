@@ -31,13 +31,13 @@
           :data="project.finance"
         />
       </div>
-      <img
-        src="/public/partners/pgrants_vertical.webp"
+      <NuxtImg
+        src="/partners/pgrants_vertical.webp"
         alt="При поддержке Фонда Президентских Грантов"
         class="pgrants-vertical"
       />
-      <img
-        src="/public/partners/pgrants_horizontal.png"
+      <NuxtImg
+        src="/partners/pgrants_horizontal.png"
         alt="При поддержке Фонда Президентских Грантов"
         class="pgrants-horizontal"
       />

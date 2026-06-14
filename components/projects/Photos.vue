@@ -5,7 +5,7 @@
       v-for="(photo, index) in photos"
       :key="index"
     >
-      <img
+      <NuxtImg
         :src="`/projects/${typeof photo === 'string' ? photo : photo.photo}`"
         alt="Фото"
         @click="popup = photo"
@@ -16,7 +16,7 @@
         v-if="typeof photo !== 'string' && photo.type === 'video'"
         @click="popup = photo"
       >
-        <img src="/play.svg" alt="play" />
+        <NuxtImg src="/play.svg" alt="play" />
       </div>
       <div
         class="project-photos__date"
@@ -36,7 +36,7 @@
     @right="changePhoto(1)"
   >
     <div class="popup-photo__base">
-      <img
+      <NuxtImg
         v-if="typeof popup === 'string' || popup.type !== 'video'"
         :src="`/projects/${typeof popup === 'string' ? popup : popup.photo}`"
         alt="Фото"

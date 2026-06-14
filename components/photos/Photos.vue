@@ -11,7 +11,7 @@
             :class="{ active: activeIndex === index }"
             @click="slideTo(index)"
           >
-            <img
+            <NuxtImg
               :src="`/photos/${photo}.webp`"
               :alt="photo"
               loading="lazy"
@@ -52,7 +52,7 @@
             :key="index"
             :virtualIndex="index"
           >
-            <img
+            <NuxtImg
               :src="`/photos/${photo}.webp`"
               loading="lazy"
               :alt="photo"

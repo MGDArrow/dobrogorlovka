@@ -7,16 +7,8 @@
       ref="activeRef"
       @click="setRoute('')"
     >
-      <img
-        :class="{ active: !isHover }"
-        src="/public/logo_bw.webp"
-        alt="logo"
-      />
-      <img
-        :class="{ active: isHover }"
-        src="/public/logo_color.webp"
-        alt="logo"
-      />
+      <NuxtImg :class="{ active: !isHover }" src="/logo_bw.webp" alt="logo" />
+      <NuxtImg :class="{ active: isHover }" src="/logo_color.webp" alt="logo" />
     </a>
     <h1 :class="{ active: isHover }" @mouseover="isHover = true">
       <span>Д</span>

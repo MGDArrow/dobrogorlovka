@@ -19,7 +19,7 @@
       @right="changePhoto(1)"
     >
       <div class="popup-photo__base">
-        <img :src="`awards/${popup.photo}.webp`" alt="Фото" />
+        <NuxtImg :src="`awards/${popup.photo}.webp`" alt="Фото" />
         <div class="popup-photo__date" v-if="popup.date">
           {{ popup.date }}
         </div>

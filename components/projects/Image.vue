@@ -5,7 +5,7 @@
     @mouseover="isHover = true"
     ref="activeRef"
   >
-    <img
+    <NuxtImg
       :src="`/projects/${photoSrc}.webp`"
       :class="{ active: isHover }"
       alt="Фото"

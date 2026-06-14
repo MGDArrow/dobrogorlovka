@@ -8,7 +8,7 @@
     />
 
     <div class="projects-card__content">
-      <img :src="photoSrc" alt="Фото" :class="{ active: isHover }" />
+      <NuxtImg :src="photoSrc" alt="Фото" :class="{ active: isHover }" />
       <slot />
     </div>
   </div>

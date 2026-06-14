@@ -1,7 +1,7 @@
 <template>
   <div class="award-card">
     <div class="award-card__photo">
-      <img :src="`awards/${award.photo}.webp`" alt="Фото" />
+      <NuxtImg :src="`awards/${award.photo}.webp`" alt="Фото" />
     </div>
     <div v-if="award.date" class="award-card__text">
       {{ award.date }}

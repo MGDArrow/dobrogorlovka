@@ -122,10 +122,17 @@ export default defineEventHandler(async (event) => {
       include: { washTypes: { include: { washType: true } } },
     });
 
-    // await $fetch(`${process.env.URL_ADMIN_PANEL}api/orders`, {
-    //   method: 'POST',
-    //   body: { ...order },
-    // });
+    // const adminPanelUrl = process.env.URL_ADMIN_PANEL;
+    // if (adminPanelUrl) {
+    //   $fetch(`${adminPanelUrl}api/orders`, {
+    //     method: 'POST',
+    //     body: { ...order },
+    //   }).catch((err) => {
+    //     console.error('Не удалось отправить заказ в админ-панель:', err);
+    //   });
+    // } else {
+    //   console.warn('URL_ADMIN_PANEL не задан, пропускаем отправку');
+    // }
 
     return {
       success: true,
