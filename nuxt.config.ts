@@ -5,6 +5,9 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'node-server',
+    prerender: {
+      routes: ['/', '/digital', '/pulse', '/rill'],
+    },
   },
 
   css: [
@@ -91,5 +94,12 @@ export default defineNuxtConfig({
     devOptions: {
       enabled: true,
     },
+  },
+  routeRules: {
+    '/': { prerender: true },
+    '/digital': { prerender: true },
+    '/pulse': { prerender: true },
+    '/rill': { prerender: true },
+    '/washing': { ssr: true },
   },
 });
