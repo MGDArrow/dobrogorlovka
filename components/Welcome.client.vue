@@ -10,7 +10,7 @@
         <UiButton
           :size="'min'"
           :color="'var(--color-red)'"
-          @click="unactivatedPopup()"
+          @click="unactivatedPopupPWA()"
         >
           Нет
         </UiButton>
@@ -77,30 +77,25 @@
 
   function getTwoWeek() {
     const dateNow = new Date();
-    const dateAdd = new Date(
-      dateNow.getFullYear(),
-      dateNow.getMonth(),
-      dateNow.getDate() + 14,
-    ).getTime();
-    return dateAdd;
+    dateNow.setDate(dateNow.getDate() + 14);
+    return dateNow.getTime();
+  }
+  function getFiveMinuts() {
+    const dateNow = new Date();
+    dateNow.setMinutes(dateNow.getMinutes() + 5);
+    return dateNow.getTime();
   }
 
   const pwaPopup = ref(false);
-  const pwaNonPopup: Ref<null | number> = ref(null);
   let installPrompt: Event | null = null;
 
-  function getBackFiveMinuts() {
-    const date = new Date();
-    date.setMinutes(date.getMinutes() - 5);
-    return date;
-  }
-
-  function unactivatedPopup() {
+  function unactivatedPopupPWA() {
     pwaPopup.value = false;
-    pwaNonPopup.value = new Date().valueOf();
+    window.localStorage.setItem('pwa-popup', getFiveMinuts().toString());
   }
 
   async function installPWA() {
+    console.log(123);
     if (!installPrompt) {
       return;
     }
@@ -123,12 +118,15 @@
     }
     window.addEventListener('beforeinstallprompt', (event) => {
       event.preventDefault();
-      if (
-        pwaNonPopup.value === null ||
-        pwaNonPopup.value <= getBackFiveMinuts().valueOf()
-      ) {
-        pwaPopup.value = true;
+      const localPWA = window.localStorage.getItem('pwa-popup');
+      if (!localPWA) {
         installPrompt = event;
+        pwaPopup.value = true;
+      } else {
+        if (new Date().getTime() > +localPWA) {
+          installPrompt = event;
+          pwaPopup.value = true;
+        }
       }
     });
   });

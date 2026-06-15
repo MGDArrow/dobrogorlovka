@@ -60,7 +60,7 @@
       margin: 20px auto;
       display: flex;
       width: 80%;
-      justify-content: space-between;
+      justify-content: space-evenly;
       @media screen and (max-width: 1599px) {
         width: 1100px;
         font-size: 1em;
@@ -68,7 +68,6 @@
       @media screen and (max-width: 1199px) {
         width: 730px;
         font-size: 0.7em;
-        justify-content: space-around;
       }
       @media screen and (max-width: 768px) {
         width: calc(98vw - 40px);

@@ -62,6 +62,8 @@
     & img {
       border-radius: var(--border-radius);
       border: 4px solid var(--color-black);
+      background: white;
+      width: 300px;
       filter: grayscale(100%);
       &.active {
         filter: grayscale(0%);
