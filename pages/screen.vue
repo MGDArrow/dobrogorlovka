@@ -55,12 +55,7 @@
       id="team"
       class="point"
     />
-    <Partners
-      :title="'Партнёры проекта'"
-      :partners="project.partners"
-      class="project-partners point"
-      id="partners"
-    />
+    <WidgetScreenPartners />
 
     <ProjectsSteps id="steps" class="point" :h1="'Шаги проекта'">
       <ProjectsStep

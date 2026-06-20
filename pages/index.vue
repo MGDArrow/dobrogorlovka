@@ -8,7 +8,7 @@
       :small-cards="smallCards"
     />
     <Photos />
-    <Partners :partners="partners" :title="'Наши партнёры'" />
+    <WidgetIndexPartners />
     <Awards />
     <Documents>
       <h2>Документы организации</h2>
@@ -49,8 +49,6 @@
 
   const bigCards = ENV.team;
   const smallCards = ENV.team.filter((persona) => persona.type === 'small');
-
-  const partners = ENV.partners;
 </script>
 
 <style scoped lang="scss">

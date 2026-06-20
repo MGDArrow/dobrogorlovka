@@ -49,12 +49,7 @@
       id="team"
       class="point"
     />
-    <Partners
-      :title="'Партнёры проекта'"
-      :partners="project.partners"
-      class="project-partners point"
-      id="partners"
-    />
+    <WidgetDigitalPartners />
 
     <Documents id="docs" class="point">
       <h2>Документы проекта</h2>

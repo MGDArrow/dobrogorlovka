@@ -56,12 +56,7 @@
       </div>
     </div>
     <PulseAnons />
-    <Partners
-      :title="'Партнёры проекта'"
-      :partners="project.partners"
-      class="project-partners point"
-      id="partners"
-    />
+    <WidgetPulsePartners />
     <ProjectsSteps
       id="steps"
       class="point"

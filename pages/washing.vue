@@ -37,12 +37,7 @@
       </div>
     </div>
     <Washing />
-    <Partners
-      :title="'Партнёры проекта'"
-      :partners="project.partners"
-      class="project-partners point"
-      id="partners"
-    />
+    <WidgetWashingPartners />
     <ProjectsStep
       :title="'Шаг 3. Открытие.'"
       :subtitle="''"

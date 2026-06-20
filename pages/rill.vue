@@ -20,12 +20,7 @@
         </ProjectsDescription>
       </div>
     </div>
-    <Partners
-      :title="'Партнёры проекта'"
-      :partners="project.partners"
-      class="project-partners point"
-      id="partners"
-    />
+    <WidgetRillPartners />
     <ProjectsStep
       :title="'Розлив'"
       :subtitle="''"

@@ -39,6 +39,7 @@ body::-webkit-scrollbar-thumb {
 section {
   width: 1600px;
   margin: 80px auto;
+  scroll-margin-block-start: 50px;
   @media screen and (max-width: 1599px) {
     width: 1200px;
     margin: 70px auto;
