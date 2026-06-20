@@ -97,6 +97,7 @@
       border: 4px solid black;
       transition: 0.5s ease-in-out;
       filter: grayscale(100%);
+      background: var(--color-white);
       &.active {
         filter: grayscale(0%);
       }

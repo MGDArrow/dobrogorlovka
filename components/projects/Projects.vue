@@ -2,34 +2,35 @@
   <section class="projects" id="projects">
     <h2>Наши проекты</h2>
     <div class="projects__cards">
-      <div class="projects__cards-full">
-        <ProjectsCard
-          :photoSrc="`projects/washing.webp`"
-          :status="'Постоянный'"
-          @click="setRoute('washing')"
-        >
-          <TeamName>
-            <p>
-              <strong>Стирка Добра</strong>
-            </p>
-            <span>
-              Бесплатная прачечная на 8 стиральных машинок для обеспечения
-              потребностей в стирке вещей жителей города в связи с нестабильной
-              ситуацией с водоснабжением.
-            </span>
-          </TeamName>
-        </ProjectsCard>
-      </div>
       <ProjectsCard
-        :photoSrc="`projects/rill.webp`"
-        :status="'Постоянный'"
-        @click="setRoute('rill')"
+        :photoSrc="`projects/screen.webp`"
+        :status="'Активный'"
+        @click="setRoute('screen')"
       >
         <TeamName>
-          <p><strong>Родник Добра</strong></p>
-          <span
-            >Проект по помощи городу в обеспечении водой населения ввиду трудной
-            ситуации с водоснабжением
+          <p>
+            <strong>Экран Добра</strong>
+          </p>
+          <span>
+            Проект системной информационно-психологической поддержки населения
+            через 7 уличных телеэкранов на остановочных комплексах в
+            муниципалитетах ДНР.
+          </span>
+        </TeamName>
+      </ProjectsCard>
+      <ProjectsCard
+        :photoSrc="`projects/washing.webp`"
+        :status="'Постоянный'"
+        @click="setRoute('washing')"
+      >
+        <TeamName>
+          <p>
+            <strong>Стирка Добра</strong>
+          </p>
+          <span>
+            Бесплатная прачечная на 8 стиральных машинок для обеспечения
+            потребностей в стирке вещей жителей города в связи с нестабильной
+            ситуацией с водоснабжением.
           </span>
         </TeamName>
       </ProjectsCard>
@@ -47,26 +48,42 @@
           </span>
         </TeamName>
       </ProjectsCard>
-      <div class="projects__cards-full">
-        <ProjectsCard
-          :photoSrc="`projects/digital.webp`"
-          :status="'Завершённый'"
-          @click="setRoute('digital')"
-        >
-          <TeamName>
-            <p>
-              <strong>Цифровой иммунитет</strong> Учись, Играй, Будь в
-              безопасности
-            </p>
-            <span>
-              Проект по обучению детей из многодетных семей навыкам пользования
-              офисных программ, основам кибербезопасности, противостояния
-              кибербуллингу и закладывание в подростков идей о морали в
-              интернете
-            </span>
-          </TeamName>
-        </ProjectsCard>
-      </div>
+    </div>
+    <div class="projects__cards">
+      <ProjectsCard
+        :photoSrc="`projects/rill.webp`"
+        :status="'Завершённый'"
+        @click="setRoute('rill')"
+      >
+        <TeamName>
+          <p><strong>Родник Добра</strong></p>
+          <span
+            >Проект по помощи городу в обеспечении водой населения ввиду трудной
+            ситуации с водоснабжением
+          </span>
+        </TeamName>
+      </ProjectsCard>
+
+      <ProjectsCard
+        :photoSrc="`projects/digital.webp`"
+        :status="'Завершённый'"
+        @click="setRoute('digital')"
+      >
+        <TeamName>
+          <p>
+            <strong>Цифровой иммунитет</strong> Учись, Играй, Будь в
+            безопасности
+          </p>
+          <span>
+            Проект по обучению детей из многодетных семей навыкам пользования
+            офисных программ, основам кибербезопасности, противостояния
+            кибербуллингу и закладывание в подростков идей о морали в интернете
+          </span>
+        </TeamName>
+      </ProjectsCard>
+      <!-- <div class="projects__cards-full">
+
+      </div> -->
     </div>
   </section>
 </template>
@@ -84,11 +101,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    width: 80%;
+    // width: 80%;
     @media screen and (max-width: 1599px) {
       width: 1100px;
     }
     @media screen and (max-width: 1199px) {
+      flex-direction: column;
+      gap: 20px;
       width: 730px;
     }
     @media screen and (max-width: 768px) {
