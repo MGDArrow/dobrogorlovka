@@ -23,7 +23,7 @@
       ? 'var(--color-green)'
       : props.status === 'Завершённый' || props.status === 'Завершена'
         ? 'var(--color-orange)'
-        : props.status === 'Предподготовка'
+        : props.status === 'Предподготовка' || props.status === 'На паузе'
           ? 'var(--color-pink)'
           : 'var(--color-blue)';
   });

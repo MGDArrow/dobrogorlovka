@@ -4,7 +4,7 @@
     <div class="projects__cards">
       <ProjectsCard
         :photoSrc="`projects/screen.webp`"
-        :status="'Активный'"
+        :status="'Предподготовка'"
         @click="setRoute('screen')"
       >
         <TeamName>
@@ -52,7 +52,7 @@
     <div class="projects__cards">
       <ProjectsCard
         :photoSrc="`projects/rill.webp`"
-        :status="'Завершённый'"
+        :status="'На паузе'"
         @click="setRoute('rill')"
       >
         <TeamName>

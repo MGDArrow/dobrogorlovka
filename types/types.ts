@@ -15,6 +15,7 @@ export type TStatus =
   | 'Завершённый'
   | 'Завершена'
   | 'Постоянный'
+  | 'На паузе'
   | 'Предподготовка';
 
 export interface IPhotoAward {

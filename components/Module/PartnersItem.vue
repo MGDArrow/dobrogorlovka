@@ -114,6 +114,10 @@
     height: 480px;
     width: 360px;
     margin: 0;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      scale: 1.04;
+    }
     @media screen and (max-width: 1199px) {
       height: 370px;
       width: 240px;
