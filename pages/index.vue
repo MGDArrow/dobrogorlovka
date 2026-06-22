@@ -1,7 +1,7 @@
 <template>
   <div class="mainpage">
     <About />
-    <Projects />
+    <WidgetIndexProjects />
     <Team
       :title="'Наша команда'"
       :big-cards="bigCards"

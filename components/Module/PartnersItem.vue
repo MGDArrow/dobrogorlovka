@@ -6,7 +6,7 @@
       :class="{ active: isActive }"
     >
       <NuxtImg :src="photoSrc" alt="Фото" :class="{ active: isActive }" />
-      <p :class="{ active: isActive }" v-if="$slots.default">
+      <p :class="{ active: isActive }" v-if="$slots.default" v-once>
         <slot />
       </p>
     </div>
