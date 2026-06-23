@@ -101,6 +101,12 @@
       top: -80px;
       left: -500px;
       transform: scale(0.85);
+      @media screen and (max-width: 1199px) {
+        left: -700px;
+      }
+      @media screen and (max-width: 768px) {
+        left: -600px;
+      }
     }
     &__title {
       font-weight: 600;
@@ -130,9 +136,6 @@
     background: var(--color-white);
     &.active {
       filter: grayscale(0%);
-    }
-    @media screen and (max-width: 1199px) {
-      width: 200px;
     }
   }
 </style>

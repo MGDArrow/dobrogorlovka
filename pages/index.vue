@@ -2,11 +2,7 @@
   <div class="mainpage">
     <About />
     <WidgetIndexProjects />
-    <Team
-      :title="'Наша команда'"
-      :big-cards="bigCards"
-      :small-cards="smallCards"
-    />
+    <WidgetIndexTeam />
     <Photos />
     <WidgetIndexPartners />
     <Awards />
@@ -46,9 +42,6 @@
 
   const docs = ENV.docs;
   // const reports = ENV.reports;
-
-  const bigCards = ENV.team;
-  const smallCards = ENV.team.filter((persona) => persona.type === 'small');
 </script>
 
 <style scoped lang="scss">

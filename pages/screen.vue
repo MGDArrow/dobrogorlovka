@@ -48,13 +48,7 @@
         class="pgrants-horizontal"
       />
     </div>
-    <Team
-      :title="'Команда проекта'"
-      :big-cards="bigCards"
-      :small-cards="smallCards"
-      id="team"
-      class="point"
-    />
+    <WidgetScreenTeam />
     <WidgetScreenPartners />
 
     <ProjectsSteps id="steps" class="point" :h1="'Шаги проекта'">
@@ -115,11 +109,6 @@
 <script setup lang="ts">
   import MenuClient from '~/components/projects/Menu.client.vue';
   import { DIGITAL as project } from '~/content/screen.project';
-
-  const bigCards = project.team;
-  const smallCards = ref(
-    project.team.filter((persona) => persona.type === 'small'),
-  );
 
   const menu = [
     { name: 'О проекте', id: 'about' },

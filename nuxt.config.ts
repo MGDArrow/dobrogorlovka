@@ -33,6 +33,11 @@ export default defineNuxtConfig({
         { name: 'author', content: 'MGDArrow' },
         { name: 'creator', content: 'MGDArrow' },
         { name: 'apple-mobile-web-app-title', content: 'Доброгорловка' },
+        {
+          name: 'viewport',
+          content:
+            'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no',
+        },
       ],
       link: [
         {

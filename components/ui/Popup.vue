@@ -90,7 +90,7 @@
       flex-direction: column;
       width: auto;
       max-height: calc(90vh - 40px); // резерв для старых браузеров
-      max-height: calc(90dvh - 40px);
+      max-height: calc(100dvh - 40px);
       overflow: hidden; // скрываем всё, что выходит
       @media screen and (max-width: 768px) {
         width: calc(100vw - 28px);
