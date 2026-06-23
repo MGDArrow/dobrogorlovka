@@ -72,15 +72,14 @@
         </template>
       </ModuleTeamItem>
       <ModuleTeamItem :photoSrc="`persona1`" :type="'line'">
-        <template v-slot:surname>Поляков</template>
-        <template v-slot:name>Иван Викторович</template>
+        <template v-slot:surname>Архимандрит</template>
+        <template v-slot:name>Агафодор (Поляков)</template>
         <template v-slot:role
           >Эксперт, автор тематических видеороликов</template
         >
         <template v-slot:description>
-          Архимандрит Агафодор (Поляков) — священник Русской Православной
-          Церкви.
           <UiList>
+            <li>Священник Русской Православной Церкви;</li>
             <li>Клирик Богоявленского кафедрального собора г. Горловка;</li>
             <li>Магистр Богословия;</li>
             <li>Председатель Общественного Совета г. Горловка;</li>
