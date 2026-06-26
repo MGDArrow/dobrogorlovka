@@ -34,6 +34,10 @@ export const ENV = {
   awards: [
     {
       date: '',
+      photo: 'award_04',
+    },
+    {
+      date: '',
       photo: 'award_03',
     },
     {
