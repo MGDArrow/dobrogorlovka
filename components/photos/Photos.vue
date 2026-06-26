@@ -83,7 +83,22 @@
   import { ENV } from '~/assets/env';
 
   const isHover = ref(false);
-  const arrayNamePhotos = ENV.photoArray;
+  const arrayNamePhotos: Ref<string[]> = ref([]);
+
+  function shuffleArray(arr: string[]) {
+    // Создаём копию, чтобы не мутировать оригинал
+    const shuffled = arr.slice();
+
+    // Проходим по массиву с конца к началу
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      // Случайный индекс от 0 до i включительно
+      const j = Math.floor(Math.random() * (i + 1));
+      // Меняем местами элементы i и j
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+  }
   const modules = [
     Navigation,
     Pagination,
@@ -109,6 +124,9 @@
   const slideTo = (index: number) => {
     swiperRef?.value?.slideTo(index + 1, 0);
   };
+  onMounted(() => {
+    arrayNamePhotos.value = shuffleArray(ENV.photoArray);
+  });
 </script>
 
 <style scoped lang="scss">

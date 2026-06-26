@@ -13,6 +13,10 @@ export const ENV = {
     'photo_11',
     'photo_12',
     'photo_13',
+    'photo_14',
+    'photo_15',
+    'photo_16',
+    'photo_17',
   ],
   requisites: {
     'ОГРН': '1249300015777',
