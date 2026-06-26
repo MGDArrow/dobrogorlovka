@@ -63,6 +63,84 @@
       :h1="'Сдачи крови и новости проекта'"
     >
       <ProjectsStep
+        :title="'День Донора'"
+        :subtitle="''"
+        :date="'15.06.2026'"
+        :status="'Завершена'"
+      >
+        <p>
+          Всемирный <UiStrong>день донора</UiStrong> в Горловке отметили
+          донацией крови, теплыми пожеланиями и
+          <UiStrong>памятными подарками</UiStrong>.
+        </p>
+        <p>
+          Заместитель руководителя миссионерского отдела Горловской епархии и
+          куратор донорского движения «Пульс добра» диакон Роман Шуклин посетил
+          <UiStrong>станцию переливания крови города Горловки</UiStrong>. Он
+          поздравил сотрудников и посетителей со Всемирным днём донора крови и
+          подарил <UiStrong>духовную литературу</UiStrong>.
+        </p>
+        <p>Мероприятие посетило <UiStrong>более 40 человек.</UiStrong></p>
+        <ProjectsPhotos :photos="photos.step11" :photos-all="photosAll" />
+      </ProjectsStep>
+      <ProjectsStep
+        :title="'«Соучастие»: '"
+        :subtitle="'Призёры Всероссийской премии'"
+        :date="'09.06.2026'"
+        :status="'Завершена'"
+      >
+        <p>
+          «Пульс добра» стал призёром
+          <UiStrong>Всероссийской премии «Соучастие».</UiStrong>
+        </p>
+        <p>
+          Куратор проекта <UiStrong>диакон Роман Шуклин</UiStrong> принял
+          участие в итоговых мероприятиях Всероссийской премии, которые прошли в
+          Москве.
+        </p>
+        <ProjectsPhotos :photos="photos.step10" :photos-all="photosAll" />
+      </ProjectsStep>
+      <ProjectsStep
+        :title="'Сдача 8: '"
+        :subtitle="'День невинных детей — жертв агрессии'"
+        :date="'01.06.2026 — 06.06.2026'"
+        :status="'Завершена'"
+      >
+        <p>
+          С 1 по 6 июня прошла донорская акция приуроченная к
+          <UiStrong>Международному дню невинных детей — жертв агрессии</UiStrong
+          >, который отмечают <UiStrong>4 июня</UiStrong>.
+        </p>
+        <ProjectsPoints>
+          <ProjectsPoint
+            :icon="'person'"
+            :number="39"
+            :color="'var(--color-blue)'"
+            >человек</ProjectsPoint
+          >
+          <ProjectsPoint
+            :icon="'first'"
+            :number="4"
+            :color="'var(--color-pink)'"
+            >первичных доноров</ProjectsPoint
+          >
+          <ProjectsPoint
+            :icon="'blood'"
+            :number="19"
+            :ci="'л.'"
+            :color="'var(--color-red)'"
+            >крови</ProjectsPoint
+          >
+          <ProjectsPoint
+            :icon="'heart-pulse'"
+            :number="55"
+            :color="'var(--color-green)'"
+            >спасённых жизней</ProjectsPoint
+          >
+        </ProjectsPoints>
+        <ProjectsPhotos :photos="photos.step9" :photos-all="photosAll" />
+      </ProjectsStep>
+      <ProjectsStep
         :title="'Сдача 7: '"
         :subtitle="'Масленица'"
         :date="'16.02.2026 — 20.02.2026'"
@@ -382,6 +460,7 @@
 </template>
 
 <script setup lang="ts">
+  import { UiStrong } from '#components';
   import MenuClient from '~/components/projects/Menu.client.vue';
   import { PULSE as project } from '~/content/pulse.project';
 
