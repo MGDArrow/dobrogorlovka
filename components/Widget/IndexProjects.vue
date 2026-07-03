@@ -3,8 +3,8 @@
     <h2>Наши проекты</h2>
     <ModuleProjectsWrapper>
       <ModuleProjectsItem
-        :photoSrc="`projects/screen.webp`"
-        :status="'Предподготовка'"
+        :photoSrc="`projects/screen2.webp`"
+        :status="'Активный'"
         @click="setRoute('screen')"
       >
         <template v-slot:title> Экран Добра </template>
