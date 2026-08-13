@@ -11,11 +11,26 @@ export const DIGITAL = {
     'Софинансирование': 1_346_111.16,
   },
   photos: {
-    // step1: [
-    //   'digital/step1_01.webp',
-    //   'digital/step1_02.webp',
-    //   'digital/step1_03.webp',
-    // ],
+    step4: [
+      'screen/step4_01.webp',
+      'screen/step4_02.webp',
+      'screen/step4_03.webp',
+      'screen/step4_04.webp',
+      'screen/step4_05.webp',
+      'screen/step4_06.webp',
+      'screen/step4_07.webp',
+      'screen/step4_08.webp',
+    ],
+    step3: [
+      'screen/step3_01.webp',
+      'screen/step3_02.webp',
+      'screen/step3_03.webp',
+      'screen/step3_04.webp',
+      'screen/step3_05.webp',
+      'screen/step3_06.webp',
+      'screen/step3_07.webp',
+    ],
+    step2: ['screen/step2_01.webp'],
   },
 
   // reports: [
