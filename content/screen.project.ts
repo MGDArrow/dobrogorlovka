@@ -10,7 +10,41 @@ export const DIGITAL = {
     'Cредства предоставлены Фондом президентских грантов': 2_994_000.0,
     'Софинансирование': 1_346_111.16,
   },
+
   photos: {
+    step5_01: [
+      {
+        type: 'video',
+        photo: 'screen/5_01.webp',
+        link: 'https://vk.ru/video_ext.php?oid=-229630779&id=456239084&hash=645ef6c7ebf2b025&hd=3',
+      },
+      'screen/step5_01_01.webp',
+      'screen/step5_01_02.webp',
+      'screen/step5_01_03.webp',
+      'screen/step5_01_04.webp',
+    ],
+    step5_02: [
+      {
+        type: 'video',
+        photo: 'screen/5_02.webp',
+        link: 'https://vk.ru/video_ext.php?oid=-229630779&id=456239085&hash=380308c7668ddf6b&hd=3',
+      },
+      'screen/step5_02_01.webp',
+      'screen/step5_02_02.webp',
+      'screen/step5_02_03.webp',
+      'screen/step5_02_04.webp',
+    ],
+    step5_03: [
+      {
+        type: 'video',
+        photo: 'screen/5_03.webp',
+        link: 'https://vk.ru/video_ext.php?oid=-229630779&id=456239086&hash=c050cef1ca37dc3b&hd=3',
+      },
+      'screen/step5_03_01.webp',
+      'screen/step5_03_02.webp',
+      'screen/step5_03_03.webp',
+      'screen/step5_03_04.webp',
+    ],
     step4: [
       'screen/step4_01.webp',
       'screen/step4_02.webp',

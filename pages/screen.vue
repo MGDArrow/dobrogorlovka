@@ -56,6 +56,20 @@
 
     <ProjectsSteps id="steps" class="point" :h1="'Шаги проекта'">
       <ProjectsStep
+        :title="'Шаг 5. Запись видеороликов'"
+        :subtitle="''"
+        :date="'01.07.2026  — 31.01.2027'"
+        :status="'Активный'"
+      >
+        <h4>Запись роликов <UiStrong>24 августа 2026 года</UiStrong></h4>
+        <ProjectsPhotos :photos="photos.step5_01" :photos-all="photosAll" />
+        <h4>Запись роликов <UiStrong>29 сентября 2026 года</UiStrong></h4>
+        <ProjectsPhotos :photos="photos.step5_02" :photos-all="photosAll" />
+        <h4>Запись роликов <UiStrong>13 ноября 2026 года</UiStrong></h4>
+        <ProjectsPhotos :photos="photos.step5_03" :photos-all="photosAll" />
+        <ProjectsWait />
+      </ProjectsStep>
+      <ProjectsStep
         :title="'Шаг 4. Начало работы: '"
         :subtitle="'Техническое оснащение'"
         :date="'12.08.2026'"
