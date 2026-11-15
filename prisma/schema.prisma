@@ -78,3 +78,20 @@ model TelegramUser {
 
     @@map("telegram_users")
 }
+
+
+model ScreenSurvey {
+    id          Int      @id @default(autoincrement())
+    rating      Int      
+    text        String?  
+    help        String[] @default([])
+    isAnonymous Boolean  @default(true) @map("is_anonymous")
+    name        String?
+    sex         String?
+    age         String?
+    employment  String?
+    createdAt   DateTime @default(now()) @map("created_at")
+    updatedAt   DateTime @updatedAt @map("updated_at")
+
+    @@map("screen_surveys")
+}

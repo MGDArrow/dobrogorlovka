@@ -389,7 +389,8 @@ export const ModelName = {
   WashType: 'WashType',
   Order: 'Order',
   OrderWashType: 'OrderWashType',
-  TelegramUser: 'TelegramUser'
+  TelegramUser: 'TelegramUser',
+  ScreenSurvey: 'ScreenSurvey'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -405,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "schedule" | "holiday" | "washType" | "order" | "orderWashType" | "telegramUser"
+    modelProps: "schedule" | "holiday" | "washType" | "order" | "orderWashType" | "telegramUser" | "screenSurvey"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -853,6 +854,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ScreenSurvey: {
+      payload: Prisma.$ScreenSurveyPayload<ExtArgs>
+      fields: Prisma.ScreenSurveyFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ScreenSurveyFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ScreenSurveyFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>
+        }
+        findFirst: {
+          args: Prisma.ScreenSurveyFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ScreenSurveyFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>
+        }
+        findMany: {
+          args: Prisma.ScreenSurveyFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>[]
+        }
+        create: {
+          args: Prisma.ScreenSurveyCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>
+        }
+        createMany: {
+          args: Prisma.ScreenSurveyCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ScreenSurveyCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>[]
+        }
+        delete: {
+          args: Prisma.ScreenSurveyDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>
+        }
+        update: {
+          args: Prisma.ScreenSurveyUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>
+        }
+        deleteMany: {
+          args: Prisma.ScreenSurveyDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ScreenSurveyUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ScreenSurveyUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>[]
+        }
+        upsert: {
+          args: Prisma.ScreenSurveyUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScreenSurveyPayload>
+        }
+        aggregate: {
+          args: Prisma.ScreenSurveyAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateScreenSurvey>
+        }
+        groupBy: {
+          args: Prisma.ScreenSurveyGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ScreenSurveyGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ScreenSurveyCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ScreenSurveyCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -964,6 +1039,23 @@ export const TelegramUserScalarFieldEnum = {
 } as const
 
 export type TelegramUserScalarFieldEnum = (typeof TelegramUserScalarFieldEnum)[keyof typeof TelegramUserScalarFieldEnum]
+
+
+export const ScreenSurveyScalarFieldEnum = {
+  id: 'id',
+  rating: 'rating',
+  text: 'text',
+  help: 'help',
+  isAnonymous: 'isAnonymous',
+  name: 'name',
+  sex: 'sex',
+  age: 'age',
+  employment: 'employment',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ScreenSurveyScalarFieldEnum = (typeof ScreenSurveyScalarFieldEnum)[keyof typeof ScreenSurveyScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1203,6 +1295,7 @@ export type GlobalOmitConfig = {
   order?: Prisma.OrderOmit
   orderWashType?: Prisma.OrderWashTypeOmit
   telegramUser?: Prisma.TelegramUserOmit
+  screenSurvey?: Prisma.ScreenSurveyOmit
 }
 
 /* Types for Logging */

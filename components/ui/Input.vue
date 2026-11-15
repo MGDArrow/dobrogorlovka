@@ -4,7 +4,12 @@
       <p>
         {{ label }}
       </p>
-      <input type="text" v-model="modelValue" :placeholder="placeholder" />
+      <input
+        type="text"
+        v-model="modelValue"
+        :placeholder="placeholder"
+        :disabled
+      />
     </label>
   </div>
 </template>
@@ -13,11 +18,14 @@
   interface Props {
     label?: string;
     placeholder?: string;
+    disabled?: boolean;
   }
 
   const modelValue = defineModel<string>({ required: true });
 
-  const props = defineProps<Props>();
+  const props = withDefaults(defineProps<Props>(), {
+    disabled: false,
+  });
 </script>
 
 <style scoped lang="scss">
@@ -51,13 +59,13 @@
       font-size: 1.2em;
       padding: 10px;
       @media screen and (max-width: 1199px) {
+        border: 3px solid var(--color-black);
         width: calc(100% - 20px);
         font-size: 1em;
         padding: 6px;
-        height: 35px;
+        height: 30px;
       }
       @media screen and (max-width: 768px) {
-        border: 3px solid var(--color-black);
         width: calc(100% - 14px);
         font-size: 0.8em;
         padding: 4px;

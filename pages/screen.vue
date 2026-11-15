@@ -3,6 +3,7 @@
     <ClientOnly>
       <MenuClient :menu />
     </ClientOnly>
+
     <div class="project__updeck">
       <ProjectsImage :photo-src="project.photo" />
       <div class="project__info point" id="about">
@@ -50,6 +51,8 @@
     </div>
     <WidgetScreenTeam />
     <WidgetScreenPartners />
+
+    <WidgetScreenSurvey />
 
     <ProjectsSteps id="steps" class="point" :h1="'Шаги проекта'">
       <ProjectsStep

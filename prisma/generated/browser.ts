@@ -47,3 +47,8 @@ export type OrderWashType = Prisma.OrderWashTypeModel
  * 
  */
 export type TelegramUser = Prisma.TelegramUserModel
+/**
+ * Model ScreenSurvey
+ * 
+ */
+export type ScreenSurvey = Prisma.ScreenSurveyModel

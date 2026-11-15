@@ -92,4 +92,6 @@ export type TIcons =
   | 'first'
   | 'person'
   | 'spin'
-  | 'temperature';
+  | 'temperature'
+  | 'star-solid'
+  | 'star-regular';

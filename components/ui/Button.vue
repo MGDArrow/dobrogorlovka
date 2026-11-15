@@ -1,5 +1,10 @@
 <template>
-  <button class="ui-button" :class="{ min: size === 'min' }" type="button">
+  <button
+    class="ui-button"
+    :class="{ min: size === 'min' }"
+    type="button"
+    :disabled
+  >
     <slot />
   </button>
 </template>
@@ -12,11 +17,13 @@
   interface Props {
     color?: string;
     size?: 'normal' | 'min';
+    disabled?: boolean;
   }
 
   const props = withDefaults(defineProps<Props>(), {
     color: 'var(--color-green)',
     size: 'normal',
+    disabled: false,
   });
 </script>
 
@@ -32,9 +39,12 @@
     text-transform: uppercase;
     font-weight: 600;
     transition: 0.3s ease-in-out;
-    &:hover {
+    &:enabled:hover {
       background: v-bind(color);
       color: var(--color-white);
+    }
+    &:disabled {
+      cursor: default;
     }
 
     @media screen and (max-width: 1199px) {
